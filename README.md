@@ -70,7 +70,7 @@ All classes and methods are described on the [DOCUMENTATION](DOCUMENTATION.md).
  
 ## Examples
 
-Please check the [PIWebApiTests.java](/src/test/java/PIWebApiTests) from the Java test module of this repository. Below there are also code snippets written in Java for you to get started using this library:
+Please check the [PIWebApiTests.java](/src/test/java/PIWebApiTests.java) from the Java test module of this repository. Below there are also code snippets written in Java for you to get started using this library:
 
 
 ### Create an instance of the PI Web API top level object.
