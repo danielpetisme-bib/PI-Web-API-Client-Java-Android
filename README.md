@@ -93,13 +93,13 @@ This library is only compatible with PI Web API Basic Authentication. As a resul
 ### Get the PI Data Archive WebId
 
 ```java
-	PIDataServer dataServer = client.getDataServer().getByPath("\\\\MARC-PI2016", null);
+	PIDataServer dataServer = client.getDataServer().getByPath("\\\\MARC-PI2016", null, null);
 ```
 
 ### Create a new PI Point
 
 ```java
-	PIDataServer dataServer = client.getDataServer().getByPath("\\\\MARC-PI2016, null);
+	PIDataServer dataServer = client.getDataServer().getByPath("\\\\MARC-PI2016, null, null);
 	PIPoint newPoint = new PIPoint();
 	newPoint.setName("SINUSOID_TEST5");
 	newPoint.setDescriptor("Test PI Point for Java PI Web API Client");
