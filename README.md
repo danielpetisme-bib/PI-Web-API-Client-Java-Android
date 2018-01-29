@@ -9,7 +9,7 @@ This repository has the source code package of the PI Web API client library for
 ## Requirements
 
  - JDK
- - Maven(https://maven.apache.org/)
+ - [Maven](https://maven.apache.org/)
  - Python 2.7 and 3.4+
 
  
@@ -62,7 +62,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/piwebapi-1.0.0.jar
+* target/piwebapi-1.1.0.jar
 * target/lib/*.jar
 
 
