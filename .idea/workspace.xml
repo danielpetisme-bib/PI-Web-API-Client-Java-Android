@@ -4,7 +4,268 @@
     <bookmark url="file://$PROJECT_DIR$/src/test/java/PIWebApiTests.java" line="48" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b72c7c2f-2cf6-44f8-8c65-3b779559a733" name="Default" comment="" />
+    <list default="true" id="b72c7c2f-2cf6-44f8-8c65-3b779559a733" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/models/PIAttributeValueQuery.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/models/PISearchByAttributeElement.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/models/PISearchByAttributeEventFrame.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIAttributeValueQuery.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PISearchByAttributeElement.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PISearchByAttributeEventFrame.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/piwebapi.iml" afterPath="$PROJECT_DIR$/.idea/modules/piwebapi.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/piwebapi_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/piwebapi_main.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/piwebapi_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/piwebapi_test.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DOCUMENTATION.md" afterPath="$PROJECT_DIR$/DOCUMENTATION.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/AnalysisApi.md" afterPath="$PROJECT_DIR$/docs/api/AnalysisApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/AnalysisCategoryApi.md" afterPath="$PROJECT_DIR$/docs/api/AnalysisCategoryApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/AnalysisRuleApi.md" afterPath="$PROJECT_DIR$/docs/api/AnalysisRuleApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/AnalysisRulePlugInApi.md" afterPath="$PROJECT_DIR$/docs/api/AnalysisRulePlugInApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/AnalysisTemplateApi.md" afterPath="$PROJECT_DIR$/docs/api/AnalysisTemplateApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/AssetDatabaseApi.md" afterPath="$PROJECT_DIR$/docs/api/AssetDatabaseApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/AssetServerApi.md" afterPath="$PROJECT_DIR$/docs/api/AssetServerApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/AttributeApi.md" afterPath="$PROJECT_DIR$/docs/api/AttributeApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/AttributeCategoryApi.md" afterPath="$PROJECT_DIR$/docs/api/AttributeCategoryApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/AttributeTemplateApi.md" afterPath="$PROJECT_DIR$/docs/api/AttributeTemplateApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/ConfigurationApi.md" afterPath="$PROJECT_DIR$/docs/api/ConfigurationApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/DataServerApi.md" afterPath="$PROJECT_DIR$/docs/api/DataServerApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/ElementApi.md" afterPath="$PROJECT_DIR$/docs/api/ElementApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/ElementCategoryApi.md" afterPath="$PROJECT_DIR$/docs/api/ElementCategoryApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/ElementTemplateApi.md" afterPath="$PROJECT_DIR$/docs/api/ElementTemplateApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/EnumerationSetApi.md" afterPath="$PROJECT_DIR$/docs/api/EnumerationSetApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/EnumerationValueApi.md" afterPath="$PROJECT_DIR$/docs/api/EnumerationValueApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/EventFrameApi.md" afterPath="$PROJECT_DIR$/docs/api/EventFrameApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/PointApi.md" afterPath="$PROJECT_DIR$/docs/api/PointApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/SecurityIdentityApi.md" afterPath="$PROJECT_DIR$/docs/api/SecurityIdentityApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/SecurityMappingApi.md" afterPath="$PROJECT_DIR$/docs/api/SecurityMappingApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/StreamApi.md" afterPath="$PROJECT_DIR$/docs/api/StreamApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/StreamSetApi.md" afterPath="$PROJECT_DIR$/docs/api/StreamSetApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/TableApi.md" afterPath="$PROJECT_DIR$/docs/api/TableApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/TableCategoryApi.md" afterPath="$PROJECT_DIR$/docs/api/TableCategoryApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/TimeRuleApi.md" afterPath="$PROJECT_DIR$/docs/api/TimeRuleApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/TimeRulePlugInApi.md" afterPath="$PROJECT_DIR$/docs/api/TimeRulePlugInApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/UnitApi.md" afterPath="$PROJECT_DIR$/docs/api/UnitApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/api/UnitClassApi.md" afterPath="$PROJECT_DIR$/docs/api/UnitClassApi.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIAnalysis.md" afterPath="$PROJECT_DIR$/docs/models/PIAnalysis.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIAnalysisCategory.md" afterPath="$PROJECT_DIR$/docs/models/PIAnalysisCategory.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIAnalysisRule.md" afterPath="$PROJECT_DIR$/docs/models/PIAnalysisRule.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIAnalysisRulePlugIn.md" afterPath="$PROJECT_DIR$/docs/models/PIAnalysisRulePlugIn.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIAnalysisTemplate.md" afterPath="$PROJECT_DIR$/docs/models/PIAnalysisTemplate.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIAnnotation.md" afterPath="$PROJECT_DIR$/docs/models/PIAnnotation.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIAssetDatabase.md" afterPath="$PROJECT_DIR$/docs/models/PIAssetDatabase.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIAssetServer.md" afterPath="$PROJECT_DIR$/docs/models/PIAssetServer.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIAttribute.md" afterPath="$PROJECT_DIR$/docs/models/PIAttribute.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIAttributeCategory.md" afterPath="$PROJECT_DIR$/docs/models/PIAttributeCategory.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIAttributeTemplate.md" afterPath="$PROJECT_DIR$/docs/models/PIAttributeTemplate.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIAttributeTrait.md" afterPath="$PROJECT_DIR$/docs/models/PIAttributeTrait.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PICacheInstance.md" afterPath="$PROJECT_DIR$/docs/models/PICacheInstance.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIDataServer.md" afterPath="$PROJECT_DIR$/docs/models/PIDataServer.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIElement.md" afterPath="$PROJECT_DIR$/docs/models/PIElement.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIElementCategory.md" afterPath="$PROJECT_DIR$/docs/models/PIElementCategory.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIElementTemplate.md" afterPath="$PROJECT_DIR$/docs/models/PIElementTemplate.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIEnumerationSet.md" afterPath="$PROJECT_DIR$/docs/models/PIEnumerationSet.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIEnumerationValue.md" afterPath="$PROJECT_DIR$/docs/models/PIEnumerationValue.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIEventFrame.md" afterPath="$PROJECT_DIR$/docs/models/PIEventFrame.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsAnalysis.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsAnalysis.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsAnalysisCategory.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsAnalysisCategory.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsAnalysisRule.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsAnalysisRule.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsAnalysisRulePlugIn.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsAnalysisRulePlugIn.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsAnalysisTemplate.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsAnalysisTemplate.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsAnnotation.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsAnnotation.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsAssetDatabase.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsAssetDatabase.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsAssetServer.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsAssetServer.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsAttribute.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsAttribute.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsAttributeCategory.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsAttributeCategory.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsAttributeTemplate.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsAttributeTemplate.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsAttributeTrait.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsAttributeTrait.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsCacheInstance.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsCacheInstance.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsDataServer.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsDataServer.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsElement.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsElement.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsElementCategory.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsElementCategory.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsElementTemplate.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsElementTemplate.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsEnumerationSet.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsEnumerationSet.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsEnumerationValue.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsEnumerationValue.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsEventFrame.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsEventFrame.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsItemAttribute.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsItemAttribute.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsItemElement.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsItemElement.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsItemEventFrame.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsItemEventFrame.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsItemPoint.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsItemPoint.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsItemsSubstatus.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsItemsSubstatus.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsPoint.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsPoint.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsPointAttribute.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsPointAttribute.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsSecurityEntry.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsSecurityEntry.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsSecurityIdentity.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsSecurityIdentity.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsSecurityMapping.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsSecurityMapping.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsSecurityRights.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsSecurityRights.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsStreamSummaries.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsStreamSummaries.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsStreamValue.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsStreamValue.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsStreamValues.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsStreamValues.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsSubstatus.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsSubstatus.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsSummaryValue.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsSummaryValue.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsTable.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsTable.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsTableCategory.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsTableCategory.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsTimeRulePlugIn.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsTimeRulePlugIn.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIItemsUnitClass.md" afterPath="$PROJECT_DIR$/docs/models/PIItemsUnitClass.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PILanding.md" afterPath="$PROJECT_DIR$/docs/models/PILanding.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIPoint.md" afterPath="$PROJECT_DIR$/docs/models/PIPoint.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIPointAttribute.md" afterPath="$PROJECT_DIR$/docs/models/PIPointAttribute.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PISecurity.md" afterPath="$PROJECT_DIR$/docs/models/PISecurity.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PISecurityEntry.md" afterPath="$PROJECT_DIR$/docs/models/PISecurityEntry.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PISecurityIdentity.md" afterPath="$PROJECT_DIR$/docs/models/PISecurityIdentity.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PISecurityMapping.md" afterPath="$PROJECT_DIR$/docs/models/PISecurityMapping.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PISecurityRights.md" afterPath="$PROJECT_DIR$/docs/models/PISecurityRights.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIStreamSummaries.md" afterPath="$PROJECT_DIR$/docs/models/PIStreamSummaries.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIStreamValue.md" afterPath="$PROJECT_DIR$/docs/models/PIStreamValue.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIStreamValues.md" afterPath="$PROJECT_DIR$/docs/models/PIStreamValues.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PISubstatus.md" afterPath="$PROJECT_DIR$/docs/models/PISubstatus.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PISummaryValue.md" afterPath="$PROJECT_DIR$/docs/models/PISummaryValue.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PISystemLanding.md" afterPath="$PROJECT_DIR$/docs/models/PISystemLanding.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PISystemStatus.md" afterPath="$PROJECT_DIR$/docs/models/PISystemStatus.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PITable.md" afterPath="$PROJECT_DIR$/docs/models/PITable.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PITableCategory.md" afterPath="$PROJECT_DIR$/docs/models/PITableCategory.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PITableData.md" afterPath="$PROJECT_DIR$/docs/models/PITableData.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PITimeRule.md" afterPath="$PROJECT_DIR$/docs/models/PITimeRule.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PITimeRulePlugIn.md" afterPath="$PROJECT_DIR$/docs/models/PITimeRulePlugIn.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PITimedValue.md" afterPath="$PROJECT_DIR$/docs/models/PITimedValue.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PITimedValues.md" afterPath="$PROJECT_DIR$/docs/models/PITimedValues.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIUnit.md" afterPath="$PROJECT_DIR$/docs/models/PIUnit.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIUnitClass.md" afterPath="$PROJECT_DIR$/docs/models/PIUnitClass.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIUserInfo.md" afterPath="$PROJECT_DIR$/docs/models/PIUserInfo.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIValue.md" afterPath="$PROJECT_DIR$/docs/models/PIValue.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/models/PIVersion.md" afterPath="$PROJECT_DIR$/docs/models/PIVersion.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/ApiClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/ApiClient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AnalysisApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AnalysisApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AnalysisCategoryApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AnalysisCategoryApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AnalysisRuleApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AnalysisRuleApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AnalysisRulePlugInApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AnalysisRulePlugInApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AnalysisTemplateApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AnalysisTemplateApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AssetDatabaseApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AssetDatabaseApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AssetServerApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AssetServerApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AttributeApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AttributeApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AttributeCategoryApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AttributeCategoryApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AttributeTemplateApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AttributeTemplateApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AttributeTraitApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AttributeTraitApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/CalculationApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/CalculationApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/ChannelApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/ChannelApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/ConfigurationApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/ConfigurationApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/DataServerApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/DataServerApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/ElementApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/ElementApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/ElementCategoryApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/ElementCategoryApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/ElementTemplateApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/ElementTemplateApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/EnumerationSetApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/EnumerationSetApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/EnumerationValueApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/EnumerationValueApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/EventFrameApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/EventFrameApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/HomeApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/HomeApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/PointApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/PointApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/SecurityIdentityApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/SecurityIdentityApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/SecurityMappingApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/SecurityMappingApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/StreamApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/StreamApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/StreamSetApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/StreamSetApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/SystemApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/SystemApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/TableApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/TableApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/TableCategoryApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/TableCategoryApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/TimeRuleApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/TimeRuleApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/TimeRulePlugInApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/TimeRulePlugInApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/UnitApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/UnitApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/UnitClassApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/UnitClassApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIAnalysis.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIAnalysis.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIAnalysisCategory.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIAnalysisCategory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIAnalysisRule.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIAnalysisRule.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIAnalysisRulePlugIn.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIAnalysisRulePlugIn.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIAnalysisTemplate.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIAnalysisTemplate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIAnnotation.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIAnnotation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIAssetDatabase.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIAssetDatabase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIAssetServer.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIAssetServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIAttribute.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIAttribute.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIAttributeCategory.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIAttributeCategory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIAttributeTemplate.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIAttributeTemplate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIAttributeTrait.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIAttributeTrait.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PICacheInstance.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PICacheInstance.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIDataServer.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIDataServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIElement.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIElement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIElementCategory.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIElementCategory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIElementTemplate.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIElementTemplate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIEnumerationSet.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIEnumerationSet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIEnumerationValue.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIEnumerationValue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIErrors.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIErrors.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIEventFrame.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIEventFrame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemAttribute.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemAttribute.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemElement.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemElement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemEventFrame.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemEventFrame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemPoint.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemPoint.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsAnalysis.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsAnalysis.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsAnalysisCategory.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsAnalysisCategory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsAnalysisRule.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsAnalysisRule.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsAnalysisRulePlugIn.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsAnalysisRulePlugIn.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsAnalysisTemplate.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsAnalysisTemplate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsAnnotation.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsAnnotation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsAssetDatabase.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsAssetDatabase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsAssetServer.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsAssetServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsAttribute.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsAttribute.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsAttributeCategory.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsAttributeCategory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsAttributeTemplate.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsAttributeTemplate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsAttributeTrait.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsAttributeTrait.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsCacheInstance.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsCacheInstance.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsDataServer.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsDataServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsElement.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsElement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsElementCategory.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsElementCategory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsElementTemplate.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsElementTemplate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsEnumerationSet.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsEnumerationSet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsEnumerationValue.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsEnumerationValue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsEventFrame.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsEventFrame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsItemAttribute.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsItemAttribute.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsItemElement.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsItemElement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsItemEventFrame.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsItemEventFrame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsItemPoint.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsItemPoint.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsItemsSubstatus.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsItemsSubstatus.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsPoint.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsPoint.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsPointAttribute.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsPointAttribute.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsSecurityEntry.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsSecurityEntry.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsSecurityIdentity.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsSecurityIdentity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsSecurityMapping.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsSecurityMapping.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsSecurityRights.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsSecurityRights.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsStreamSummaries.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsStreamSummaries.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsStreamValue.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsStreamValue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsStreamValues.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsStreamValues.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsSubstatus.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsSubstatus.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsSummaryValue.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsSummaryValue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsTable.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsTable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsTableCategory.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsTableCategory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsTimeRulePlugIn.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsTimeRulePlugIn.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsUnitClass.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIItemsUnitClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PILanding.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PILanding.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIPoint.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIPoint.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIPointAttribute.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIPointAttribute.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIRequest.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIRequest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIRequestTemplate.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIRequestTemplate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIResponse.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIResponse.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PISecurity.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PISecurity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PISecurityEntry.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PISecurityEntry.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PISecurityIdentity.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PISecurityIdentity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PISecurityMapping.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PISecurityMapping.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PISecurityRights.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PISecurityRights.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIStreamSummaries.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIStreamSummaries.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIStreamValue.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIStreamValue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIStreamValues.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIStreamValues.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PISubstatus.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PISubstatus.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PISummaryValue.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PISummaryValue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PISystemLanding.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PISystemLanding.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PISystemStatus.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PISystemStatus.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PITable.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PITable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PITableCategory.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PITableCategory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PITableData.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PITableData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PITimeRule.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PITimeRule.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PITimeRulePlugIn.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PITimeRulePlugIn.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PITimedValue.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PITimedValue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PITimedValues.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PITimedValues.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIUnit.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIUnit.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIUnitClass.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIUnitClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIUserInfo.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIUserInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIValue.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIValue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIVersion.java" afterPath="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/models/PIVersion.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/PIWebApiTests.java" afterPath="$PROJECT_DIR$/src/test/java/PIWebApiTests.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -83,34 +344,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PIWebApiTests.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PIWebApiTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/PIWebApiTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="142" column="32" lean-forward="true" selection-start-line="142" selection-start-column="32" selection-end-line="142" selection-end-column="32" />
+            <state relative-caret-position="461">
+              <caret line="124" column="5" lean-forward="false" selection-start-line="123" selection-start-column="5" selection-end-line="124" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3902#3910#0" expanded="true" />
+                <element signature="e#8347#8361#0" expanded="true" />
+                <element signature="e#8530#8544#0" expanded="true" />
+                <element signature="e#8713#8727#0" expanded="true" />
+                <element signature="e#8905#8921#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="44" lean-forward="false" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -118,78 +364,68 @@
       <file leaf-file-name="PIWebApiClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/PIWebApiClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="272">
+              <caret line="16" column="43" lean-forward="true" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApiClient.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="StringUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/StringUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Pair.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/Pair.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ApiClient.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/ApiClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="505">
-              <caret line="576" column="0" lean-forward="false" selection-start-line="576" selection-start-column="0" selection-end-line="576" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3129#3145#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReflectiveCallable.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="476">
+              <caret line="146" column="0" lean-forward="true" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ParentRunner.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runners/ParentRunner.java">
+      <file leaf-file-name="Configuration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/Configuration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="370" column="0" lean-forward="false" selection-start-line="370" selection-start-column="0" selection-end-line="370" selection-end-column="0" />
-              <folding>
-                <element signature="e#2922#2923#0" expanded="true" />
-                <element signature="e#2966#2967#0" expanded="true" />
-                <element signature="e#10310#10449#0" expanded="true" />
-                <element signature="e#10448#10449#0" expanded="true" />
-                <element signature="e#11040#11204#0" expanded="true" />
-                <element signature="e#11203#11204#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JUnitCore.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runner/JUnitCore.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+            <state relative-caret-position="102">
+              <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlockJUnit4ClassRunner.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runners/BlockJUnit4ClassRunner.java">
+      <file leaf-file-name="ApiResponse.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/ApiResponse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+            <state relative-caret-position="204">
+              <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HttpLoggingInterceptor.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/logging-interceptor/3.8.1/346af70dd5d5493ad6e2c6ed3a944449e6709786/logging-interceptor-3.8.1-sources.jar!/okhttp3/logging/HttpLoggingInterceptor.java">
+      <file leaf-file-name="ApiException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/ApiException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+            <state relative-caret-position="-511">
+              <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -203,6 +439,20 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>SERVERNAME</find>
+      <find>header</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>&quot;webapiuser&quot;</replace>
+      <replace>&quot;!try3.14webapi!&quot;</replace>
+      <replace>PISRV1</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
@@ -382,8 +632,8 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4501430914421" />
-        <entry key="$PROJECT_DIR$/build.gradle" value="28260757" />
+        <entry key="$PROJECT_DIR$" value="4522141089894" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="705154545" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -490,27 +740,17 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/build/classes/test/PIWebApiTests.class" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/ApiClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/PIWebApiClient.java" />
         <option value="$PROJECT_DIR$/src/test/java/PIWebApiTests.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/ApiClient.java" />
       </list>
     </option>
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="piwebapi" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-      </PATH>
       <PATH>
         <PATH_ELEMENT>
           <option name="myItemId" value="" />
@@ -528,7 +768,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1912" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1176" />
@@ -549,7 +789,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -558,17 +797,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="piwebapi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PI-Web-API-Client-Java" />
+              <option name="myItemId" value="PI-Web-API-Client-Java-Android" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -578,7 +807,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PI-Web-API-Client-Java" />
+              <option name="myItemId" value="PI-Web-API-Client-Java-Android" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -596,7 +825,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PI-Web-API-Client-Java" />
+              <option name="myItemId" value="PI-Web-API-Client-Java-Android" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -618,7 +847,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PI-Web-API-Client-Java" />
+              <option name="myItemId" value="PI-Web-API-Client-Java-Android" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -628,36 +857,11 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
               <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="piwebapi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PI-Web-API-Client-Java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="piwebapi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -676,7 +880,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.PI-Web-API-Client-Java [build]">
+  <component name="RunManager" selected="JUnit.PIWebApiTests">
     <configuration default="false" name="PIWebApiTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="piwebapi_test" />
@@ -716,27 +920,6 @@
       </ExternalSystemSettings>
       <method />
     </configuration>
-    <configuration default="false" name="PIWebApiTests.testDebug" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="piwebapi_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PIWebApiTests" />
-      <option name="METHOD_NAME" value="testDebug" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="PI-Web-API-Client-Java [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -763,6 +946,27 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PIWebApiTests" />
       <option name="METHOD_NAME" value="testCreatePoint" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="PIWebApiTests.testGetPointByPath" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="piwebapi_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PIWebApiTests" />
+      <option name="METHOD_NAME" value="testGetPointByPath" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1005,17 +1209,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.PIWebApiTests" />
       <item index="1" class="java.lang.String" itemvalue="Gradle.PI-Web-API-Client-Java [build]" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.PIWebApiTests.testDebug" />
-      <item index="3" class="java.lang.String" itemvalue="Gradle.PI-Web-API-Client-Java [clean]" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.PIWebApiTests.testCreatePoint" />
+      <item index="2" class="java.lang.String" itemvalue="Gradle.PI-Web-API-Client-Java [clean]" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.PIWebApiTests.testCreatePoint" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.PIWebApiTests.testGetPointByPath" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Gradle.PI-Web-API-Client-Java [build]" />
-        <item index="1" class="java.lang.String" itemvalue="Gradle.PI-Web-API-Client-Java [clean]" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.PIWebApiTests" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.PIWebApiTests.testCreatePoint" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.PIWebApiTests.testDebug" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.PIWebApiTests" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.PIWebApiTests.testGetPointByPath" />
+        <item index="2" class="java.lang.String" itemvalue="Gradle.PI-Web-API-Client-Java [build]" />
+        <item index="3" class="java.lang.String" itemvalue="Gradle.PI-Web-API-Client-Java [clean]" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.PIWebApiTests.testCreatePoint" />
       </list>
     </recent_temporary>
   </component>
@@ -1033,29 +1237,23 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PIWebApiTests - 2017.07.19 at 14h 56m 35s.xml">
+    <history-entry file="PIWebApiTests - 2018.01.29 at 08h 54m 33s.xml">
       <configuration name="PIWebApiTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PIWebApiTests - 2017.07.19 at 14h 58m 14s.xml">
+    <history-entry file="PIWebApiTests - 2018.01.29 at 08h 56m 01s.xml">
       <configuration name="PIWebApiTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PIWebApiTests - 2017.07.19 at 15h 03m 21s.xml">
+    <history-entry file="PIWebApiTests - 2018.01.29 at 08h 57m 32s.xml">
       <configuration name="PIWebApiTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PIWebApiTests - 2017.07.19 at 15h 04m 48s.xml">
+    <history-entry file="PIWebApiTests - 2018.01.29 at 09h 14m 46s.xml">
       <configuration name="PIWebApiTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PIWebApiTests_testCreatePoint - 2017.07.19 at 15h 00m 42s.xml">
-      <configuration name="PIWebApiTests.testCreatePoint" configurationId="JUnit" />
+    <history-entry file="PIWebApiTests - 2018.01.29 at 09h 34m 11s.xml">
+      <configuration name="PIWebApiTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PIWebApiTests_testCreatePoint - 2017.07.19 at 15h 00m 53s.xml">
-      <configuration name="PIWebApiTests.testCreatePoint" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PIWebApiTests_testCreatePoint - 2017.07.19 at 15h 01m 50s.xml">
-      <configuration name="PIWebApiTests.testCreatePoint" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PIWebApiTests_testCreatePoint - 2017.07.19 at 15h 02m 18s.xml">
-      <configuration name="PIWebApiTests.testCreatePoint" configurationId="JUnit" />
+    <history-entry file="PIWebApiTests - 2018.01.29 at 09h 35m 17s.xml">
+      <configuration name="PIWebApiTests" configurationId="JUnit" />
     </history-entry>
     <history-entry file="PIWebApiTests_testCreatePoint - 2017.07.19 at 15h 02m 51s.xml">
       <configuration name="PIWebApiTests.testCreatePoint" configurationId="JUnit" />
@@ -1063,40 +1261,46 @@
     <history-entry file="PIWebApiTests_testCreatePoint - 2017.07.19 at 15h 04m 03s.xml">
       <configuration name="PIWebApiTests.testCreatePoint" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="PIWebApiTests_testGetPointByPath - 2018.01.29 at 08h 55m 03s.xml">
+      <configuration name="PIWebApiTests.testGetPointByPath" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PIWebApiTests_testGetPointByPath - 2018.01.29 at 08h 55m 38s.xml">
+      <configuration name="PIWebApiTests.testGetPointByPath" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1176" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32981783" sideWeight="0.4914712" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32981783" sideWeight="0.510661" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32981783" sideWeight="0.48933902" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32981783" sideWeight="0.5191898" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18230277" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32981783" sideWeight="0.48081023" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25266525" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2249467" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32981783" sideWeight="0.4978678" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39962476" sideWeight="0.49166667" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3988495" sideWeight="0.48720682" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14552239" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -1104,20 +1308,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/PIWebApiTests.java</url>
-          <line>21</line>
-          <properties />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/PIWebApiTests.java</url>
-          <line>180</line>
-          <properties />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
@@ -1127,12 +1317,94 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="44" lean-forward="false" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/PIWebApiClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/ApiClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9792">
+          <caret line="576" column="0" lean-forward="false" selection-start-line="576" selection-start-column="0" selection-end-line="576" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runners/ParentRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5338">
+          <caret line="370" column="0" lean-forward="false" selection-start-line="370" selection-start-column="0" selection-end-line="370" selection-end-column="0" />
+          <folding>
+            <element signature="e#2922#2923#0" expanded="false" />
+            <element signature="e#2966#2967#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runner/JUnitCore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2091">
+          <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runners/BlockJUnit4ClassRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/logging-interceptor/3.8.1/346af70dd5d5493ad6e2c6ed3a944449e6709786/logging-interceptor-3.8.1-sources.jar!/okhttp3/logging/HttpLoggingInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/PIWebApiTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1054">
           <caret line="72" column="31" lean-forward="false" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3902#3910#0" expanded="true" />
+            <element signature="e#8347#8361#0" expanded="true" />
+            <element signature="e#8530#8544#0" expanded="true" />
+            <element signature="e#8713#8727#0" expanded="true" />
+            <element signature="e#8905#8921#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1158,8 +1430,7 @@
         <state relative-caret-position="8279">
           <caret line="576" column="0" lean-forward="false" selection-start-line="576" selection-start-column="0" selection-end-line="576" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3129#3145#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1172,13 +1443,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/classes/test/PIWebApiTests.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/build/classes/test/PIWebApiTests.class" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/a.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/auth/Authentication.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1215,52 +1480,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/classes/test/PIWebApiTests.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="168" column="9" lean-forward="true" selection-start-line="168" selection-start-column="9" selection-end-line="168" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="44" lean-forward="false" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/build/classes/test/PIWebApiTests.class" />
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/logging-interceptor/3.8.1/346af70dd5d5493ad6e2c6ed3a944449e6709786/logging-interceptor-3.8.1-sources.jar!/okhttp3/logging/HttpLoggingInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/ApiClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="576" column="0" lean-forward="false" selection-start-line="576" selection-start-column="0" selection-end-line="576" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3129#3145#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/PIWebApiClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1275,7 +1499,7 @@
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runners/BlockJUnit4ClassRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
+        <state relative-caret-position="867">
           <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
           <folding />
         </state>
@@ -1283,34 +1507,219 @@
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runners/ParentRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
+        <state relative-caret-position="5338">
           <caret line="370" column="0" lean-forward="false" selection-start-line="370" selection-start-column="0" selection-end-line="370" selection-end-column="0" />
           <folding>
-            <element signature="e#2922#2923#0" expanded="true" />
-            <element signature="e#2966#2967#0" expanded="true" />
-            <element signature="e#10310#10449#0" expanded="true" />
-            <element signature="e#10448#10449#0" expanded="true" />
-            <element signature="e#11040#11204#0" expanded="true" />
-            <element signature="e#11203#11204#0" expanded="true" />
+            <element signature="e#2922#2923#0" expanded="false" />
+            <element signature="e#2966#2967#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runner/JUnitCore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
+        <state relative-caret-position="2091">
           <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradlew.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/ApiCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-86">
+          <caret line="25" column="17" lean-forward="false" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/HomeApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="61" column="30" lean-forward="true" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/ProgressRequestBody.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AssetServerApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AttributeApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AttributeCategoryApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AttributeTemplateApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/AttributeTraitApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/api/CalculationApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="12" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DOCUMENTATION.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LICENSE.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/PIWebApiTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="142" column="32" lean-forward="true" selection-start-line="142" selection-start-column="32" selection-end-line="142" selection-end-column="32" />
+        <state relative-caret-position="461">
+          <caret line="124" column="5" lean-forward="false" selection-start-line="123" selection-start-column="5" selection-end-line="124" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3902#3910#0" expanded="true" />
+            <element signature="e#8347#8361#0" expanded="true" />
+            <element signature="e#8530#8544#0" expanded="true" />
+            <element signature="e#8713#8727#0" expanded="true" />
+            <element signature="e#8905#8921#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/PIWebApiClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="43" lean-forward="true" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/StringUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/Pair.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/Configuration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/ApiResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/ApiException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-511">
+          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/osisoft/pidevclub/piwebapi/ApiClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="146" column="0" lean-forward="true" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

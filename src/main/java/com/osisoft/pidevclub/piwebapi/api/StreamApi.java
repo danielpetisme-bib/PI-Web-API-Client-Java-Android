@@ -1,6 +1,6 @@
 /*
  *
- * Copyright 2017 OSIsoft, LLC
+ * Copyright 2018 OSIsoft, LLC
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,8 +47,8 @@ public class StreamApi {
 	 * Opens a channel that will send messages about any value changes for the specified stream. 
 	 *
 	 */
-	public PIItemsStreamValues getChannel(String webId, Boolean includeInitialValues) throws ApiException {
-		ApiResponse<PIItemsStreamValues> resp = getChannelWithHttpInfo(webId, includeInitialValues);
+	public PIItemsStreamValues getChannel(String webId, Integer heartbeatRate, Boolean includeInitialValues, String webIdType) throws ApiException {
+		ApiResponse<PIItemsStreamValues> resp = getChannelWithHttpInfo(webId, heartbeatRate, includeInitialValues, webIdType);
 		return resp.getData();
 	}
 
@@ -56,8 +56,8 @@ public class StreamApi {
 	 * Opens a channel that will send messages about any value changes for the specified stream. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsStreamValues> getChannelWithHttpInfo(String webId, Boolean includeInitialValues) throws ApiException {
-		okhttp3.Call call = getChannelCall(webId, includeInitialValues,null,null);
+	public ApiResponse<PIItemsStreamValues> getChannelWithHttpInfo(String webId, Integer heartbeatRate, Boolean includeInitialValues, String webIdType) throws ApiException {
+		okhttp3.Call call = getChannelCall(webId, heartbeatRate, includeInitialValues, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsStreamValues>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -66,7 +66,7 @@ public class StreamApi {
 	 * Opens a channel that will send messages about any value changes for the specified stream. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getChannelAsync(String webId, Boolean includeInitialValues, final ApiCallback<PIItemsStreamValues> callback) throws ApiException {
+	public okhttp3.Call getChannelAsync(String webId, Integer heartbeatRate, Boolean includeInitialValues, String webIdType, final ApiCallback<PIItemsStreamValues> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -86,12 +86,12 @@ public class StreamApi {
 				}
 			};
 		}
-		okhttp3.Call call = getChannelCall(webId, includeInitialValues, progressListener, progressRequestListener);
+		okhttp3.Call call = getChannelCall(webId, heartbeatRate, includeInitialValues, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getChannelCall(String webId, Boolean includeInitialValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getChannelCall(String webId, Integer heartbeatRate, Boolean includeInitialValues, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -113,8 +113,12 @@ public class StreamApi {
 		localVarHeaderParams.put("Content-Type", localVarContentType);
 
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
+		if (heartbeatRate != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "heartbeatRate", heartbeatRate));
 		if (includeInitialValues != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "includeInitialValues", includeInitialValues));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -225,8 +229,8 @@ public class StreamApi {
 	 * Retrieves interpolated values over the specified time range at the specified sampling interval. 
 	 *
 	 */
-	public PITimedValues getInterpolated(String webId, String desiredUnits, String endTime, String filterExpression, Boolean includeFilteredValues, String interval, String selectedFields, String startTime, String timeZone) throws ApiException {
-		ApiResponse<PITimedValues> resp = getInterpolatedWithHttpInfo(webId, desiredUnits, endTime, filterExpression, includeFilteredValues, interval, selectedFields, startTime, timeZone);
+	public PITimedValues getInterpolated(String webId, String desiredUnits, String endTime, String filterExpression, Boolean includeFilteredValues, String interval, String selectedFields, String startTime, String syncTime, String syncTimeBoundaryType, String timeZone) throws ApiException {
+		ApiResponse<PITimedValues> resp = getInterpolatedWithHttpInfo(webId, desiredUnits, endTime, filterExpression, includeFilteredValues, interval, selectedFields, startTime, syncTime, syncTimeBoundaryType, timeZone);
 		return resp.getData();
 	}
 
@@ -234,8 +238,8 @@ public class StreamApi {
 	 * Retrieves interpolated values over the specified time range at the specified sampling interval. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PITimedValues> getInterpolatedWithHttpInfo(String webId, String desiredUnits, String endTime, String filterExpression, Boolean includeFilteredValues, String interval, String selectedFields, String startTime, String timeZone) throws ApiException {
-		okhttp3.Call call = getInterpolatedCall(webId, desiredUnits, endTime, filterExpression, includeFilteredValues, interval, selectedFields, startTime, timeZone,null,null);
+	public ApiResponse<PITimedValues> getInterpolatedWithHttpInfo(String webId, String desiredUnits, String endTime, String filterExpression, Boolean includeFilteredValues, String interval, String selectedFields, String startTime, String syncTime, String syncTimeBoundaryType, String timeZone) throws ApiException {
+		okhttp3.Call call = getInterpolatedCall(webId, desiredUnits, endTime, filterExpression, includeFilteredValues, interval, selectedFields, startTime, syncTime, syncTimeBoundaryType, timeZone,null,null);
 		Type localVarReturnType = new TypeToken<PITimedValues>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -244,7 +248,7 @@ public class StreamApi {
 	 * Retrieves interpolated values over the specified time range at the specified sampling interval. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getInterpolatedAsync(String webId, String desiredUnits, String endTime, String filterExpression, Boolean includeFilteredValues, String interval, String selectedFields, String startTime, String timeZone, final ApiCallback<PITimedValues> callback) throws ApiException {
+	public okhttp3.Call getInterpolatedAsync(String webId, String desiredUnits, String endTime, String filterExpression, Boolean includeFilteredValues, String interval, String selectedFields, String startTime, String syncTime, String syncTimeBoundaryType, String timeZone, final ApiCallback<PITimedValues> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -264,12 +268,12 @@ public class StreamApi {
 				}
 			};
 		}
-		okhttp3.Call call = getInterpolatedCall(webId, desiredUnits, endTime, filterExpression, includeFilteredValues, interval, selectedFields, startTime, timeZone, progressListener, progressRequestListener);
+		okhttp3.Call call = getInterpolatedCall(webId, desiredUnits, endTime, filterExpression, includeFilteredValues, interval, selectedFields, startTime, syncTime, syncTimeBoundaryType, timeZone, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getInterpolatedCall(String webId, String desiredUnits, String endTime, String filterExpression, Boolean includeFilteredValues, String interval, String selectedFields, String startTime, String timeZone, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getInterpolatedCall(String webId, String desiredUnits, String endTime, String filterExpression, Boolean includeFilteredValues, String interval, String selectedFields, String startTime, String syncTime, String syncTimeBoundaryType, String timeZone, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -305,6 +309,10 @@ public class StreamApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
 		if (startTime != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "startTime", startTime));
+		if (syncTime != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "syncTime", syncTime));
+		if (syncTimeBoundaryType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "syncTimeBoundaryType", syncTimeBoundaryType));
 		if (timeZone != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "timeZone", timeZone));
 		if (progressListener != null)
@@ -1122,16 +1130,16 @@ public class StreamApi {
 	 * Updates a value for the specified stream. 
 	 *
 	 */
-	public void updateValue(String webId, PITimedValue value, String bufferOption, String updateOption) throws ApiException {
-		updateValueWithHttpInfo(webId, value, bufferOption, updateOption);
+	public void updateValue(String webId, PITimedValue value, String bufferOption, String updateOption, String webIdType) throws ApiException {
+		updateValueWithHttpInfo(webId, value, bufferOption, updateOption, webIdType);
 	}
 
 	/**
 	 * Updates a value for the specified stream. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<Void> updateValueWithHttpInfo(String webId, PITimedValue value, String bufferOption, String updateOption) throws ApiException {
-		okhttp3.Call call = updateValueCall(webId, value, bufferOption, updateOption,null,null);
+	public ApiResponse<Void> updateValueWithHttpInfo(String webId, PITimedValue value, String bufferOption, String updateOption, String webIdType) throws ApiException {
+		okhttp3.Call call = updateValueCall(webId, value, bufferOption, updateOption, webIdType,null,null);
 		return apiClient.execute(call);
 	}
 
@@ -1139,7 +1147,7 @@ public class StreamApi {
 	 * Updates a value for the specified stream. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call updateValueAsync(String webId, PITimedValue value, String bufferOption, String updateOption, final ApiCallback<Void> callback) throws ApiException {
+	public okhttp3.Call updateValueAsync(String webId, PITimedValue value, String bufferOption, String updateOption, String webIdType, final ApiCallback<Void> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -1159,12 +1167,12 @@ public class StreamApi {
 				}
 			};
 		}
-		okhttp3.Call call = updateValueCall(webId, value, bufferOption, updateOption, progressListener, progressRequestListener);
+		okhttp3.Call call = updateValueCall(webId, value, bufferOption, updateOption, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call updateValueCall(String webId, PITimedValue value, String bufferOption, String updateOption, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call updateValueCall(String webId, PITimedValue value, String bufferOption, String updateOption, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -1194,6 +1202,8 @@ public class StreamApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "bufferOption", bufferOption));
 		if (updateOption != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "updateOption", updateOption));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {

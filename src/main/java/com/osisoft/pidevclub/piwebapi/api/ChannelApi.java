@@ -1,6 +1,6 @@
 /*
  *
- * Copyright 2017 OSIsoft, LLC
+ * Copyright 2018 OSIsoft, LLC
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,24 +47,26 @@ public class ChannelApi {
 	 * Retrieves a list of currently running channel instances. 
 	 *
 	 */
-	public void instances() throws ApiException {
-		instancesWithHttpInfo();
+	public PIItemsChannelInstance instances() throws ApiException {
+		ApiResponse<PIItemsChannelInstance> resp = instancesWithHttpInfo();
+		return resp.getData();
 	}
 
 	/**
 	 * Retrieves a list of currently running channel instances. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<Void> instancesWithHttpInfo() throws ApiException {
+	public ApiResponse<PIItemsChannelInstance> instancesWithHttpInfo() throws ApiException {
 		okhttp3.Call call = instancesCall(null,null);
-		return apiClient.execute(call);
+		Type localVarReturnType = new TypeToken<PIItemsChannelInstance>(){}.getType();
+		return apiClient.execute(call, localVarReturnType);
 	}
 
 	/**
 	 * Retrieves a list of currently running channel instances. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call instancesAsync(final ApiCallback<Void> callback) throws ApiException {
+	public okhttp3.Call instancesAsync(final ApiCallback<PIItemsChannelInstance> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)

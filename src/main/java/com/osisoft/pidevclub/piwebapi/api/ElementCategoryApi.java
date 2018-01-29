@@ -1,6 +1,6 @@
 /*
  *
- * Copyright 2017 OSIsoft, LLC
+ * Copyright 2018 OSIsoft, LLC
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,8 +47,8 @@ public class ElementCategoryApi {
 	 * Retrieve an element category by path. 
 	 *
 	 */
-	public PIElementCategory getByPath(String path, String selectedFields) throws ApiException {
-		ApiResponse<PIElementCategory> resp = getByPathWithHttpInfo(path, selectedFields);
+	public PIElementCategory getByPath(String path, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIElementCategory> resp = getByPathWithHttpInfo(path, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -56,8 +56,8 @@ public class ElementCategoryApi {
 	 * Retrieve an element category by path. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIElementCategory> getByPathWithHttpInfo(String path, String selectedFields) throws ApiException {
-		okhttp3.Call call = getByPathCall(path, selectedFields,null,null);
+	public ApiResponse<PIElementCategory> getByPathWithHttpInfo(String path, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getByPathCall(path, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIElementCategory>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -66,7 +66,7 @@ public class ElementCategoryApi {
 	 * Retrieve an element category by path. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getByPathAsync(String path, String selectedFields, final ApiCallback<PIElementCategory> callback) throws ApiException {
+	public okhttp3.Call getByPathAsync(String path, String selectedFields, String webIdType, final ApiCallback<PIElementCategory> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -86,12 +86,12 @@ public class ElementCategoryApi {
 				}
 			};
 		}
-		okhttp3.Call call = getByPathCall(path, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getByPathCall(path, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getByPathCall(String path, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getByPathCall(String path, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'path' is set
 		if (path == null)
@@ -116,6 +116,8 @@ public class ElementCategoryApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "path", path));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -136,8 +138,8 @@ public class ElementCategoryApi {
 	 * Retrieve an element category. 
 	 *
 	 */
-	public PIElementCategory get(String webId, String selectedFields) throws ApiException {
-		ApiResponse<PIElementCategory> resp = getWithHttpInfo(webId, selectedFields);
+	public PIElementCategory get(String webId, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIElementCategory> resp = getWithHttpInfo(webId, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -145,8 +147,8 @@ public class ElementCategoryApi {
 	 * Retrieve an element category. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIElementCategory> getWithHttpInfo(String webId, String selectedFields) throws ApiException {
-		okhttp3.Call call = getCall(webId, selectedFields,null,null);
+	public ApiResponse<PIElementCategory> getWithHttpInfo(String webId, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getCall(webId, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIElementCategory>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -155,7 +157,7 @@ public class ElementCategoryApi {
 	 * Retrieve an element category. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getAsync(String webId, String selectedFields, final ApiCallback<PIElementCategory> callback) throws ApiException {
+	public okhttp3.Call getAsync(String webId, String selectedFields, String webIdType, final ApiCallback<PIElementCategory> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -175,12 +177,12 @@ public class ElementCategoryApi {
 				}
 			};
 		}
-		okhttp3.Call call = getCall(webId, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getCall(webId, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getCall(String webId, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getCall(String webId, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -204,6 +206,8 @@ public class ElementCategoryApi {
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -396,8 +400,8 @@ public class ElementCategoryApi {
 	 * Get the security information of the specified security item associated with the element category for a specified user. 
 	 *
 	 */
-	public PIItemsSecurityRights getSecurity(String webId, List<String> userIdentity, Boolean forceRefresh, String selectedFields) throws ApiException {
-		ApiResponse<PIItemsSecurityRights> resp = getSecurityWithHttpInfo(webId, userIdentity, forceRefresh, selectedFields);
+	public PIItemsSecurityRights getSecurity(String webId, List<String> userIdentity, Boolean forceRefresh, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIItemsSecurityRights> resp = getSecurityWithHttpInfo(webId, userIdentity, forceRefresh, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -405,8 +409,8 @@ public class ElementCategoryApi {
 	 * Get the security information of the specified security item associated with the element category for a specified user. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsSecurityRights> getSecurityWithHttpInfo(String webId, List<String> userIdentity, Boolean forceRefresh, String selectedFields) throws ApiException {
-		okhttp3.Call call = getSecurityCall(webId, userIdentity, forceRefresh, selectedFields,null,null);
+	public ApiResponse<PIItemsSecurityRights> getSecurityWithHttpInfo(String webId, List<String> userIdentity, Boolean forceRefresh, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getSecurityCall(webId, userIdentity, forceRefresh, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsSecurityRights>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -415,7 +419,7 @@ public class ElementCategoryApi {
 	 * Get the security information of the specified security item associated with the element category for a specified user. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getSecurityAsync(String webId, List<String> userIdentity, Boolean forceRefresh, String selectedFields, final ApiCallback<PIItemsSecurityRights> callback) throws ApiException {
+	public okhttp3.Call getSecurityAsync(String webId, List<String> userIdentity, Boolean forceRefresh, String selectedFields, String webIdType, final ApiCallback<PIItemsSecurityRights> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -435,12 +439,12 @@ public class ElementCategoryApi {
 				}
 			};
 		}
-		okhttp3.Call call = getSecurityCall(webId, userIdentity, forceRefresh, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getSecurityCall(webId, userIdentity, forceRefresh, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getSecurityCall(String webId, List<String> userIdentity, Boolean forceRefresh, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getSecurityCall(String webId, List<String> userIdentity, Boolean forceRefresh, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -471,6 +475,8 @@ public class ElementCategoryApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "forceRefresh", forceRefresh));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -491,8 +497,8 @@ public class ElementCategoryApi {
 	 * Retrieve the security entries associated with the element category based on the specified criteria. By default, all security entries for this element category are returned. 
 	 *
 	 */
-	public PIItemsSecurityEntry getSecurityEntries(String webId, String nameFilter, String selectedFields) throws ApiException {
-		ApiResponse<PIItemsSecurityEntry> resp = getSecurityEntriesWithHttpInfo(webId, nameFilter, selectedFields);
+	public PIItemsSecurityEntry getSecurityEntries(String webId, String nameFilter, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIItemsSecurityEntry> resp = getSecurityEntriesWithHttpInfo(webId, nameFilter, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -500,8 +506,8 @@ public class ElementCategoryApi {
 	 * Retrieve the security entries associated with the element category based on the specified criteria. By default, all security entries for this element category are returned. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsSecurityEntry> getSecurityEntriesWithHttpInfo(String webId, String nameFilter, String selectedFields) throws ApiException {
-		okhttp3.Call call = getSecurityEntriesCall(webId, nameFilter, selectedFields,null,null);
+	public ApiResponse<PIItemsSecurityEntry> getSecurityEntriesWithHttpInfo(String webId, String nameFilter, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getSecurityEntriesCall(webId, nameFilter, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsSecurityEntry>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -510,7 +516,7 @@ public class ElementCategoryApi {
 	 * Retrieve the security entries associated with the element category based on the specified criteria. By default, all security entries for this element category are returned. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getSecurityEntriesAsync(String webId, String nameFilter, String selectedFields, final ApiCallback<PIItemsSecurityEntry> callback) throws ApiException {
+	public okhttp3.Call getSecurityEntriesAsync(String webId, String nameFilter, String selectedFields, String webIdType, final ApiCallback<PIItemsSecurityEntry> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -530,12 +536,12 @@ public class ElementCategoryApi {
 				}
 			};
 		}
-		okhttp3.Call call = getSecurityEntriesCall(webId, nameFilter, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getSecurityEntriesCall(webId, nameFilter, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getSecurityEntriesCall(String webId, String nameFilter, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getSecurityEntriesCall(String webId, String nameFilter, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -561,6 +567,8 @@ public class ElementCategoryApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "nameFilter", nameFilter));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -581,16 +589,16 @@ public class ElementCategoryApi {
 	 * Create a security entry owned by the element category. 
 	 *
 	 */
-	public void createSecurityEntry(String webId, PISecurityEntry securityEntry, Boolean applyToChildren) throws ApiException {
-		createSecurityEntryWithHttpInfo(webId, securityEntry, applyToChildren);
+	public void createSecurityEntry(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, String webIdType) throws ApiException {
+		createSecurityEntryWithHttpInfo(webId, securityEntry, applyToChildren, webIdType);
 	}
 
 	/**
 	 * Create a security entry owned by the element category. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<Void> createSecurityEntryWithHttpInfo(String webId, PISecurityEntry securityEntry, Boolean applyToChildren) throws ApiException {
-		okhttp3.Call call = createSecurityEntryCall(webId, securityEntry, applyToChildren,null,null);
+	public ApiResponse<Void> createSecurityEntryWithHttpInfo(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, String webIdType) throws ApiException {
+		okhttp3.Call call = createSecurityEntryCall(webId, securityEntry, applyToChildren, webIdType,null,null);
 		return apiClient.execute(call);
 	}
 
@@ -598,7 +606,7 @@ public class ElementCategoryApi {
 	 * Create a security entry owned by the element category. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call createSecurityEntryAsync(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, final ApiCallback<Void> callback) throws ApiException {
+	public okhttp3.Call createSecurityEntryAsync(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, String webIdType, final ApiCallback<Void> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -618,12 +626,12 @@ public class ElementCategoryApi {
 				}
 			};
 		}
-		okhttp3.Call call = createSecurityEntryCall(webId, securityEntry, applyToChildren, progressListener, progressRequestListener);
+		okhttp3.Call call = createSecurityEntryCall(webId, securityEntry, applyToChildren, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call createSecurityEntryCall(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call createSecurityEntryCall(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -651,6 +659,8 @@ public class ElementCategoryApi {
 		localVarPostBody =  securityEntry;
 		if (applyToChildren != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "applyToChildren", applyToChildren));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -671,8 +681,8 @@ public class ElementCategoryApi {
 	 * Retrieve the security entry associated with the element category with the specified name. 
 	 *
 	 */
-	public PISecurityEntry getSecurityEntryByName(String name, String webId, String selectedFields) throws ApiException {
-		ApiResponse<PISecurityEntry> resp = getSecurityEntryByNameWithHttpInfo(name, webId, selectedFields);
+	public PISecurityEntry getSecurityEntryByName(String name, String webId, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PISecurityEntry> resp = getSecurityEntryByNameWithHttpInfo(name, webId, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -680,8 +690,8 @@ public class ElementCategoryApi {
 	 * Retrieve the security entry associated with the element category with the specified name. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PISecurityEntry> getSecurityEntryByNameWithHttpInfo(String name, String webId, String selectedFields) throws ApiException {
-		okhttp3.Call call = getSecurityEntryByNameCall(name, webId, selectedFields,null,null);
+	public ApiResponse<PISecurityEntry> getSecurityEntryByNameWithHttpInfo(String name, String webId, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getSecurityEntryByNameCall(name, webId, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PISecurityEntry>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -690,7 +700,7 @@ public class ElementCategoryApi {
 	 * Retrieve the security entry associated with the element category with the specified name. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getSecurityEntryByNameAsync(String name, String webId, String selectedFields, final ApiCallback<PISecurityEntry> callback) throws ApiException {
+	public okhttp3.Call getSecurityEntryByNameAsync(String name, String webId, String selectedFields, String webIdType, final ApiCallback<PISecurityEntry> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -710,12 +720,12 @@ public class ElementCategoryApi {
 				}
 			};
 		}
-		okhttp3.Call call = getSecurityEntryByNameCall(name, webId, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getSecurityEntryByNameCall(name, webId, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getSecurityEntryByNameCall(String name, String webId, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getSecurityEntryByNameCall(String name, String webId, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'name' is set
 		if (name == null)
@@ -743,6 +753,8 @@ public class ElementCategoryApi {
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {

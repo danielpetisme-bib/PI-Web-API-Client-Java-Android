@@ -23,7 +23,7 @@ Method | HTTP request | Description
 [**getEnumerationSets**](AssetDatabaseApi.md#getenumerationsets) | **GET** /assetdatabases/{webId}/enumerationsets | Retrieve enumeration sets for given asset database.
 [**createEnumerationSet**](AssetDatabaseApi.md#createenumerationset) | **POST** /assetdatabases/{webId}/enumerationsets | Create an enumeration set at the Asset Database.
 [**findEventFrameAttributes**](AssetDatabaseApi.md#findeventframeattributes) | **GET** /assetdatabases/{webId}/eventframeattributes | Retrieves a list of event frame attributes matching the specified filters from the specified asset database.
-[**getEventFrames**](AssetDatabaseApi.md#geteventframes) | **GET** /assetdatabases/{webId}/eventframes | Retrieve event frames based on the specified conditions. By default, returns all children of the specified root resource with a start time in the past 8 hours.
+[**getEventFrames**](AssetDatabaseApi.md#geteventframes) | **GET** /assetdatabases/{webId}/eventframes | Retrieve event frames based on the specified conditions. By default, returns all children of the specified root resource that have been active in the past 8 hours.
 [**createEventFrame**](AssetDatabaseApi.md#createeventframe) | **POST** /assetdatabases/{webId}/eventframes | Create an event frame.
 [**export**](AssetDatabaseApi.md#export) | **GET** /assetdatabases/{webId}/export | Export the asset database.
 [**importData**](AssetDatabaseApi.md#import) | **POST** /assetdatabases/{webId}/import | Import an asset database.
@@ -43,7 +43,7 @@ Method | HTTP request | Description
 
 
 # **getByPath**
-> getByPath(String path, String selectedFields)
+> getByPath(String path, String selectedFields, String webIdType)
 
 Retrieve an Asset Database by path.
 
@@ -53,6 +53,7 @@ Name | Type | Description | Notes
 ------------- | ------------- | ------------- | -------------
  **path** | **String**| The path to the database.. | [required]
  **selectedFields** | **String**| List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.. | [optional]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -62,7 +63,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **get**
-> get(String webId, String selectedFields)
+> get(String webId, String selectedFields, String webIdType)
 
 Retrieve an Asset Database.
 
@@ -72,6 +73,7 @@ Name | Type | Description | Notes
 ------------- | ------------- | ------------- | -------------
  **webId** | **String**| The ID of the database.. | [required]
  **selectedFields** | **String**| List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.. | [optional]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -118,7 +120,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **findAnalyses**
-> findAnalyses(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder, Integer startIndex)
+> findAnalyses(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder, Integer startIndex, String webIdType)
 
 Retrieve analyses based on the specified conditions.
 
@@ -134,6 +136,7 @@ Name | Type | Description | Notes
  **sortField** | **String**| The field or property of the object used to sort the returned collection. The default is 'Name'.. | [optional]
  **sortOrder** | **String**| The order that the returned collection is sorted. The default is 'Ascending'.. | [optional]
  **startIndex** | **Integer**| The starting index (zero based) of the items to be returned. The default is 0.. | [optional]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -143,7 +146,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **getAnalysisCategories**
-> getAnalysisCategories(String webId, String selectedFields)
+> getAnalysisCategories(String webId, String selectedFields, String webIdType)
 
 Retrieve analysis categories for a given Asset Database.
 
@@ -153,6 +156,7 @@ Name | Type | Description | Notes
 ------------- | ------------- | ------------- | -------------
  **webId** | **String**| The ID of the database.. | [required]
  **selectedFields** | **String**| List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.. | [optional]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -162,7 +166,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **createAnalysisCategory**
-> createAnalysisCategory(String webId, PIAnalysisCategory analysisCategory)
+> createAnalysisCategory(String webId, PIAnalysisCategory analysisCategory, String webIdType)
 
 Create an analysis category at the Asset Database root.
 
@@ -172,6 +176,7 @@ Name | Type | Description | Notes
 ------------- | ------------- | ------------- | -------------
  **webId** | **String**| The ID of the database in which to create the analysis category.. | [required]
  **analysisCategory** | **PIAnalysisCategory**| The new analysis category definition.. | [required]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -181,7 +186,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **getAnalysisTemplates**
-> getAnalysisTemplates(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder)
+> getAnalysisTemplates(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder, String webIdType)
 
 Retrieve analysis templates based on the specified criteria. By default, all analysis templates in the specified Asset Database are returned.
 
@@ -196,6 +201,7 @@ Name | Type | Description | Notes
  **selectedFields** | **String**| List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.. | [optional]
  **sortField** | **String**| The field or property of the object used to sort the returned collection. The default is 'Name'.. | [optional]
  **sortOrder** | **String**| The order that the returned collection is sorted. The default is 'Ascending'.. | [optional]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -205,7 +211,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **createAnalysisTemplate**
-> createAnalysisTemplate(String webId, PIAnalysisTemplate template)
+> createAnalysisTemplate(String webId, PIAnalysisTemplate template, String webIdType)
 
 Create an analysis template at the Asset Database root.
 
@@ -215,6 +221,7 @@ Name | Type | Description | Notes
 ------------- | ------------- | ------------- | -------------
  **webId** | **String**| The ID of the database in which to create the analysis template.. | [required]
  **template** | **PIAnalysisTemplate**| The new analysis template definition.. | [required]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -224,7 +231,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **getAttributeCategories**
-> getAttributeCategories(String webId, String selectedFields)
+> getAttributeCategories(String webId, String selectedFields, String webIdType)
 
 Retrieve attribute categories for a given Asset Database.
 
@@ -234,6 +241,7 @@ Name | Type | Description | Notes
 ------------- | ------------- | ------------- | -------------
  **webId** | **String**| The ID of the database.. | [required]
  **selectedFields** | **String**| List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.. | [optional]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -243,7 +251,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **createAttributeCategory**
-> createAttributeCategory(String webId, PIAttributeCategory attributeCategory)
+> createAttributeCategory(String webId, PIAttributeCategory attributeCategory, String webIdType)
 
 Create an attribute category at the Asset Database root.
 
@@ -253,6 +261,7 @@ Name | Type | Description | Notes
 ------------- | ------------- | ------------- | -------------
  **webId** | **String**| The ID of the database in which to create the attribute category.. | [required]
  **attributeCategory** | **PIAttributeCategory**| The new attribute category definition.. | [required]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -262,7 +271,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **findElementAttributes**
-> findElementAttributes(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String elementCategory, String elementDescriptionFilter, String elementNameFilter, String elementTemplate, String elementType, Integer maxCount, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex)
+> findElementAttributes(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String elementCategory, String elementDescriptionFilter, String elementNameFilter, String elementTemplate, String elementType, Integer maxCount, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex, String webIdType)
 
 Retrieves a list of element attributes matching the specified filters from the specified asset database.
 
@@ -286,6 +295,7 @@ Name | Type | Description | Notes
  **sortField** | **String**| The field or property of the object used to sort the returned collection. The default is 'Name'.. | [optional]
  **sortOrder** | **String**| The order that the returned collection is sorted. The default is 'Ascending'.. | [optional]
  **startIndex** | **Integer**| The starting index (zero based) of the items to be returned. The default is 0.. | [optional]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -295,7 +305,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **getElementCategories**
-> getElementCategories(String webId, String selectedFields)
+> getElementCategories(String webId, String selectedFields, String webIdType)
 
 Retrieve element categories for a given Asset Database.
 
@@ -305,6 +315,7 @@ Name | Type | Description | Notes
 ------------- | ------------- | ------------- | -------------
  **webId** | **String**| The ID of the database.. | [required]
  **selectedFields** | **String**| List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.. | [optional]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -314,7 +325,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **createElementCategory**
-> createElementCategory(String webId, PIElementCategory elementCategory)
+> createElementCategory(String webId, PIElementCategory elementCategory, String webIdType)
 
 Create an element category at the Asset Database root.
 
@@ -324,6 +335,7 @@ Name | Type | Description | Notes
 ------------- | ------------- | ------------- | -------------
  **webId** | **String**| The ID of the database in which to create the element category.. | [required]
  **elementCategory** | **PIElementCategory**| The new element category definition.. | [required]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -333,7 +345,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **getElements**
-> getElements(String webId, String categoryName, String descriptionFilter, String elementType, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex, String templateName)
+> getElements(String webId, String categoryName, String descriptionFilter, String elementType, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex, String templateName, String webIdType)
 
 Retrieve elements based on the specified conditions. By default, this method selects immediate children of the specified asset database.
 
@@ -353,6 +365,7 @@ Name | Type | Description | Notes
  **sortOrder** | **String**| The order that the returned collection is sorted. The default is 'Ascending'.. | [optional]
  **startIndex** | **Integer**| The starting index (zero based) of the items to be returned. The default is 0.. | [optional]
  **templateName** | **String**| Specify that returned elements must have this template or a template derived from this template. The default is no template filter.. | [optional]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -362,7 +375,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **createElement**
-> createElement(String webId, PIElement element)
+> createElement(String webId, PIElement element, String webIdType)
 
 Create a child element.
 
@@ -372,6 +385,7 @@ Name | Type | Description | Notes
 ------------- | ------------- | ------------- | -------------
  **webId** | **String**| The ID of the asset database on which to create the element.. | [required]
  **element** | **PIElement**| The new element definition.. | [required]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -381,7 +395,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **getElementTemplates**
-> getElementTemplates(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder)
+> getElementTemplates(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder, String webIdType)
 
 Retrieve element templates based on the specified criteria. Only templates of instance type "Element" and "EventFrame" are returned. By default, all element and event frame templates in the specified Asset Database are returned.
 
@@ -396,6 +410,7 @@ Name | Type | Description | Notes
  **selectedFields** | **String**| List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.. | [optional]
  **sortField** | **String**| The field or property of the object used to sort the returned collection. The default is 'Name'.. | [optional]
  **sortOrder** | **String**| The order that the returned collection is sorted. The default is 'Ascending'.. | [optional]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -405,7 +420,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **createElementTemplate**
-> createElementTemplate(String webId, PIElementTemplate template)
+> createElementTemplate(String webId, PIElementTemplate template, String webIdType)
 
 Create a template at the Asset Database root. Specify InstanceType of "Element" or "EventFrame" to create element or event frame template respectively. Only these two types of templates can be created.
 
@@ -415,6 +430,7 @@ Name | Type | Description | Notes
 ------------- | ------------- | ------------- | -------------
  **webId** | **String**| The ID of the database in which to create the element template.. | [required]
  **template** | **PIElementTemplate**| The new element template definition.. | [required]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -424,7 +440,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **getEnumerationSets**
-> getEnumerationSets(String webId, String selectedFields)
+> getEnumerationSets(String webId, String selectedFields, String webIdType)
 
 Retrieve enumeration sets for given asset database.
 
@@ -434,6 +450,7 @@ Name | Type | Description | Notes
 ------------- | ------------- | ------------- | -------------
  **webId** | **String**| The ID of the database.. | [required]
  **selectedFields** | **String**| List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.. | [optional]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -443,7 +460,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **createEnumerationSet**
-> createEnumerationSet(String webId, PIEnumerationSet enumerationSet)
+> createEnumerationSet(String webId, PIEnumerationSet enumerationSet, String webIdType)
 
 Create an enumeration set at the Asset Database.
 
@@ -453,6 +470,7 @@ Name | Type | Description | Notes
 ------------- | ------------- | ------------- | -------------
  **webId** | **String**| The ID of the database in which to create the enumeration set.. | [required]
  **enumerationSet** | **PIEnumerationSet**| The new enumeration set definition.. | [required]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -462,7 +480,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **findEventFrameAttributes**
-> findEventFrameAttributes(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String endTime, String eventFrameCategory, String eventFrameDescriptionFilter, String eventFrameNameFilter, String eventFrameTemplate, Integer maxCount, String referencedElementNameFilter, Boolean searchFullHierarchy, String searchMode, String selectedFields, String sortField, String sortOrder, Integer startIndex, String startTime)
+> findEventFrameAttributes(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String endTime, String eventFrameCategory, String eventFrameDescriptionFilter, String eventFrameNameFilter, String eventFrameTemplate, Integer maxCount, String referencedElementNameFilter, Boolean searchFullHierarchy, String searchMode, String selectedFields, String sortField, String sortOrder, Integer startIndex, String startTime, String webIdType)
 
 Retrieves a list of event frame attributes matching the specified filters from the specified asset database.
 
@@ -483,12 +501,13 @@ Name | Type | Description | Notes
  **maxCount** | **Integer**| The maximum number of objects to be returned (the page size). The default is 1000.. | [optional]
  **referencedElementNameFilter** | **String**| The name query string which must match the name of a referenced element. The default is no filter.. | [optional]
  **searchFullHierarchy** | **Boolean**| Specifies if the search should include objects nested further than immediate children of the given resource. The default is 'false'.. | [optional]
- **searchMode** | **String**| Determines how the startTime and endTime parameters are treated when searching for event frames.     The default is 'Overlapped'.. | [optional]
+ **searchMode** | **String**| Determines how the startTime and endTime parameters are treated when searching for event frames. The default is 'Overlapped'.. | [optional]
  **selectedFields** | **String**| List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.. | [optional]
  **sortField** | **String**| The field or property of the object used to sort the returned collection. The default is 'Name'.. | [optional]
  **sortOrder** | **String**| The order that the returned collection is sorted. The default is 'Ascending'.. | [optional]
  **startIndex** | **Integer**| The starting index (zero based) of the items to be returned. The default is 0.. | [optional]
  **startTime** | **String**| A string representing the earliest starting time for the event frames to be matched. startTime must be less than or equal to the endTime. The default is '*-8h'.. | [optional]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -498,9 +517,9 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **getEventFrames**
-> getEventFrames(String webId, Boolean canBeAcknowledged, String categoryName, String endTime, Boolean isAcknowledged, Integer maxCount, String nameFilter, String referencedElementNameFilter, String referencedElementTemplateName, Boolean searchFullHierarchy, String searchMode, String selectedFields, List<String> severity, String sortField, String sortOrder, Integer startIndex, String startTime, String templateName)
+> getEventFrames(String webId, Boolean canBeAcknowledged, String categoryName, String endTime, Boolean isAcknowledged, Integer maxCount, String nameFilter, String referencedElementNameFilter, String referencedElementTemplateName, Boolean searchFullHierarchy, String searchMode, String selectedFields, List<String> severity, String sortField, String sortOrder, Integer startIndex, String startTime, String templateName, String webIdType)
 
-Retrieve event frames based on the specified conditions. By default, returns all children of the specified root resource with a start time in the past 8 hours.
+Retrieve event frames based on the specified conditions. By default, returns all children of the specified root resource that have been active in the past 8 hours.
 
 ### Parameters
 
@@ -524,6 +543,7 @@ Name | Type | Description | Notes
  **startIndex** | **Integer**| The starting index (zero based) of the items to be returned. The default is 0.. | [optional]
  **startTime** | **String**| The starting time for the search. startTime must be less than or equal to the endTime. The searchMode parameter will control whether the comparison will be performed against the event frame's startTime or endTime. The default is '*-8h'.. | [optional]
  **templateName** | **String**| Specify that returned event frames must have this template or a template derived from this template. The default is no template filter. Specify this parameter by name.. | [optional]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -533,7 +553,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **createEventFrame**
-> createEventFrame(String webId, PIEventFrame eventFrame)
+> createEventFrame(String webId, PIEventFrame eventFrame, String webIdType)
 
 Create an event frame.
 
@@ -543,6 +563,7 @@ Name | Type | Description | Notes
 ------------- | ------------- | ------------- | -------------
  **webId** | **String**| The ID of the database on which to create the event frame.. | [required]
  **eventFrame** | **PIEventFrame**| The new event frame definition.. | [required]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -592,7 +613,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **getReferencedElements**
-> getReferencedElements(String webId, String categoryName, String descriptionFilter, String elementType, Integer maxCount, String nameFilter, String selectedFields, String sortField, String sortOrder, Integer startIndex, String templateName)
+> getReferencedElements(String webId, String categoryName, String descriptionFilter, String elementType, Integer maxCount, String nameFilter, String selectedFields, String sortField, String sortOrder, Integer startIndex, String templateName, String webIdType)
 
 Retrieve referenced elements based on the specified conditions. By default, this method selects all referenced elements at the root level of the asset database.
 
@@ -611,6 +632,7 @@ Name | Type | Description | Notes
  **sortOrder** | **String**| The order that the returned collection is sorted. The default is 'Ascending'.. | [optional]
  **startIndex** | **Integer**| The starting index (zero based) of the items to be returned. The default is 0.. | [optional]
  **templateName** | **String**| Specify that returned elements must have this template or a template derived from this template. The default is no template filter.. | [optional]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -659,7 +681,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **getSecurity**
-> getSecurity(String webId, List<String> securityItem, List<String> userIdentity, Boolean forceRefresh, String selectedFields)
+> getSecurity(String webId, List<String> securityItem, List<String> userIdentity, Boolean forceRefresh, String selectedFields, String webIdType)
 
 Get the security information of the specified security item associated with the asset database for a specified user.
 
@@ -672,6 +694,7 @@ Name | Type | Description | Notes
  **userIdentity** | **List<String>**| The user identity for the security information to be checked. Multiple security identities may be specified with multiple instances of the parameter. If the parameter is not specified, only the current user's security rights will be returned.. | [required]
  **forceRefresh** | **Boolean**| Indicates if the security cache should be refreshed before getting security information. The default is 'false'.. | [optional]
  **selectedFields** | **String**| List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.. | [optional]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -681,7 +704,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **getSecurityEntries**
-> getSecurityEntries(String webId, String nameFilter, String securityItem, String selectedFields)
+> getSecurityEntries(String webId, String nameFilter, String securityItem, String selectedFields, String webIdType)
 
 Retrieve the security entries of the specified security item associated with the asset database based on the specified criteria. By default, all security entries for this asset database are returned.
 
@@ -693,6 +716,7 @@ Name | Type | Description | Notes
  **nameFilter** | **String**| The name query string used for filtering security entries. The default is no filter.. | [optional]
  **securityItem** | **String**| The security item of the desired security entries information to be returned. If the parameter is not specified, security entries of the 'Default' security item will be returned.. | [optional]
  **selectedFields** | **String**| List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.. | [optional]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -702,7 +726,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **createSecurityEntry**
-> createSecurityEntry(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, String securityItem)
+> createSecurityEntry(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, String securityItem, String webIdType)
 
 Create a security entry owned by the asset database.
 
@@ -714,6 +738,7 @@ Name | Type | Description | Notes
  **securityEntry** | **PISecurityEntry**| The new security entry definition. The full list of allow and deny rights must be supplied.. | [required]
  **applyToChildren** | **Boolean**| If false, the new access permissions are only applied to the associated object. If true, the access permissions of children with any parent-child reference types will change when the permissions on the primary parent change.. | [optional]
  **securityItem** | **String**| The security item of the desired security entries to be created. If the parameter is not specified, security entries of the 'Default' security item will be created.. | [optional]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -723,7 +748,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **getSecurityEntryByName**
-> getSecurityEntryByName(String name, String webId, String securityItem, String selectedFields)
+> getSecurityEntryByName(String name, String webId, String securityItem, String selectedFields, String webIdType)
 
 Retrieve the security entry of the specified security item associated with the asset database with the specified name.
 
@@ -735,6 +760,7 @@ Name | Type | Description | Notes
  **webId** | **String**| The ID of the asset database.. | [required]
  **securityItem** | **String**| The security item of the desired security entries information to be returned. If the parameter is not specified, security entries of the 'Default' security item will be returned.. | [optional]
  **selectedFields** | **String**| List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.. | [optional]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -787,7 +813,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **getTableCategories**
-> getTableCategories(String webId, String selectedFields)
+> getTableCategories(String webId, String selectedFields, String webIdType)
 
 Retrieve table categories for a given Asset Database.
 
@@ -797,6 +823,7 @@ Name | Type | Description | Notes
 ------------- | ------------- | ------------- | -------------
  **webId** | **String**| The ID of the database.. | [required]
  **selectedFields** | **String**| List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.. | [optional]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -806,7 +833,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **createTableCategory**
-> createTableCategory(String webId, PITableCategory tableCategory)
+> createTableCategory(String webId, PITableCategory tableCategory, String webIdType)
 
 Create a table category on the Asset Database.
 
@@ -816,6 +843,7 @@ Name | Type | Description | Notes
 ------------- | ------------- | ------------- | -------------
  **webId** | **String**| The ID of the database in which to create the table category.. | [required]
  **tableCategory** | **PITableCategory**| The new table category definition.. | [required]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -825,7 +853,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **getTables**
-> getTables(String webId, String selectedFields)
+> getTables(String webId, String selectedFields, String webIdType)
 
 Retrieve tables for given Asset Database.
 
@@ -835,6 +863,7 @@ Name | Type | Description | Notes
 ------------- | ------------- | ------------- | -------------
  **webId** | **String**| The ID of the database.. | [required]
  **selectedFields** | **String**| List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.. | [optional]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -844,7 +873,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **createTable**
-> createTable(String webId, PITable table)
+> createTable(String webId, PITable table, String webIdType)
 
 Create a table on the Asset Database.
 
@@ -854,6 +883,7 @@ Name | Type | Description | Notes
 ------------- | ------------- | ------------- | -------------
  **webId** | **String**| The ID of the database in which to create the table.. | [required]
  **table** | **PITable**| The new table definition.. | [required]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type

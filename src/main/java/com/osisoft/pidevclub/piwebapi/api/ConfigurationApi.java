@@ -1,6 +1,6 @@
 /*
  *
- * Copyright 2017 OSIsoft, LLC
+ * Copyright 2018 OSIsoft, LLC
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -291,94 +291,6 @@ public class ConfigurationApi {
 		}
 		String[] localVarAuthNames = new String[] {"Basic" };
 		return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-	}
-
-	/**
-	 * Create or update a configuration item. 
-	 *
-	 */
-	public void put(String key, Object value) throws ApiException {
-		putWithHttpInfo(key, value);
-	}
-
-	/**
-	 * Create or update a configuration item. (with HTTP information)
-	 *
-	 */
-	public ApiResponse<Void> putWithHttpInfo(String key, Object value) throws ApiException {
-		okhttp3.Call call = putCall(key, value,null,null);
-		return apiClient.execute(call);
-	}
-
-	/**
-	 * Create or update a configuration item. (asynchronously)
-	 *
-	 */
-	public okhttp3.Call putAsync(String key, Object value, final ApiCallback<Void> callback) throws ApiException {
-		ProgressResponseBody.ProgressListener progressListener = null;
-		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-		if (callback != null)
-		{
-			progressListener = new ProgressResponseBody.ProgressListener() {
-				@Override
-				public void update(long bytesRead, long contentLength, boolean done)
-				{
-					callback.onDownloadProgress(bytesRead, contentLength, done);
-				}
-			};
-			progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-				@Override
-				public void onRequestProgress(long bytesWritten, long contentLength, boolean done)
-				{
-					callback.onUploadProgress(bytesWritten, contentLength, done);
-				}
-			};
-		}
-		okhttp3.Call call = putCall(key, value, progressListener, progressRequestListener);
-		apiClient.executeAsync(call, callback);
-		return call;
-	}
-
-	private okhttp3.Call putCall(String key, Object value, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-		Object localVarPostBody =  null;
-		// verify the required parameter 'key' is set
-		if (key == null)
-			throw new ApiException("Missing required parameter 'key'");
-		// verify the required parameter 'value' is set
-		if (value == null)
-			throw new ApiException("Missing required parameter 'value'");
-		String localVarPath = "/system/configuration/{key}";
-		Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-		Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-		List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-		final String[] localVarAccepts = {"application/json", "text/json", "text/html", "application/x-ms-application"};
-
-		final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-		if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-		final String[] localVarContentTypes = {"application/json", "text/json" };
-
-		final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-		localVarHeaderParams.put("Content-Type", localVarContentType);
-
-		localVarPath = localVarPath.replaceAll("\\{key\\}", apiClient.escapeString(key.toString()));
-		localVarPostBody =  value;
-		if (progressListener != null)
-		{
-			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
-			@Override
-			public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-				okhttp3.Response originalResponse = chain.proceed(chain.request());
-				return originalResponse.newBuilder()
-				.body(new ProgressResponseBody(originalResponse.body(), progressListener))
-				.build();
-				}
-			});
-		}
-		String[] localVarAuthNames = new String[] {"Basic" };
-		return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 	}
 
 }

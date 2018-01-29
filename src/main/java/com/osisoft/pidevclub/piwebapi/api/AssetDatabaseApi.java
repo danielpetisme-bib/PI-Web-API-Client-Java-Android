@@ -1,6 +1,6 @@
 /*
  *
- * Copyright 2017 OSIsoft, LLC
+ * Copyright 2018 OSIsoft, LLC
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,8 +47,8 @@ public class AssetDatabaseApi {
 	 * Retrieve an Asset Database by path. 
 	 *
 	 */
-	public PIAssetDatabase getByPath(String path, String selectedFields) throws ApiException {
-		ApiResponse<PIAssetDatabase> resp = getByPathWithHttpInfo(path, selectedFields);
+	public PIAssetDatabase getByPath(String path, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIAssetDatabase> resp = getByPathWithHttpInfo(path, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -56,8 +56,8 @@ public class AssetDatabaseApi {
 	 * Retrieve an Asset Database by path. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIAssetDatabase> getByPathWithHttpInfo(String path, String selectedFields) throws ApiException {
-		okhttp3.Call call = getByPathCall(path, selectedFields,null,null);
+	public ApiResponse<PIAssetDatabase> getByPathWithHttpInfo(String path, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getByPathCall(path, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIAssetDatabase>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -66,7 +66,7 @@ public class AssetDatabaseApi {
 	 * Retrieve an Asset Database by path. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getByPathAsync(String path, String selectedFields, final ApiCallback<PIAssetDatabase> callback) throws ApiException {
+	public okhttp3.Call getByPathAsync(String path, String selectedFields, String webIdType, final ApiCallback<PIAssetDatabase> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -86,12 +86,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = getByPathCall(path, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getByPathCall(path, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getByPathCall(String path, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getByPathCall(String path, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'path' is set
 		if (path == null)
@@ -116,6 +116,8 @@ public class AssetDatabaseApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "path", path));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -136,8 +138,8 @@ public class AssetDatabaseApi {
 	 * Retrieve an Asset Database. 
 	 *
 	 */
-	public PIAssetDatabase get(String webId, String selectedFields) throws ApiException {
-		ApiResponse<PIAssetDatabase> resp = getWithHttpInfo(webId, selectedFields);
+	public PIAssetDatabase get(String webId, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIAssetDatabase> resp = getWithHttpInfo(webId, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -145,8 +147,8 @@ public class AssetDatabaseApi {
 	 * Retrieve an Asset Database. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIAssetDatabase> getWithHttpInfo(String webId, String selectedFields) throws ApiException {
-		okhttp3.Call call = getCall(webId, selectedFields,null,null);
+	public ApiResponse<PIAssetDatabase> getWithHttpInfo(String webId, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getCall(webId, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIAssetDatabase>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -155,7 +157,7 @@ public class AssetDatabaseApi {
 	 * Retrieve an Asset Database. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getAsync(String webId, String selectedFields, final ApiCallback<PIAssetDatabase> callback) throws ApiException {
+	public okhttp3.Call getAsync(String webId, String selectedFields, String webIdType, final ApiCallback<PIAssetDatabase> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -175,12 +177,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = getCall(webId, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getCall(webId, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getCall(String webId, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getCall(String webId, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -204,6 +206,8 @@ public class AssetDatabaseApi {
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -396,8 +400,8 @@ public class AssetDatabaseApi {
 	 * Retrieve analyses based on the specified conditions. 
 	 *
 	 */
-	public PIItemsAnalysis findAnalyses(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder, Integer startIndex) throws ApiException {
-		ApiResponse<PIItemsAnalysis> resp = findAnalysesWithHttpInfo(webId, field, maxCount, query, selectedFields, sortField, sortOrder, startIndex);
+	public PIItemsAnalysis findAnalyses(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder, Integer startIndex, String webIdType) throws ApiException {
+		ApiResponse<PIItemsAnalysis> resp = findAnalysesWithHttpInfo(webId, field, maxCount, query, selectedFields, sortField, sortOrder, startIndex, webIdType);
 		return resp.getData();
 	}
 
@@ -405,8 +409,8 @@ public class AssetDatabaseApi {
 	 * Retrieve analyses based on the specified conditions. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsAnalysis> findAnalysesWithHttpInfo(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder, Integer startIndex) throws ApiException {
-		okhttp3.Call call = findAnalysesCall(webId, field, maxCount, query, selectedFields, sortField, sortOrder, startIndex,null,null);
+	public ApiResponse<PIItemsAnalysis> findAnalysesWithHttpInfo(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder, Integer startIndex, String webIdType) throws ApiException {
+		okhttp3.Call call = findAnalysesCall(webId, field, maxCount, query, selectedFields, sortField, sortOrder, startIndex, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsAnalysis>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -415,7 +419,7 @@ public class AssetDatabaseApi {
 	 * Retrieve analyses based on the specified conditions. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call findAnalysesAsync(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder, Integer startIndex, final ApiCallback<PIItemsAnalysis> callback) throws ApiException {
+	public okhttp3.Call findAnalysesAsync(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder, Integer startIndex, String webIdType, final ApiCallback<PIItemsAnalysis> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -435,12 +439,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = findAnalysesCall(webId, field, maxCount, query, selectedFields, sortField, sortOrder, startIndex, progressListener, progressRequestListener);
+		okhttp3.Call call = findAnalysesCall(webId, field, maxCount, query, selectedFields, sortField, sortOrder, startIndex, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call findAnalysesCall(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder, Integer startIndex, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call findAnalysesCall(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder, Integer startIndex, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -479,6 +483,8 @@ public class AssetDatabaseApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "sortOrder", sortOrder));
 		if (startIndex != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "startIndex", startIndex));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -499,8 +505,8 @@ public class AssetDatabaseApi {
 	 * Retrieve analysis categories for a given Asset Database. 
 	 *
 	 */
-	public PIItemsAnalysisCategory getAnalysisCategories(String webId, String selectedFields) throws ApiException {
-		ApiResponse<PIItemsAnalysisCategory> resp = getAnalysisCategoriesWithHttpInfo(webId, selectedFields);
+	public PIItemsAnalysisCategory getAnalysisCategories(String webId, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIItemsAnalysisCategory> resp = getAnalysisCategoriesWithHttpInfo(webId, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -508,8 +514,8 @@ public class AssetDatabaseApi {
 	 * Retrieve analysis categories for a given Asset Database. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsAnalysisCategory> getAnalysisCategoriesWithHttpInfo(String webId, String selectedFields) throws ApiException {
-		okhttp3.Call call = getAnalysisCategoriesCall(webId, selectedFields,null,null);
+	public ApiResponse<PIItemsAnalysisCategory> getAnalysisCategoriesWithHttpInfo(String webId, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getAnalysisCategoriesCall(webId, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsAnalysisCategory>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -518,7 +524,7 @@ public class AssetDatabaseApi {
 	 * Retrieve analysis categories for a given Asset Database. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getAnalysisCategoriesAsync(String webId, String selectedFields, final ApiCallback<PIItemsAnalysisCategory> callback) throws ApiException {
+	public okhttp3.Call getAnalysisCategoriesAsync(String webId, String selectedFields, String webIdType, final ApiCallback<PIItemsAnalysisCategory> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -538,12 +544,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = getAnalysisCategoriesCall(webId, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getAnalysisCategoriesCall(webId, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getAnalysisCategoriesCall(String webId, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getAnalysisCategoriesCall(String webId, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -567,6 +573,8 @@ public class AssetDatabaseApi {
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -587,16 +595,16 @@ public class AssetDatabaseApi {
 	 * Create an analysis category at the Asset Database root. 
 	 *
 	 */
-	public void createAnalysisCategory(String webId, PIAnalysisCategory analysisCategory) throws ApiException {
-		createAnalysisCategoryWithHttpInfo(webId, analysisCategory);
+	public void createAnalysisCategory(String webId, PIAnalysisCategory analysisCategory, String webIdType) throws ApiException {
+		createAnalysisCategoryWithHttpInfo(webId, analysisCategory, webIdType);
 	}
 
 	/**
 	 * Create an analysis category at the Asset Database root. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<Void> createAnalysisCategoryWithHttpInfo(String webId, PIAnalysisCategory analysisCategory) throws ApiException {
-		okhttp3.Call call = createAnalysisCategoryCall(webId, analysisCategory,null,null);
+	public ApiResponse<Void> createAnalysisCategoryWithHttpInfo(String webId, PIAnalysisCategory analysisCategory, String webIdType) throws ApiException {
+		okhttp3.Call call = createAnalysisCategoryCall(webId, analysisCategory, webIdType,null,null);
 		return apiClient.execute(call);
 	}
 
@@ -604,7 +612,7 @@ public class AssetDatabaseApi {
 	 * Create an analysis category at the Asset Database root. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call createAnalysisCategoryAsync(String webId, PIAnalysisCategory analysisCategory, final ApiCallback<Void> callback) throws ApiException {
+	public okhttp3.Call createAnalysisCategoryAsync(String webId, PIAnalysisCategory analysisCategory, String webIdType, final ApiCallback<Void> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -624,12 +632,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = createAnalysisCategoryCall(webId, analysisCategory, progressListener, progressRequestListener);
+		okhttp3.Call call = createAnalysisCategoryCall(webId, analysisCategory, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call createAnalysisCategoryCall(String webId, PIAnalysisCategory analysisCategory, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call createAnalysisCategoryCall(String webId, PIAnalysisCategory analysisCategory, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -655,6 +663,8 @@ public class AssetDatabaseApi {
 
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		localVarPostBody =  analysisCategory;
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -675,8 +685,8 @@ public class AssetDatabaseApi {
 	 * Retrieve analysis templates based on the specified criteria. By default, all analysis templates in the specified Asset Database are returned. 
 	 *
 	 */
-	public PIItemsAnalysisTemplate getAnalysisTemplates(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder) throws ApiException {
-		ApiResponse<PIItemsAnalysisTemplate> resp = getAnalysisTemplatesWithHttpInfo(webId, field, maxCount, query, selectedFields, sortField, sortOrder);
+	public PIItemsAnalysisTemplate getAnalysisTemplates(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder, String webIdType) throws ApiException {
+		ApiResponse<PIItemsAnalysisTemplate> resp = getAnalysisTemplatesWithHttpInfo(webId, field, maxCount, query, selectedFields, sortField, sortOrder, webIdType);
 		return resp.getData();
 	}
 
@@ -684,8 +694,8 @@ public class AssetDatabaseApi {
 	 * Retrieve analysis templates based on the specified criteria. By default, all analysis templates in the specified Asset Database are returned. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsAnalysisTemplate> getAnalysisTemplatesWithHttpInfo(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder) throws ApiException {
-		okhttp3.Call call = getAnalysisTemplatesCall(webId, field, maxCount, query, selectedFields, sortField, sortOrder,null,null);
+	public ApiResponse<PIItemsAnalysisTemplate> getAnalysisTemplatesWithHttpInfo(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder, String webIdType) throws ApiException {
+		okhttp3.Call call = getAnalysisTemplatesCall(webId, field, maxCount, query, selectedFields, sortField, sortOrder, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsAnalysisTemplate>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -694,7 +704,7 @@ public class AssetDatabaseApi {
 	 * Retrieve analysis templates based on the specified criteria. By default, all analysis templates in the specified Asset Database are returned. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getAnalysisTemplatesAsync(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder, final ApiCallback<PIItemsAnalysisTemplate> callback) throws ApiException {
+	public okhttp3.Call getAnalysisTemplatesAsync(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder, String webIdType, final ApiCallback<PIItemsAnalysisTemplate> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -714,12 +724,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = getAnalysisTemplatesCall(webId, field, maxCount, query, selectedFields, sortField, sortOrder, progressListener, progressRequestListener);
+		okhttp3.Call call = getAnalysisTemplatesCall(webId, field, maxCount, query, selectedFields, sortField, sortOrder, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getAnalysisTemplatesCall(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getAnalysisTemplatesCall(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -756,6 +766,8 @@ public class AssetDatabaseApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "sortField", sortField));
 		if (sortOrder != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "sortOrder", sortOrder));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -776,16 +788,16 @@ public class AssetDatabaseApi {
 	 * Create an analysis template at the Asset Database root. 
 	 *
 	 */
-	public void createAnalysisTemplate(String webId, PIAnalysisTemplate template) throws ApiException {
-		createAnalysisTemplateWithHttpInfo(webId, template);
+	public void createAnalysisTemplate(String webId, PIAnalysisTemplate template, String webIdType) throws ApiException {
+		createAnalysisTemplateWithHttpInfo(webId, template, webIdType);
 	}
 
 	/**
 	 * Create an analysis template at the Asset Database root. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<Void> createAnalysisTemplateWithHttpInfo(String webId, PIAnalysisTemplate template) throws ApiException {
-		okhttp3.Call call = createAnalysisTemplateCall(webId, template,null,null);
+	public ApiResponse<Void> createAnalysisTemplateWithHttpInfo(String webId, PIAnalysisTemplate template, String webIdType) throws ApiException {
+		okhttp3.Call call = createAnalysisTemplateCall(webId, template, webIdType,null,null);
 		return apiClient.execute(call);
 	}
 
@@ -793,7 +805,7 @@ public class AssetDatabaseApi {
 	 * Create an analysis template at the Asset Database root. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call createAnalysisTemplateAsync(String webId, PIAnalysisTemplate template, final ApiCallback<Void> callback) throws ApiException {
+	public okhttp3.Call createAnalysisTemplateAsync(String webId, PIAnalysisTemplate template, String webIdType, final ApiCallback<Void> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -813,12 +825,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = createAnalysisTemplateCall(webId, template, progressListener, progressRequestListener);
+		okhttp3.Call call = createAnalysisTemplateCall(webId, template, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call createAnalysisTemplateCall(String webId, PIAnalysisTemplate template, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call createAnalysisTemplateCall(String webId, PIAnalysisTemplate template, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -844,6 +856,8 @@ public class AssetDatabaseApi {
 
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		localVarPostBody =  template;
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -864,8 +878,8 @@ public class AssetDatabaseApi {
 	 * Retrieve attribute categories for a given Asset Database. 
 	 *
 	 */
-	public PIItemsAttributeCategory getAttributeCategories(String webId, String selectedFields) throws ApiException {
-		ApiResponse<PIItemsAttributeCategory> resp = getAttributeCategoriesWithHttpInfo(webId, selectedFields);
+	public PIItemsAttributeCategory getAttributeCategories(String webId, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIItemsAttributeCategory> resp = getAttributeCategoriesWithHttpInfo(webId, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -873,8 +887,8 @@ public class AssetDatabaseApi {
 	 * Retrieve attribute categories for a given Asset Database. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsAttributeCategory> getAttributeCategoriesWithHttpInfo(String webId, String selectedFields) throws ApiException {
-		okhttp3.Call call = getAttributeCategoriesCall(webId, selectedFields,null,null);
+	public ApiResponse<PIItemsAttributeCategory> getAttributeCategoriesWithHttpInfo(String webId, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getAttributeCategoriesCall(webId, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsAttributeCategory>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -883,7 +897,7 @@ public class AssetDatabaseApi {
 	 * Retrieve attribute categories for a given Asset Database. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getAttributeCategoriesAsync(String webId, String selectedFields, final ApiCallback<PIItemsAttributeCategory> callback) throws ApiException {
+	public okhttp3.Call getAttributeCategoriesAsync(String webId, String selectedFields, String webIdType, final ApiCallback<PIItemsAttributeCategory> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -903,12 +917,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = getAttributeCategoriesCall(webId, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getAttributeCategoriesCall(webId, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getAttributeCategoriesCall(String webId, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getAttributeCategoriesCall(String webId, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -932,6 +946,8 @@ public class AssetDatabaseApi {
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -952,16 +968,16 @@ public class AssetDatabaseApi {
 	 * Create an attribute category at the Asset Database root. 
 	 *
 	 */
-	public void createAttributeCategory(String webId, PIAttributeCategory attributeCategory) throws ApiException {
-		createAttributeCategoryWithHttpInfo(webId, attributeCategory);
+	public void createAttributeCategory(String webId, PIAttributeCategory attributeCategory, String webIdType) throws ApiException {
+		createAttributeCategoryWithHttpInfo(webId, attributeCategory, webIdType);
 	}
 
 	/**
 	 * Create an attribute category at the Asset Database root. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<Void> createAttributeCategoryWithHttpInfo(String webId, PIAttributeCategory attributeCategory) throws ApiException {
-		okhttp3.Call call = createAttributeCategoryCall(webId, attributeCategory,null,null);
+	public ApiResponse<Void> createAttributeCategoryWithHttpInfo(String webId, PIAttributeCategory attributeCategory, String webIdType) throws ApiException {
+		okhttp3.Call call = createAttributeCategoryCall(webId, attributeCategory, webIdType,null,null);
 		return apiClient.execute(call);
 	}
 
@@ -969,7 +985,7 @@ public class AssetDatabaseApi {
 	 * Create an attribute category at the Asset Database root. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call createAttributeCategoryAsync(String webId, PIAttributeCategory attributeCategory, final ApiCallback<Void> callback) throws ApiException {
+	public okhttp3.Call createAttributeCategoryAsync(String webId, PIAttributeCategory attributeCategory, String webIdType, final ApiCallback<Void> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -989,12 +1005,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = createAttributeCategoryCall(webId, attributeCategory, progressListener, progressRequestListener);
+		okhttp3.Call call = createAttributeCategoryCall(webId, attributeCategory, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call createAttributeCategoryCall(String webId, PIAttributeCategory attributeCategory, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call createAttributeCategoryCall(String webId, PIAttributeCategory attributeCategory, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -1020,6 +1036,8 @@ public class AssetDatabaseApi {
 
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		localVarPostBody =  attributeCategory;
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -1040,8 +1058,8 @@ public class AssetDatabaseApi {
 	 * Retrieves a list of element attributes matching the specified filters from the specified asset database. 
 	 *
 	 */
-	public PIItemsAttribute findElementAttributes(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String elementCategory, String elementDescriptionFilter, String elementNameFilter, String elementTemplate, String elementType, Integer maxCount, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex) throws ApiException {
-		ApiResponse<PIItemsAttribute> resp = findElementAttributesWithHttpInfo(webId, attributeCategory, attributeDescriptionFilter, attributeNameFilter, attributeType, elementCategory, elementDescriptionFilter, elementNameFilter, elementTemplate, elementType, maxCount, searchFullHierarchy, selectedFields, sortField, sortOrder, startIndex);
+	public PIItemsAttribute findElementAttributes(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String elementCategory, String elementDescriptionFilter, String elementNameFilter, String elementTemplate, String elementType, Integer maxCount, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex, String webIdType) throws ApiException {
+		ApiResponse<PIItemsAttribute> resp = findElementAttributesWithHttpInfo(webId, attributeCategory, attributeDescriptionFilter, attributeNameFilter, attributeType, elementCategory, elementDescriptionFilter, elementNameFilter, elementTemplate, elementType, maxCount, searchFullHierarchy, selectedFields, sortField, sortOrder, startIndex, webIdType);
 		return resp.getData();
 	}
 
@@ -1049,8 +1067,8 @@ public class AssetDatabaseApi {
 	 * Retrieves a list of element attributes matching the specified filters from the specified asset database. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsAttribute> findElementAttributesWithHttpInfo(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String elementCategory, String elementDescriptionFilter, String elementNameFilter, String elementTemplate, String elementType, Integer maxCount, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex) throws ApiException {
-		okhttp3.Call call = findElementAttributesCall(webId, attributeCategory, attributeDescriptionFilter, attributeNameFilter, attributeType, elementCategory, elementDescriptionFilter, elementNameFilter, elementTemplate, elementType, maxCount, searchFullHierarchy, selectedFields, sortField, sortOrder, startIndex,null,null);
+	public ApiResponse<PIItemsAttribute> findElementAttributesWithHttpInfo(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String elementCategory, String elementDescriptionFilter, String elementNameFilter, String elementTemplate, String elementType, Integer maxCount, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex, String webIdType) throws ApiException {
+		okhttp3.Call call = findElementAttributesCall(webId, attributeCategory, attributeDescriptionFilter, attributeNameFilter, attributeType, elementCategory, elementDescriptionFilter, elementNameFilter, elementTemplate, elementType, maxCount, searchFullHierarchy, selectedFields, sortField, sortOrder, startIndex, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsAttribute>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -1059,7 +1077,7 @@ public class AssetDatabaseApi {
 	 * Retrieves a list of element attributes matching the specified filters from the specified asset database. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call findElementAttributesAsync(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String elementCategory, String elementDescriptionFilter, String elementNameFilter, String elementTemplate, String elementType, Integer maxCount, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex, final ApiCallback<PIItemsAttribute> callback) throws ApiException {
+	public okhttp3.Call findElementAttributesAsync(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String elementCategory, String elementDescriptionFilter, String elementNameFilter, String elementTemplate, String elementType, Integer maxCount, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex, String webIdType, final ApiCallback<PIItemsAttribute> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -1079,12 +1097,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = findElementAttributesCall(webId, attributeCategory, attributeDescriptionFilter, attributeNameFilter, attributeType, elementCategory, elementDescriptionFilter, elementNameFilter, elementTemplate, elementType, maxCount, searchFullHierarchy, selectedFields, sortField, sortOrder, startIndex, progressListener, progressRequestListener);
+		okhttp3.Call call = findElementAttributesCall(webId, attributeCategory, attributeDescriptionFilter, attributeNameFilter, attributeType, elementCategory, elementDescriptionFilter, elementNameFilter, elementTemplate, elementType, maxCount, searchFullHierarchy, selectedFields, sortField, sortOrder, startIndex, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call findElementAttributesCall(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String elementCategory, String elementDescriptionFilter, String elementNameFilter, String elementTemplate, String elementType, Integer maxCount, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call findElementAttributesCall(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String elementCategory, String elementDescriptionFilter, String elementNameFilter, String elementTemplate, String elementType, Integer maxCount, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -1136,6 +1154,8 @@ public class AssetDatabaseApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "sortOrder", sortOrder));
 		if (startIndex != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "startIndex", startIndex));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -1156,8 +1176,8 @@ public class AssetDatabaseApi {
 	 * Retrieve element categories for a given Asset Database. 
 	 *
 	 */
-	public PIItemsElementCategory getElementCategories(String webId, String selectedFields) throws ApiException {
-		ApiResponse<PIItemsElementCategory> resp = getElementCategoriesWithHttpInfo(webId, selectedFields);
+	public PIItemsElementCategory getElementCategories(String webId, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIItemsElementCategory> resp = getElementCategoriesWithHttpInfo(webId, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -1165,8 +1185,8 @@ public class AssetDatabaseApi {
 	 * Retrieve element categories for a given Asset Database. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsElementCategory> getElementCategoriesWithHttpInfo(String webId, String selectedFields) throws ApiException {
-		okhttp3.Call call = getElementCategoriesCall(webId, selectedFields,null,null);
+	public ApiResponse<PIItemsElementCategory> getElementCategoriesWithHttpInfo(String webId, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getElementCategoriesCall(webId, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsElementCategory>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -1175,7 +1195,7 @@ public class AssetDatabaseApi {
 	 * Retrieve element categories for a given Asset Database. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getElementCategoriesAsync(String webId, String selectedFields, final ApiCallback<PIItemsElementCategory> callback) throws ApiException {
+	public okhttp3.Call getElementCategoriesAsync(String webId, String selectedFields, String webIdType, final ApiCallback<PIItemsElementCategory> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -1195,12 +1215,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = getElementCategoriesCall(webId, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getElementCategoriesCall(webId, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getElementCategoriesCall(String webId, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getElementCategoriesCall(String webId, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -1224,6 +1244,8 @@ public class AssetDatabaseApi {
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -1244,16 +1266,16 @@ public class AssetDatabaseApi {
 	 * Create an element category at the Asset Database root. 
 	 *
 	 */
-	public void createElementCategory(String webId, PIElementCategory elementCategory) throws ApiException {
-		createElementCategoryWithHttpInfo(webId, elementCategory);
+	public void createElementCategory(String webId, PIElementCategory elementCategory, String webIdType) throws ApiException {
+		createElementCategoryWithHttpInfo(webId, elementCategory, webIdType);
 	}
 
 	/**
 	 * Create an element category at the Asset Database root. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<Void> createElementCategoryWithHttpInfo(String webId, PIElementCategory elementCategory) throws ApiException {
-		okhttp3.Call call = createElementCategoryCall(webId, elementCategory,null,null);
+	public ApiResponse<Void> createElementCategoryWithHttpInfo(String webId, PIElementCategory elementCategory, String webIdType) throws ApiException {
+		okhttp3.Call call = createElementCategoryCall(webId, elementCategory, webIdType,null,null);
 		return apiClient.execute(call);
 	}
 
@@ -1261,7 +1283,7 @@ public class AssetDatabaseApi {
 	 * Create an element category at the Asset Database root. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call createElementCategoryAsync(String webId, PIElementCategory elementCategory, final ApiCallback<Void> callback) throws ApiException {
+	public okhttp3.Call createElementCategoryAsync(String webId, PIElementCategory elementCategory, String webIdType, final ApiCallback<Void> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -1281,12 +1303,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = createElementCategoryCall(webId, elementCategory, progressListener, progressRequestListener);
+		okhttp3.Call call = createElementCategoryCall(webId, elementCategory, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call createElementCategoryCall(String webId, PIElementCategory elementCategory, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call createElementCategoryCall(String webId, PIElementCategory elementCategory, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -1312,6 +1334,8 @@ public class AssetDatabaseApi {
 
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		localVarPostBody =  elementCategory;
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -1332,8 +1356,8 @@ public class AssetDatabaseApi {
 	 * Retrieve elements based on the specified conditions. By default, this method selects immediate children of the specified asset database. 
 	 *
 	 */
-	public PIItemsElement getElements(String webId, String categoryName, String descriptionFilter, String elementType, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex, String templateName) throws ApiException {
-		ApiResponse<PIItemsElement> resp = getElementsWithHttpInfo(webId, categoryName, descriptionFilter, elementType, maxCount, nameFilter, searchFullHierarchy, selectedFields, sortField, sortOrder, startIndex, templateName);
+	public PIItemsElement getElements(String webId, String categoryName, String descriptionFilter, String elementType, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex, String templateName, String webIdType) throws ApiException {
+		ApiResponse<PIItemsElement> resp = getElementsWithHttpInfo(webId, categoryName, descriptionFilter, elementType, maxCount, nameFilter, searchFullHierarchy, selectedFields, sortField, sortOrder, startIndex, templateName, webIdType);
 		return resp.getData();
 	}
 
@@ -1341,8 +1365,8 @@ public class AssetDatabaseApi {
 	 * Retrieve elements based on the specified conditions. By default, this method selects immediate children of the specified asset database. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsElement> getElementsWithHttpInfo(String webId, String categoryName, String descriptionFilter, String elementType, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex, String templateName) throws ApiException {
-		okhttp3.Call call = getElementsCall(webId, categoryName, descriptionFilter, elementType, maxCount, nameFilter, searchFullHierarchy, selectedFields, sortField, sortOrder, startIndex, templateName,null,null);
+	public ApiResponse<PIItemsElement> getElementsWithHttpInfo(String webId, String categoryName, String descriptionFilter, String elementType, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex, String templateName, String webIdType) throws ApiException {
+		okhttp3.Call call = getElementsCall(webId, categoryName, descriptionFilter, elementType, maxCount, nameFilter, searchFullHierarchy, selectedFields, sortField, sortOrder, startIndex, templateName, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsElement>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -1351,7 +1375,7 @@ public class AssetDatabaseApi {
 	 * Retrieve elements based on the specified conditions. By default, this method selects immediate children of the specified asset database. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getElementsAsync(String webId, String categoryName, String descriptionFilter, String elementType, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex, String templateName, final ApiCallback<PIItemsElement> callback) throws ApiException {
+	public okhttp3.Call getElementsAsync(String webId, String categoryName, String descriptionFilter, String elementType, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex, String templateName, String webIdType, final ApiCallback<PIItemsElement> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -1371,12 +1395,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = getElementsCall(webId, categoryName, descriptionFilter, elementType, maxCount, nameFilter, searchFullHierarchy, selectedFields, sortField, sortOrder, startIndex, templateName, progressListener, progressRequestListener);
+		okhttp3.Call call = getElementsCall(webId, categoryName, descriptionFilter, elementType, maxCount, nameFilter, searchFullHierarchy, selectedFields, sortField, sortOrder, startIndex, templateName, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getElementsCall(String webId, String categoryName, String descriptionFilter, String elementType, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex, String templateName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getElementsCall(String webId, String categoryName, String descriptionFilter, String elementType, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex, String templateName, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -1420,6 +1444,8 @@ public class AssetDatabaseApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "startIndex", startIndex));
 		if (templateName != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "templateName", templateName));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -1440,16 +1466,16 @@ public class AssetDatabaseApi {
 	 * Create a child element. 
 	 *
 	 */
-	public void createElement(String webId, PIElement element) throws ApiException {
-		createElementWithHttpInfo(webId, element);
+	public void createElement(String webId, PIElement element, String webIdType) throws ApiException {
+		createElementWithHttpInfo(webId, element, webIdType);
 	}
 
 	/**
 	 * Create a child element. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<Void> createElementWithHttpInfo(String webId, PIElement element) throws ApiException {
-		okhttp3.Call call = createElementCall(webId, element,null,null);
+	public ApiResponse<Void> createElementWithHttpInfo(String webId, PIElement element, String webIdType) throws ApiException {
+		okhttp3.Call call = createElementCall(webId, element, webIdType,null,null);
 		return apiClient.execute(call);
 	}
 
@@ -1457,7 +1483,7 @@ public class AssetDatabaseApi {
 	 * Create a child element. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call createElementAsync(String webId, PIElement element, final ApiCallback<Void> callback) throws ApiException {
+	public okhttp3.Call createElementAsync(String webId, PIElement element, String webIdType, final ApiCallback<Void> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -1477,12 +1503,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = createElementCall(webId, element, progressListener, progressRequestListener);
+		okhttp3.Call call = createElementCall(webId, element, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call createElementCall(String webId, PIElement element, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call createElementCall(String webId, PIElement element, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -1508,6 +1534,8 @@ public class AssetDatabaseApi {
 
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		localVarPostBody =  element;
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -1528,8 +1556,8 @@ public class AssetDatabaseApi {
 	 * Retrieve element templates based on the specified criteria. Only templates of instance type "Element" and "EventFrame" are returned. By default, all element and event frame templates in the specified Asset Database are returned. 
 	 *
 	 */
-	public PIItemsElementTemplate getElementTemplates(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder) throws ApiException {
-		ApiResponse<PIItemsElementTemplate> resp = getElementTemplatesWithHttpInfo(webId, field, maxCount, query, selectedFields, sortField, sortOrder);
+	public PIItemsElementTemplate getElementTemplates(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder, String webIdType) throws ApiException {
+		ApiResponse<PIItemsElementTemplate> resp = getElementTemplatesWithHttpInfo(webId, field, maxCount, query, selectedFields, sortField, sortOrder, webIdType);
 		return resp.getData();
 	}
 
@@ -1537,8 +1565,8 @@ public class AssetDatabaseApi {
 	 * Retrieve element templates based on the specified criteria. Only templates of instance type "Element" and "EventFrame" are returned. By default, all element and event frame templates in the specified Asset Database are returned. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsElementTemplate> getElementTemplatesWithHttpInfo(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder) throws ApiException {
-		okhttp3.Call call = getElementTemplatesCall(webId, field, maxCount, query, selectedFields, sortField, sortOrder,null,null);
+	public ApiResponse<PIItemsElementTemplate> getElementTemplatesWithHttpInfo(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder, String webIdType) throws ApiException {
+		okhttp3.Call call = getElementTemplatesCall(webId, field, maxCount, query, selectedFields, sortField, sortOrder, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsElementTemplate>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -1547,7 +1575,7 @@ public class AssetDatabaseApi {
 	 * Retrieve element templates based on the specified criteria. Only templates of instance type "Element" and "EventFrame" are returned. By default, all element and event frame templates in the specified Asset Database are returned. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getElementTemplatesAsync(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder, final ApiCallback<PIItemsElementTemplate> callback) throws ApiException {
+	public okhttp3.Call getElementTemplatesAsync(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder, String webIdType, final ApiCallback<PIItemsElementTemplate> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -1567,12 +1595,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = getElementTemplatesCall(webId, field, maxCount, query, selectedFields, sortField, sortOrder, progressListener, progressRequestListener);
+		okhttp3.Call call = getElementTemplatesCall(webId, field, maxCount, query, selectedFields, sortField, sortOrder, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getElementTemplatesCall(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getElementTemplatesCall(String webId, List<String> field, Integer maxCount, String query, String selectedFields, String sortField, String sortOrder, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -1609,6 +1637,8 @@ public class AssetDatabaseApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "sortField", sortField));
 		if (sortOrder != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "sortOrder", sortOrder));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -1629,16 +1659,16 @@ public class AssetDatabaseApi {
 	 * Create a template at the Asset Database root. Specify InstanceType of "Element" or "EventFrame" to create element or event frame template respectively. Only these two types of templates can be created. 
 	 *
 	 */
-	public void createElementTemplate(String webId, PIElementTemplate template) throws ApiException {
-		createElementTemplateWithHttpInfo(webId, template);
+	public void createElementTemplate(String webId, PIElementTemplate template, String webIdType) throws ApiException {
+		createElementTemplateWithHttpInfo(webId, template, webIdType);
 	}
 
 	/**
 	 * Create a template at the Asset Database root. Specify InstanceType of "Element" or "EventFrame" to create element or event frame template respectively. Only these two types of templates can be created. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<Void> createElementTemplateWithHttpInfo(String webId, PIElementTemplate template) throws ApiException {
-		okhttp3.Call call = createElementTemplateCall(webId, template,null,null);
+	public ApiResponse<Void> createElementTemplateWithHttpInfo(String webId, PIElementTemplate template, String webIdType) throws ApiException {
+		okhttp3.Call call = createElementTemplateCall(webId, template, webIdType,null,null);
 		return apiClient.execute(call);
 	}
 
@@ -1646,7 +1676,7 @@ public class AssetDatabaseApi {
 	 * Create a template at the Asset Database root. Specify InstanceType of "Element" or "EventFrame" to create element or event frame template respectively. Only these two types of templates can be created. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call createElementTemplateAsync(String webId, PIElementTemplate template, final ApiCallback<Void> callback) throws ApiException {
+	public okhttp3.Call createElementTemplateAsync(String webId, PIElementTemplate template, String webIdType, final ApiCallback<Void> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -1666,12 +1696,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = createElementTemplateCall(webId, template, progressListener, progressRequestListener);
+		okhttp3.Call call = createElementTemplateCall(webId, template, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call createElementTemplateCall(String webId, PIElementTemplate template, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call createElementTemplateCall(String webId, PIElementTemplate template, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -1697,6 +1727,8 @@ public class AssetDatabaseApi {
 
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		localVarPostBody =  template;
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -1717,8 +1749,8 @@ public class AssetDatabaseApi {
 	 * Retrieve enumeration sets for given asset database. 
 	 *
 	 */
-	public PIItemsEnumerationSet getEnumerationSets(String webId, String selectedFields) throws ApiException {
-		ApiResponse<PIItemsEnumerationSet> resp = getEnumerationSetsWithHttpInfo(webId, selectedFields);
+	public PIItemsEnumerationSet getEnumerationSets(String webId, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIItemsEnumerationSet> resp = getEnumerationSetsWithHttpInfo(webId, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -1726,8 +1758,8 @@ public class AssetDatabaseApi {
 	 * Retrieve enumeration sets for given asset database. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsEnumerationSet> getEnumerationSetsWithHttpInfo(String webId, String selectedFields) throws ApiException {
-		okhttp3.Call call = getEnumerationSetsCall(webId, selectedFields,null,null);
+	public ApiResponse<PIItemsEnumerationSet> getEnumerationSetsWithHttpInfo(String webId, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getEnumerationSetsCall(webId, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsEnumerationSet>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -1736,7 +1768,7 @@ public class AssetDatabaseApi {
 	 * Retrieve enumeration sets for given asset database. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getEnumerationSetsAsync(String webId, String selectedFields, final ApiCallback<PIItemsEnumerationSet> callback) throws ApiException {
+	public okhttp3.Call getEnumerationSetsAsync(String webId, String selectedFields, String webIdType, final ApiCallback<PIItemsEnumerationSet> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -1756,12 +1788,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = getEnumerationSetsCall(webId, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getEnumerationSetsCall(webId, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getEnumerationSetsCall(String webId, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getEnumerationSetsCall(String webId, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -1785,6 +1817,8 @@ public class AssetDatabaseApi {
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -1805,16 +1839,16 @@ public class AssetDatabaseApi {
 	 * Create an enumeration set at the Asset Database. 
 	 *
 	 */
-	public void createEnumerationSet(String webId, PIEnumerationSet enumerationSet) throws ApiException {
-		createEnumerationSetWithHttpInfo(webId, enumerationSet);
+	public void createEnumerationSet(String webId, PIEnumerationSet enumerationSet, String webIdType) throws ApiException {
+		createEnumerationSetWithHttpInfo(webId, enumerationSet, webIdType);
 	}
 
 	/**
 	 * Create an enumeration set at the Asset Database. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<Void> createEnumerationSetWithHttpInfo(String webId, PIEnumerationSet enumerationSet) throws ApiException {
-		okhttp3.Call call = createEnumerationSetCall(webId, enumerationSet,null,null);
+	public ApiResponse<Void> createEnumerationSetWithHttpInfo(String webId, PIEnumerationSet enumerationSet, String webIdType) throws ApiException {
+		okhttp3.Call call = createEnumerationSetCall(webId, enumerationSet, webIdType,null,null);
 		return apiClient.execute(call);
 	}
 
@@ -1822,7 +1856,7 @@ public class AssetDatabaseApi {
 	 * Create an enumeration set at the Asset Database. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call createEnumerationSetAsync(String webId, PIEnumerationSet enumerationSet, final ApiCallback<Void> callback) throws ApiException {
+	public okhttp3.Call createEnumerationSetAsync(String webId, PIEnumerationSet enumerationSet, String webIdType, final ApiCallback<Void> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -1842,12 +1876,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = createEnumerationSetCall(webId, enumerationSet, progressListener, progressRequestListener);
+		okhttp3.Call call = createEnumerationSetCall(webId, enumerationSet, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call createEnumerationSetCall(String webId, PIEnumerationSet enumerationSet, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call createEnumerationSetCall(String webId, PIEnumerationSet enumerationSet, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -1873,6 +1907,8 @@ public class AssetDatabaseApi {
 
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		localVarPostBody =  enumerationSet;
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -1893,8 +1929,8 @@ public class AssetDatabaseApi {
 	 * Retrieves a list of event frame attributes matching the specified filters from the specified asset database. 
 	 *
 	 */
-	public PIItemsAttribute findEventFrameAttributes(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String endTime, String eventFrameCategory, String eventFrameDescriptionFilter, String eventFrameNameFilter, String eventFrameTemplate, Integer maxCount, String referencedElementNameFilter, Boolean searchFullHierarchy, String searchMode, String selectedFields, String sortField, String sortOrder, Integer startIndex, String startTime) throws ApiException {
-		ApiResponse<PIItemsAttribute> resp = findEventFrameAttributesWithHttpInfo(webId, attributeCategory, attributeDescriptionFilter, attributeNameFilter, attributeType, endTime, eventFrameCategory, eventFrameDescriptionFilter, eventFrameNameFilter, eventFrameTemplate, maxCount, referencedElementNameFilter, searchFullHierarchy, searchMode, selectedFields, sortField, sortOrder, startIndex, startTime);
+	public PIItemsAttribute findEventFrameAttributes(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String endTime, String eventFrameCategory, String eventFrameDescriptionFilter, String eventFrameNameFilter, String eventFrameTemplate, Integer maxCount, String referencedElementNameFilter, Boolean searchFullHierarchy, String searchMode, String selectedFields, String sortField, String sortOrder, Integer startIndex, String startTime, String webIdType) throws ApiException {
+		ApiResponse<PIItemsAttribute> resp = findEventFrameAttributesWithHttpInfo(webId, attributeCategory, attributeDescriptionFilter, attributeNameFilter, attributeType, endTime, eventFrameCategory, eventFrameDescriptionFilter, eventFrameNameFilter, eventFrameTemplate, maxCount, referencedElementNameFilter, searchFullHierarchy, searchMode, selectedFields, sortField, sortOrder, startIndex, startTime, webIdType);
 		return resp.getData();
 	}
 
@@ -1902,8 +1938,8 @@ public class AssetDatabaseApi {
 	 * Retrieves a list of event frame attributes matching the specified filters from the specified asset database. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsAttribute> findEventFrameAttributesWithHttpInfo(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String endTime, String eventFrameCategory, String eventFrameDescriptionFilter, String eventFrameNameFilter, String eventFrameTemplate, Integer maxCount, String referencedElementNameFilter, Boolean searchFullHierarchy, String searchMode, String selectedFields, String sortField, String sortOrder, Integer startIndex, String startTime) throws ApiException {
-		okhttp3.Call call = findEventFrameAttributesCall(webId, attributeCategory, attributeDescriptionFilter, attributeNameFilter, attributeType, endTime, eventFrameCategory, eventFrameDescriptionFilter, eventFrameNameFilter, eventFrameTemplate, maxCount, referencedElementNameFilter, searchFullHierarchy, searchMode, selectedFields, sortField, sortOrder, startIndex, startTime,null,null);
+	public ApiResponse<PIItemsAttribute> findEventFrameAttributesWithHttpInfo(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String endTime, String eventFrameCategory, String eventFrameDescriptionFilter, String eventFrameNameFilter, String eventFrameTemplate, Integer maxCount, String referencedElementNameFilter, Boolean searchFullHierarchy, String searchMode, String selectedFields, String sortField, String sortOrder, Integer startIndex, String startTime, String webIdType) throws ApiException {
+		okhttp3.Call call = findEventFrameAttributesCall(webId, attributeCategory, attributeDescriptionFilter, attributeNameFilter, attributeType, endTime, eventFrameCategory, eventFrameDescriptionFilter, eventFrameNameFilter, eventFrameTemplate, maxCount, referencedElementNameFilter, searchFullHierarchy, searchMode, selectedFields, sortField, sortOrder, startIndex, startTime, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsAttribute>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -1912,7 +1948,7 @@ public class AssetDatabaseApi {
 	 * Retrieves a list of event frame attributes matching the specified filters from the specified asset database. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call findEventFrameAttributesAsync(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String endTime, String eventFrameCategory, String eventFrameDescriptionFilter, String eventFrameNameFilter, String eventFrameTemplate, Integer maxCount, String referencedElementNameFilter, Boolean searchFullHierarchy, String searchMode, String selectedFields, String sortField, String sortOrder, Integer startIndex, String startTime, final ApiCallback<PIItemsAttribute> callback) throws ApiException {
+	public okhttp3.Call findEventFrameAttributesAsync(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String endTime, String eventFrameCategory, String eventFrameDescriptionFilter, String eventFrameNameFilter, String eventFrameTemplate, Integer maxCount, String referencedElementNameFilter, Boolean searchFullHierarchy, String searchMode, String selectedFields, String sortField, String sortOrder, Integer startIndex, String startTime, String webIdType, final ApiCallback<PIItemsAttribute> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -1932,12 +1968,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = findEventFrameAttributesCall(webId, attributeCategory, attributeDescriptionFilter, attributeNameFilter, attributeType, endTime, eventFrameCategory, eventFrameDescriptionFilter, eventFrameNameFilter, eventFrameTemplate, maxCount, referencedElementNameFilter, searchFullHierarchy, searchMode, selectedFields, sortField, sortOrder, startIndex, startTime, progressListener, progressRequestListener);
+		okhttp3.Call call = findEventFrameAttributesCall(webId, attributeCategory, attributeDescriptionFilter, attributeNameFilter, attributeType, endTime, eventFrameCategory, eventFrameDescriptionFilter, eventFrameNameFilter, eventFrameTemplate, maxCount, referencedElementNameFilter, searchFullHierarchy, searchMode, selectedFields, sortField, sortOrder, startIndex, startTime, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call findEventFrameAttributesCall(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String endTime, String eventFrameCategory, String eventFrameDescriptionFilter, String eventFrameNameFilter, String eventFrameTemplate, Integer maxCount, String referencedElementNameFilter, Boolean searchFullHierarchy, String searchMode, String selectedFields, String sortField, String sortOrder, Integer startIndex, String startTime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call findEventFrameAttributesCall(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String endTime, String eventFrameCategory, String eventFrameDescriptionFilter, String eventFrameNameFilter, String eventFrameTemplate, Integer maxCount, String referencedElementNameFilter, Boolean searchFullHierarchy, String searchMode, String selectedFields, String sortField, String sortOrder, Integer startIndex, String startTime, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -1995,6 +2031,8 @@ public class AssetDatabaseApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "startIndex", startIndex));
 		if (startTime != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "startTime", startTime));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -2012,29 +2050,29 @@ public class AssetDatabaseApi {
 	}
 
 	/**
-	 * Retrieve event frames based on the specified conditions. By default, returns all children of the specified root resource with a start time in the past 8 hours. 
+	 * Retrieve event frames based on the specified conditions. By default, returns all children of the specified root resource that have been active in the past 8 hours. 
 	 *
 	 */
-	public PIItemsEventFrame getEventFrames(String webId, Boolean canBeAcknowledged, String categoryName, String endTime, Boolean isAcknowledged, Integer maxCount, String nameFilter, String referencedElementNameFilter, String referencedElementTemplateName, Boolean searchFullHierarchy, String searchMode, String selectedFields, List<String> severity, String sortField, String sortOrder, Integer startIndex, String startTime, String templateName) throws ApiException {
-		ApiResponse<PIItemsEventFrame> resp = getEventFramesWithHttpInfo(webId, canBeAcknowledged, categoryName, endTime, isAcknowledged, maxCount, nameFilter, referencedElementNameFilter, referencedElementTemplateName, searchFullHierarchy, searchMode, selectedFields, severity, sortField, sortOrder, startIndex, startTime, templateName);
+	public PIItemsEventFrame getEventFrames(String webId, Boolean canBeAcknowledged, String categoryName, String endTime, Boolean isAcknowledged, Integer maxCount, String nameFilter, String referencedElementNameFilter, String referencedElementTemplateName, Boolean searchFullHierarchy, String searchMode, String selectedFields, List<String> severity, String sortField, String sortOrder, Integer startIndex, String startTime, String templateName, String webIdType) throws ApiException {
+		ApiResponse<PIItemsEventFrame> resp = getEventFramesWithHttpInfo(webId, canBeAcknowledged, categoryName, endTime, isAcknowledged, maxCount, nameFilter, referencedElementNameFilter, referencedElementTemplateName, searchFullHierarchy, searchMode, selectedFields, severity, sortField, sortOrder, startIndex, startTime, templateName, webIdType);
 		return resp.getData();
 	}
 
 	/**
-	 * Retrieve event frames based on the specified conditions. By default, returns all children of the specified root resource with a start time in the past 8 hours. (with HTTP information)
+	 * Retrieve event frames based on the specified conditions. By default, returns all children of the specified root resource that have been active in the past 8 hours. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsEventFrame> getEventFramesWithHttpInfo(String webId, Boolean canBeAcknowledged, String categoryName, String endTime, Boolean isAcknowledged, Integer maxCount, String nameFilter, String referencedElementNameFilter, String referencedElementTemplateName, Boolean searchFullHierarchy, String searchMode, String selectedFields, List<String> severity, String sortField, String sortOrder, Integer startIndex, String startTime, String templateName) throws ApiException {
-		okhttp3.Call call = getEventFramesCall(webId, canBeAcknowledged, categoryName, endTime, isAcknowledged, maxCount, nameFilter, referencedElementNameFilter, referencedElementTemplateName, searchFullHierarchy, searchMode, selectedFields, severity, sortField, sortOrder, startIndex, startTime, templateName,null,null);
+	public ApiResponse<PIItemsEventFrame> getEventFramesWithHttpInfo(String webId, Boolean canBeAcknowledged, String categoryName, String endTime, Boolean isAcknowledged, Integer maxCount, String nameFilter, String referencedElementNameFilter, String referencedElementTemplateName, Boolean searchFullHierarchy, String searchMode, String selectedFields, List<String> severity, String sortField, String sortOrder, Integer startIndex, String startTime, String templateName, String webIdType) throws ApiException {
+		okhttp3.Call call = getEventFramesCall(webId, canBeAcknowledged, categoryName, endTime, isAcknowledged, maxCount, nameFilter, referencedElementNameFilter, referencedElementTemplateName, searchFullHierarchy, searchMode, selectedFields, severity, sortField, sortOrder, startIndex, startTime, templateName, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsEventFrame>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
 
 	/**
-	 * Retrieve event frames based on the specified conditions. By default, returns all children of the specified root resource with a start time in the past 8 hours. (asynchronously)
+	 * Retrieve event frames based on the specified conditions. By default, returns all children of the specified root resource that have been active in the past 8 hours. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getEventFramesAsync(String webId, Boolean canBeAcknowledged, String categoryName, String endTime, Boolean isAcknowledged, Integer maxCount, String nameFilter, String referencedElementNameFilter, String referencedElementTemplateName, Boolean searchFullHierarchy, String searchMode, String selectedFields, List<String> severity, String sortField, String sortOrder, Integer startIndex, String startTime, String templateName, final ApiCallback<PIItemsEventFrame> callback) throws ApiException {
+	public okhttp3.Call getEventFramesAsync(String webId, Boolean canBeAcknowledged, String categoryName, String endTime, Boolean isAcknowledged, Integer maxCount, String nameFilter, String referencedElementNameFilter, String referencedElementTemplateName, Boolean searchFullHierarchy, String searchMode, String selectedFields, List<String> severity, String sortField, String sortOrder, Integer startIndex, String startTime, String templateName, String webIdType, final ApiCallback<PIItemsEventFrame> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -2054,12 +2092,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = getEventFramesCall(webId, canBeAcknowledged, categoryName, endTime, isAcknowledged, maxCount, nameFilter, referencedElementNameFilter, referencedElementTemplateName, searchFullHierarchy, searchMode, selectedFields, severity, sortField, sortOrder, startIndex, startTime, templateName, progressListener, progressRequestListener);
+		okhttp3.Call call = getEventFramesCall(webId, canBeAcknowledged, categoryName, endTime, isAcknowledged, maxCount, nameFilter, referencedElementNameFilter, referencedElementTemplateName, searchFullHierarchy, searchMode, selectedFields, severity, sortField, sortOrder, startIndex, startTime, templateName, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getEventFramesCall(String webId, Boolean canBeAcknowledged, String categoryName, String endTime, Boolean isAcknowledged, Integer maxCount, String nameFilter, String referencedElementNameFilter, String referencedElementTemplateName, Boolean searchFullHierarchy, String searchMode, String selectedFields, List<String> severity, String sortField, String sortOrder, Integer startIndex, String startTime, String templateName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getEventFramesCall(String webId, Boolean canBeAcknowledged, String categoryName, String endTime, Boolean isAcknowledged, Integer maxCount, String nameFilter, String referencedElementNameFilter, String referencedElementTemplateName, Boolean searchFullHierarchy, String searchMode, String selectedFields, List<String> severity, String sortField, String sortOrder, Integer startIndex, String startTime, String templateName, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -2115,6 +2153,8 @@ public class AssetDatabaseApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "startTime", startTime));
 		if (templateName != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "templateName", templateName));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -2135,16 +2175,16 @@ public class AssetDatabaseApi {
 	 * Create an event frame. 
 	 *
 	 */
-	public void createEventFrame(String webId, PIEventFrame eventFrame) throws ApiException {
-		createEventFrameWithHttpInfo(webId, eventFrame);
+	public void createEventFrame(String webId, PIEventFrame eventFrame, String webIdType) throws ApiException {
+		createEventFrameWithHttpInfo(webId, eventFrame, webIdType);
 	}
 
 	/**
 	 * Create an event frame. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<Void> createEventFrameWithHttpInfo(String webId, PIEventFrame eventFrame) throws ApiException {
-		okhttp3.Call call = createEventFrameCall(webId, eventFrame,null,null);
+	public ApiResponse<Void> createEventFrameWithHttpInfo(String webId, PIEventFrame eventFrame, String webIdType) throws ApiException {
+		okhttp3.Call call = createEventFrameCall(webId, eventFrame, webIdType,null,null);
 		return apiClient.execute(call);
 	}
 
@@ -2152,7 +2192,7 @@ public class AssetDatabaseApi {
 	 * Create an event frame. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call createEventFrameAsync(String webId, PIEventFrame eventFrame, final ApiCallback<Void> callback) throws ApiException {
+	public okhttp3.Call createEventFrameAsync(String webId, PIEventFrame eventFrame, String webIdType, final ApiCallback<Void> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -2172,12 +2212,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = createEventFrameCall(webId, eventFrame, progressListener, progressRequestListener);
+		okhttp3.Call call = createEventFrameCall(webId, eventFrame, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call createEventFrameCall(String webId, PIEventFrame eventFrame, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call createEventFrameCall(String webId, PIEventFrame eventFrame, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -2203,6 +2243,8 @@ public class AssetDatabaseApi {
 
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		localVarPostBody =  eventFrame;
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -2399,8 +2441,8 @@ public class AssetDatabaseApi {
 	 * Retrieve referenced elements based on the specified conditions. By default, this method selects all referenced elements at the root level of the asset database. 
 	 *
 	 */
-	public PIItemsElement getReferencedElements(String webId, String categoryName, String descriptionFilter, String elementType, Integer maxCount, String nameFilter, String selectedFields, String sortField, String sortOrder, Integer startIndex, String templateName) throws ApiException {
-		ApiResponse<PIItemsElement> resp = getReferencedElementsWithHttpInfo(webId, categoryName, descriptionFilter, elementType, maxCount, nameFilter, selectedFields, sortField, sortOrder, startIndex, templateName);
+	public PIItemsElement getReferencedElements(String webId, String categoryName, String descriptionFilter, String elementType, Integer maxCount, String nameFilter, String selectedFields, String sortField, String sortOrder, Integer startIndex, String templateName, String webIdType) throws ApiException {
+		ApiResponse<PIItemsElement> resp = getReferencedElementsWithHttpInfo(webId, categoryName, descriptionFilter, elementType, maxCount, nameFilter, selectedFields, sortField, sortOrder, startIndex, templateName, webIdType);
 		return resp.getData();
 	}
 
@@ -2408,8 +2450,8 @@ public class AssetDatabaseApi {
 	 * Retrieve referenced elements based on the specified conditions. By default, this method selects all referenced elements at the root level of the asset database. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsElement> getReferencedElementsWithHttpInfo(String webId, String categoryName, String descriptionFilter, String elementType, Integer maxCount, String nameFilter, String selectedFields, String sortField, String sortOrder, Integer startIndex, String templateName) throws ApiException {
-		okhttp3.Call call = getReferencedElementsCall(webId, categoryName, descriptionFilter, elementType, maxCount, nameFilter, selectedFields, sortField, sortOrder, startIndex, templateName,null,null);
+	public ApiResponse<PIItemsElement> getReferencedElementsWithHttpInfo(String webId, String categoryName, String descriptionFilter, String elementType, Integer maxCount, String nameFilter, String selectedFields, String sortField, String sortOrder, Integer startIndex, String templateName, String webIdType) throws ApiException {
+		okhttp3.Call call = getReferencedElementsCall(webId, categoryName, descriptionFilter, elementType, maxCount, nameFilter, selectedFields, sortField, sortOrder, startIndex, templateName, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsElement>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -2418,7 +2460,7 @@ public class AssetDatabaseApi {
 	 * Retrieve referenced elements based on the specified conditions. By default, this method selects all referenced elements at the root level of the asset database. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getReferencedElementsAsync(String webId, String categoryName, String descriptionFilter, String elementType, Integer maxCount, String nameFilter, String selectedFields, String sortField, String sortOrder, Integer startIndex, String templateName, final ApiCallback<PIItemsElement> callback) throws ApiException {
+	public okhttp3.Call getReferencedElementsAsync(String webId, String categoryName, String descriptionFilter, String elementType, Integer maxCount, String nameFilter, String selectedFields, String sortField, String sortOrder, Integer startIndex, String templateName, String webIdType, final ApiCallback<PIItemsElement> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -2438,12 +2480,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = getReferencedElementsCall(webId, categoryName, descriptionFilter, elementType, maxCount, nameFilter, selectedFields, sortField, sortOrder, startIndex, templateName, progressListener, progressRequestListener);
+		okhttp3.Call call = getReferencedElementsCall(webId, categoryName, descriptionFilter, elementType, maxCount, nameFilter, selectedFields, sortField, sortOrder, startIndex, templateName, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getReferencedElementsCall(String webId, String categoryName, String descriptionFilter, String elementType, Integer maxCount, String nameFilter, String selectedFields, String sortField, String sortOrder, Integer startIndex, String templateName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getReferencedElementsCall(String webId, String categoryName, String descriptionFilter, String elementType, Integer maxCount, String nameFilter, String selectedFields, String sortField, String sortOrder, Integer startIndex, String templateName, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -2485,6 +2527,8 @@ public class AssetDatabaseApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "startIndex", startIndex));
 		if (templateName != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "templateName", templateName));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -2685,8 +2729,8 @@ public class AssetDatabaseApi {
 	 * Get the security information of the specified security item associated with the asset database for a specified user. 
 	 *
 	 */
-	public PIItemsSecurityRights getSecurity(String webId, List<String> securityItem, List<String> userIdentity, Boolean forceRefresh, String selectedFields) throws ApiException {
-		ApiResponse<PIItemsSecurityRights> resp = getSecurityWithHttpInfo(webId, securityItem, userIdentity, forceRefresh, selectedFields);
+	public PIItemsSecurityRights getSecurity(String webId, List<String> securityItem, List<String> userIdentity, Boolean forceRefresh, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIItemsSecurityRights> resp = getSecurityWithHttpInfo(webId, securityItem, userIdentity, forceRefresh, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -2694,8 +2738,8 @@ public class AssetDatabaseApi {
 	 * Get the security information of the specified security item associated with the asset database for a specified user. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsSecurityRights> getSecurityWithHttpInfo(String webId, List<String> securityItem, List<String> userIdentity, Boolean forceRefresh, String selectedFields) throws ApiException {
-		okhttp3.Call call = getSecurityCall(webId, securityItem, userIdentity, forceRefresh, selectedFields,null,null);
+	public ApiResponse<PIItemsSecurityRights> getSecurityWithHttpInfo(String webId, List<String> securityItem, List<String> userIdentity, Boolean forceRefresh, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getSecurityCall(webId, securityItem, userIdentity, forceRefresh, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsSecurityRights>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -2704,7 +2748,7 @@ public class AssetDatabaseApi {
 	 * Get the security information of the specified security item associated with the asset database for a specified user. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getSecurityAsync(String webId, List<String> securityItem, List<String> userIdentity, Boolean forceRefresh, String selectedFields, final ApiCallback<PIItemsSecurityRights> callback) throws ApiException {
+	public okhttp3.Call getSecurityAsync(String webId, List<String> securityItem, List<String> userIdentity, Boolean forceRefresh, String selectedFields, String webIdType, final ApiCallback<PIItemsSecurityRights> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -2724,12 +2768,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = getSecurityCall(webId, securityItem, userIdentity, forceRefresh, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getSecurityCall(webId, securityItem, userIdentity, forceRefresh, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getSecurityCall(String webId, List<String> securityItem, List<String> userIdentity, Boolean forceRefresh, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getSecurityCall(String webId, List<String> securityItem, List<String> userIdentity, Boolean forceRefresh, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -2765,6 +2809,8 @@ public class AssetDatabaseApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "forceRefresh", forceRefresh));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -2785,8 +2831,8 @@ public class AssetDatabaseApi {
 	 * Retrieve the security entries of the specified security item associated with the asset database based on the specified criteria. By default, all security entries for this asset database are returned. 
 	 *
 	 */
-	public PIItemsSecurityEntry getSecurityEntries(String webId, String nameFilter, String securityItem, String selectedFields) throws ApiException {
-		ApiResponse<PIItemsSecurityEntry> resp = getSecurityEntriesWithHttpInfo(webId, nameFilter, securityItem, selectedFields);
+	public PIItemsSecurityEntry getSecurityEntries(String webId, String nameFilter, String securityItem, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIItemsSecurityEntry> resp = getSecurityEntriesWithHttpInfo(webId, nameFilter, securityItem, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -2794,8 +2840,8 @@ public class AssetDatabaseApi {
 	 * Retrieve the security entries of the specified security item associated with the asset database based on the specified criteria. By default, all security entries for this asset database are returned. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsSecurityEntry> getSecurityEntriesWithHttpInfo(String webId, String nameFilter, String securityItem, String selectedFields) throws ApiException {
-		okhttp3.Call call = getSecurityEntriesCall(webId, nameFilter, securityItem, selectedFields,null,null);
+	public ApiResponse<PIItemsSecurityEntry> getSecurityEntriesWithHttpInfo(String webId, String nameFilter, String securityItem, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getSecurityEntriesCall(webId, nameFilter, securityItem, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsSecurityEntry>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -2804,7 +2850,7 @@ public class AssetDatabaseApi {
 	 * Retrieve the security entries of the specified security item associated with the asset database based on the specified criteria. By default, all security entries for this asset database are returned. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getSecurityEntriesAsync(String webId, String nameFilter, String securityItem, String selectedFields, final ApiCallback<PIItemsSecurityEntry> callback) throws ApiException {
+	public okhttp3.Call getSecurityEntriesAsync(String webId, String nameFilter, String securityItem, String selectedFields, String webIdType, final ApiCallback<PIItemsSecurityEntry> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -2824,12 +2870,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = getSecurityEntriesCall(webId, nameFilter, securityItem, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getSecurityEntriesCall(webId, nameFilter, securityItem, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getSecurityEntriesCall(String webId, String nameFilter, String securityItem, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getSecurityEntriesCall(String webId, String nameFilter, String securityItem, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -2857,6 +2903,8 @@ public class AssetDatabaseApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "securityItem", securityItem));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -2877,16 +2925,16 @@ public class AssetDatabaseApi {
 	 * Create a security entry owned by the asset database. 
 	 *
 	 */
-	public void createSecurityEntry(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, String securityItem) throws ApiException {
-		createSecurityEntryWithHttpInfo(webId, securityEntry, applyToChildren, securityItem);
+	public void createSecurityEntry(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, String securityItem, String webIdType) throws ApiException {
+		createSecurityEntryWithHttpInfo(webId, securityEntry, applyToChildren, securityItem, webIdType);
 	}
 
 	/**
 	 * Create a security entry owned by the asset database. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<Void> createSecurityEntryWithHttpInfo(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, String securityItem) throws ApiException {
-		okhttp3.Call call = createSecurityEntryCall(webId, securityEntry, applyToChildren, securityItem,null,null);
+	public ApiResponse<Void> createSecurityEntryWithHttpInfo(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, String securityItem, String webIdType) throws ApiException {
+		okhttp3.Call call = createSecurityEntryCall(webId, securityEntry, applyToChildren, securityItem, webIdType,null,null);
 		return apiClient.execute(call);
 	}
 
@@ -2894,7 +2942,7 @@ public class AssetDatabaseApi {
 	 * Create a security entry owned by the asset database. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call createSecurityEntryAsync(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, String securityItem, final ApiCallback<Void> callback) throws ApiException {
+	public okhttp3.Call createSecurityEntryAsync(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, String securityItem, String webIdType, final ApiCallback<Void> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -2914,12 +2962,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = createSecurityEntryCall(webId, securityEntry, applyToChildren, securityItem, progressListener, progressRequestListener);
+		okhttp3.Call call = createSecurityEntryCall(webId, securityEntry, applyToChildren, securityItem, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call createSecurityEntryCall(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, String securityItem, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call createSecurityEntryCall(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, String securityItem, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -2949,6 +2997,8 @@ public class AssetDatabaseApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "applyToChildren", applyToChildren));
 		if (securityItem != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "securityItem", securityItem));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -2969,8 +3019,8 @@ public class AssetDatabaseApi {
 	 * Retrieve the security entry of the specified security item associated with the asset database with the specified name. 
 	 *
 	 */
-	public PISecurityEntry getSecurityEntryByName(String name, String webId, String securityItem, String selectedFields) throws ApiException {
-		ApiResponse<PISecurityEntry> resp = getSecurityEntryByNameWithHttpInfo(name, webId, securityItem, selectedFields);
+	public PISecurityEntry getSecurityEntryByName(String name, String webId, String securityItem, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PISecurityEntry> resp = getSecurityEntryByNameWithHttpInfo(name, webId, securityItem, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -2978,8 +3028,8 @@ public class AssetDatabaseApi {
 	 * Retrieve the security entry of the specified security item associated with the asset database with the specified name. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PISecurityEntry> getSecurityEntryByNameWithHttpInfo(String name, String webId, String securityItem, String selectedFields) throws ApiException {
-		okhttp3.Call call = getSecurityEntryByNameCall(name, webId, securityItem, selectedFields,null,null);
+	public ApiResponse<PISecurityEntry> getSecurityEntryByNameWithHttpInfo(String name, String webId, String securityItem, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getSecurityEntryByNameCall(name, webId, securityItem, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PISecurityEntry>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -2988,7 +3038,7 @@ public class AssetDatabaseApi {
 	 * Retrieve the security entry of the specified security item associated with the asset database with the specified name. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getSecurityEntryByNameAsync(String name, String webId, String securityItem, String selectedFields, final ApiCallback<PISecurityEntry> callback) throws ApiException {
+	public okhttp3.Call getSecurityEntryByNameAsync(String name, String webId, String securityItem, String selectedFields, String webIdType, final ApiCallback<PISecurityEntry> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -3008,12 +3058,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = getSecurityEntryByNameCall(name, webId, securityItem, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getSecurityEntryByNameCall(name, webId, securityItem, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getSecurityEntryByNameCall(String name, String webId, String securityItem, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getSecurityEntryByNameCall(String name, String webId, String securityItem, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'name' is set
 		if (name == null)
@@ -3043,6 +3093,8 @@ public class AssetDatabaseApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "securityItem", securityItem));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -3251,8 +3303,8 @@ public class AssetDatabaseApi {
 	 * Retrieve table categories for a given Asset Database. 
 	 *
 	 */
-	public PIItemsTableCategory getTableCategories(String webId, String selectedFields) throws ApiException {
-		ApiResponse<PIItemsTableCategory> resp = getTableCategoriesWithHttpInfo(webId, selectedFields);
+	public PIItemsTableCategory getTableCategories(String webId, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIItemsTableCategory> resp = getTableCategoriesWithHttpInfo(webId, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -3260,8 +3312,8 @@ public class AssetDatabaseApi {
 	 * Retrieve table categories for a given Asset Database. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsTableCategory> getTableCategoriesWithHttpInfo(String webId, String selectedFields) throws ApiException {
-		okhttp3.Call call = getTableCategoriesCall(webId, selectedFields,null,null);
+	public ApiResponse<PIItemsTableCategory> getTableCategoriesWithHttpInfo(String webId, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getTableCategoriesCall(webId, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsTableCategory>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -3270,7 +3322,7 @@ public class AssetDatabaseApi {
 	 * Retrieve table categories for a given Asset Database. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getTableCategoriesAsync(String webId, String selectedFields, final ApiCallback<PIItemsTableCategory> callback) throws ApiException {
+	public okhttp3.Call getTableCategoriesAsync(String webId, String selectedFields, String webIdType, final ApiCallback<PIItemsTableCategory> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -3290,12 +3342,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = getTableCategoriesCall(webId, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getTableCategoriesCall(webId, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getTableCategoriesCall(String webId, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getTableCategoriesCall(String webId, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -3319,6 +3371,8 @@ public class AssetDatabaseApi {
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -3339,16 +3393,16 @@ public class AssetDatabaseApi {
 	 * Create a table category on the Asset Database. 
 	 *
 	 */
-	public void createTableCategory(String webId, PITableCategory tableCategory) throws ApiException {
-		createTableCategoryWithHttpInfo(webId, tableCategory);
+	public void createTableCategory(String webId, PITableCategory tableCategory, String webIdType) throws ApiException {
+		createTableCategoryWithHttpInfo(webId, tableCategory, webIdType);
 	}
 
 	/**
 	 * Create a table category on the Asset Database. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<Void> createTableCategoryWithHttpInfo(String webId, PITableCategory tableCategory) throws ApiException {
-		okhttp3.Call call = createTableCategoryCall(webId, tableCategory,null,null);
+	public ApiResponse<Void> createTableCategoryWithHttpInfo(String webId, PITableCategory tableCategory, String webIdType) throws ApiException {
+		okhttp3.Call call = createTableCategoryCall(webId, tableCategory, webIdType,null,null);
 		return apiClient.execute(call);
 	}
 
@@ -3356,7 +3410,7 @@ public class AssetDatabaseApi {
 	 * Create a table category on the Asset Database. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call createTableCategoryAsync(String webId, PITableCategory tableCategory, final ApiCallback<Void> callback) throws ApiException {
+	public okhttp3.Call createTableCategoryAsync(String webId, PITableCategory tableCategory, String webIdType, final ApiCallback<Void> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -3376,12 +3430,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = createTableCategoryCall(webId, tableCategory, progressListener, progressRequestListener);
+		okhttp3.Call call = createTableCategoryCall(webId, tableCategory, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call createTableCategoryCall(String webId, PITableCategory tableCategory, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call createTableCategoryCall(String webId, PITableCategory tableCategory, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -3407,6 +3461,8 @@ public class AssetDatabaseApi {
 
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		localVarPostBody =  tableCategory;
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -3427,8 +3483,8 @@ public class AssetDatabaseApi {
 	 * Retrieve tables for given Asset Database. 
 	 *
 	 */
-	public PIItemsTable getTables(String webId, String selectedFields) throws ApiException {
-		ApiResponse<PIItemsTable> resp = getTablesWithHttpInfo(webId, selectedFields);
+	public PIItemsTable getTables(String webId, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIItemsTable> resp = getTablesWithHttpInfo(webId, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -3436,8 +3492,8 @@ public class AssetDatabaseApi {
 	 * Retrieve tables for given Asset Database. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsTable> getTablesWithHttpInfo(String webId, String selectedFields) throws ApiException {
-		okhttp3.Call call = getTablesCall(webId, selectedFields,null,null);
+	public ApiResponse<PIItemsTable> getTablesWithHttpInfo(String webId, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getTablesCall(webId, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsTable>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -3446,7 +3502,7 @@ public class AssetDatabaseApi {
 	 * Retrieve tables for given Asset Database. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getTablesAsync(String webId, String selectedFields, final ApiCallback<PIItemsTable> callback) throws ApiException {
+	public okhttp3.Call getTablesAsync(String webId, String selectedFields, String webIdType, final ApiCallback<PIItemsTable> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -3466,12 +3522,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = getTablesCall(webId, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getTablesCall(webId, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getTablesCall(String webId, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getTablesCall(String webId, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -3495,6 +3551,8 @@ public class AssetDatabaseApi {
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -3515,16 +3573,16 @@ public class AssetDatabaseApi {
 	 * Create a table on the Asset Database. 
 	 *
 	 */
-	public void createTable(String webId, PITable table) throws ApiException {
-		createTableWithHttpInfo(webId, table);
+	public void createTable(String webId, PITable table, String webIdType) throws ApiException {
+		createTableWithHttpInfo(webId, table, webIdType);
 	}
 
 	/**
 	 * Create a table on the Asset Database. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<Void> createTableWithHttpInfo(String webId, PITable table) throws ApiException {
-		okhttp3.Call call = createTableCall(webId, table,null,null);
+	public ApiResponse<Void> createTableWithHttpInfo(String webId, PITable table, String webIdType) throws ApiException {
+		okhttp3.Call call = createTableCall(webId, table, webIdType,null,null);
 		return apiClient.execute(call);
 	}
 
@@ -3532,7 +3590,7 @@ public class AssetDatabaseApi {
 	 * Create a table on the Asset Database. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call createTableAsync(String webId, PITable table, final ApiCallback<Void> callback) throws ApiException {
+	public okhttp3.Call createTableAsync(String webId, PITable table, String webIdType, final ApiCallback<Void> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -3552,12 +3610,12 @@ public class AssetDatabaseApi {
 				}
 			};
 		}
-		okhttp3.Call call = createTableCall(webId, table, progressListener, progressRequestListener);
+		okhttp3.Call call = createTableCall(webId, table, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call createTableCall(String webId, PITable table, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call createTableCall(String webId, PITable table, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -3583,6 +3641,8 @@ public class AssetDatabaseApi {
 
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		localVarPostBody =  table;
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {

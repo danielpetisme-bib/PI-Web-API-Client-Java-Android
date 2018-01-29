@@ -1,6 +1,6 @@
 /*
  *
- * Copyright 2017 OSIsoft, LLC
+ * Copyright 2018 OSIsoft, LLC
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,8 +47,8 @@ public class AnalysisRuleApi {
 	 * Retrieve an Analysis Rule by path. 
 	 *
 	 */
-	public PIAnalysisRule getByPath(String path, String selectedFields) throws ApiException {
-		ApiResponse<PIAnalysisRule> resp = getByPathWithHttpInfo(path, selectedFields);
+	public PIAnalysisRule getByPath(String path, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIAnalysisRule> resp = getByPathWithHttpInfo(path, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -56,8 +56,8 @@ public class AnalysisRuleApi {
 	 * Retrieve an Analysis Rule by path. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIAnalysisRule> getByPathWithHttpInfo(String path, String selectedFields) throws ApiException {
-		okhttp3.Call call = getByPathCall(path, selectedFields,null,null);
+	public ApiResponse<PIAnalysisRule> getByPathWithHttpInfo(String path, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getByPathCall(path, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIAnalysisRule>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -66,7 +66,7 @@ public class AnalysisRuleApi {
 	 * Retrieve an Analysis Rule by path. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getByPathAsync(String path, String selectedFields, final ApiCallback<PIAnalysisRule> callback) throws ApiException {
+	public okhttp3.Call getByPathAsync(String path, String selectedFields, String webIdType, final ApiCallback<PIAnalysisRule> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -86,12 +86,12 @@ public class AnalysisRuleApi {
 				}
 			};
 		}
-		okhttp3.Call call = getByPathCall(path, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getByPathCall(path, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getByPathCall(String path, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getByPathCall(String path, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'path' is set
 		if (path == null)
@@ -116,6 +116,8 @@ public class AnalysisRuleApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "path", path));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -136,8 +138,8 @@ public class AnalysisRuleApi {
 	 * Retrieve an Analysis Rule. 
 	 *
 	 */
-	public PIAnalysisRule get(String webId, String selectedFields) throws ApiException {
-		ApiResponse<PIAnalysisRule> resp = getWithHttpInfo(webId, selectedFields);
+	public PIAnalysisRule get(String webId, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIAnalysisRule> resp = getWithHttpInfo(webId, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -145,8 +147,8 @@ public class AnalysisRuleApi {
 	 * Retrieve an Analysis Rule. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIAnalysisRule> getWithHttpInfo(String webId, String selectedFields) throws ApiException {
-		okhttp3.Call call = getCall(webId, selectedFields,null,null);
+	public ApiResponse<PIAnalysisRule> getWithHttpInfo(String webId, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getCall(webId, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIAnalysisRule>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -155,7 +157,7 @@ public class AnalysisRuleApi {
 	 * Retrieve an Analysis Rule. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getAsync(String webId, String selectedFields, final ApiCallback<PIAnalysisRule> callback) throws ApiException {
+	public okhttp3.Call getAsync(String webId, String selectedFields, String webIdType, final ApiCallback<PIAnalysisRule> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -175,12 +177,12 @@ public class AnalysisRuleApi {
 				}
 			};
 		}
-		okhttp3.Call call = getCall(webId, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getCall(webId, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getCall(String webId, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getCall(String webId, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -204,6 +206,8 @@ public class AnalysisRuleApi {
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -396,8 +400,8 @@ public class AnalysisRuleApi {
 	 * Get the child Analysis Rules of the Analysis Rule. 
 	 *
 	 */
-	public PIItemsAnalysisRule getAnalysisRules(String webId, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex) throws ApiException {
-		ApiResponse<PIItemsAnalysisRule> resp = getAnalysisRulesWithHttpInfo(webId, maxCount, nameFilter, searchFullHierarchy, selectedFields, sortField, sortOrder, startIndex);
+	public PIItemsAnalysisRule getAnalysisRules(String webId, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex, String webIdType) throws ApiException {
+		ApiResponse<PIItemsAnalysisRule> resp = getAnalysisRulesWithHttpInfo(webId, maxCount, nameFilter, searchFullHierarchy, selectedFields, sortField, sortOrder, startIndex, webIdType);
 		return resp.getData();
 	}
 
@@ -405,8 +409,8 @@ public class AnalysisRuleApi {
 	 * Get the child Analysis Rules of the Analysis Rule. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsAnalysisRule> getAnalysisRulesWithHttpInfo(String webId, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex) throws ApiException {
-		okhttp3.Call call = getAnalysisRulesCall(webId, maxCount, nameFilter, searchFullHierarchy, selectedFields, sortField, sortOrder, startIndex,null,null);
+	public ApiResponse<PIItemsAnalysisRule> getAnalysisRulesWithHttpInfo(String webId, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex, String webIdType) throws ApiException {
+		okhttp3.Call call = getAnalysisRulesCall(webId, maxCount, nameFilter, searchFullHierarchy, selectedFields, sortField, sortOrder, startIndex, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsAnalysisRule>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -415,7 +419,7 @@ public class AnalysisRuleApi {
 	 * Get the child Analysis Rules of the Analysis Rule. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getAnalysisRulesAsync(String webId, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex, final ApiCallback<PIItemsAnalysisRule> callback) throws ApiException {
+	public okhttp3.Call getAnalysisRulesAsync(String webId, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex, String webIdType, final ApiCallback<PIItemsAnalysisRule> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -435,12 +439,12 @@ public class AnalysisRuleApi {
 				}
 			};
 		}
-		okhttp3.Call call = getAnalysisRulesCall(webId, maxCount, nameFilter, searchFullHierarchy, selectedFields, sortField, sortOrder, startIndex, progressListener, progressRequestListener);
+		okhttp3.Call call = getAnalysisRulesCall(webId, maxCount, nameFilter, searchFullHierarchy, selectedFields, sortField, sortOrder, startIndex, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getAnalysisRulesCall(String webId, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getAnalysisRulesCall(String webId, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -476,6 +480,8 @@ public class AnalysisRuleApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "sortOrder", sortOrder));
 		if (startIndex != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "startIndex", startIndex));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -496,16 +502,16 @@ public class AnalysisRuleApi {
 	 * Create a new Analysis Rule as a child of an existing Analysis Rule. 
 	 *
 	 */
-	public void createAnalysisRule(String webId, PIAnalysisRule analysisRule) throws ApiException {
-		createAnalysisRuleWithHttpInfo(webId, analysisRule);
+	public void createAnalysisRule(String webId, PIAnalysisRule analysisRule, String webIdType) throws ApiException {
+		createAnalysisRuleWithHttpInfo(webId, analysisRule, webIdType);
 	}
 
 	/**
 	 * Create a new Analysis Rule as a child of an existing Analysis Rule. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<Void> createAnalysisRuleWithHttpInfo(String webId, PIAnalysisRule analysisRule) throws ApiException {
-		okhttp3.Call call = createAnalysisRuleCall(webId, analysisRule,null,null);
+	public ApiResponse<Void> createAnalysisRuleWithHttpInfo(String webId, PIAnalysisRule analysisRule, String webIdType) throws ApiException {
+		okhttp3.Call call = createAnalysisRuleCall(webId, analysisRule, webIdType,null,null);
 		return apiClient.execute(call);
 	}
 
@@ -513,7 +519,7 @@ public class AnalysisRuleApi {
 	 * Create a new Analysis Rule as a child of an existing Analysis Rule. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call createAnalysisRuleAsync(String webId, PIAnalysisRule analysisRule, final ApiCallback<Void> callback) throws ApiException {
+	public okhttp3.Call createAnalysisRuleAsync(String webId, PIAnalysisRule analysisRule, String webIdType, final ApiCallback<Void> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -533,12 +539,12 @@ public class AnalysisRuleApi {
 				}
 			};
 		}
-		okhttp3.Call call = createAnalysisRuleCall(webId, analysisRule, progressListener, progressRequestListener);
+		okhttp3.Call call = createAnalysisRuleCall(webId, analysisRule, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call createAnalysisRuleCall(String webId, PIAnalysisRule analysisRule, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call createAnalysisRuleCall(String webId, PIAnalysisRule analysisRule, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -564,6 +570,8 @@ public class AnalysisRuleApi {
 
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		localVarPostBody =  analysisRule;
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {

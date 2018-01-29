@@ -1,6 +1,6 @@
 /*
  *
- * Copyright 2017 OSIsoft, LLC
+ * Copyright 2018 OSIsoft, LLC
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -69,7 +69,10 @@ public class PIAnalysisTemplate {
 	private String timeRulePlugInName = null;
 
 	@SerializedName("Links")
-	private Map<String, String> links = null;
+	private PIAnalysisTemplateLinks links = null;
+
+	@SerializedName("WebException")
+	private PIWebException webException = null;
 
 	public PIAnalysisTemplate() {
 	}
@@ -131,7 +134,11 @@ public class PIAnalysisTemplate {
 
 	public String getTimeRulePlugInName() { return this.timeRulePlugInName;}
 
-	public void setLinks(Map<String, String> links) { this.links = links;}
+	public void setLinks(PIAnalysisTemplateLinks links) { this.links = links;}
 
-	public Map<String, String> getLinks() { return this.links;}
+	public PIAnalysisTemplateLinks getLinks() { return this.links;}
+
+	public void setWebException(PIWebException webException) { this.webException = webException;}
+
+	public PIWebException getWebException() { return this.webException;}
 }

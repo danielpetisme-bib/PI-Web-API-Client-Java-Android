@@ -1,15 +1,18 @@
-PI Web API Client libraries for Java and Android
+PI Web API client library for Java and Android (2017 R2)
 ===
 
 
 ## Overview
-This repository has the source code package of the PI Web API Client libraries for Java and Android.
+This repository has the source code package of the PI Web API client library for Java and Android. This version was developed on top of the PI Web API 2017 R2 swagger specification.
+
 
 ## Requirements
 
-Building this PI Web API client library requires JDK and [Maven](https://maven.apache.org/) to be installed.
+ - JDK
+ - Maven(https://maven.apache.org/)
+ - Python 2.7 and 3.4+
 
-
+ 
 ## Installation
 
 To install the API client library to your local Maven repository, simply execute on the project folder:
@@ -39,7 +42,7 @@ Add this dependency to your project's POM:
 <dependency>
 	<groupId>com.osisoft.pidevclub</groupId>
 	<artifactId>piwebapi</artifactId>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 </dependency>
 ```
 
@@ -48,7 +51,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile 'com.osisoft.pidevclub:piwebapi:1.0.0'
+compile 'com.osisoft.pidevclub:piwebapi:1.1.0'
 ```
 
 ### Others
@@ -66,6 +69,11 @@ Then manually install the following JARs:
 ## Documentation
 
 All classes and methods are described on the [DOCUMENTATION](DOCUMENTATION.md). 
+
+## Notes
+
+ - Is is highly recommended to turn debug mode on in case you are using PI Web API 2017 R2+ in order to receive more detailed exception errors. This can be achieved by creating or editing the DebugMode attribute's value to TRUE from the System Configuration element.
+ - The X-Requested-With header is added to work with CSRF defences.
 
  
 ## Examples
@@ -98,15 +106,15 @@ If you want to use basic authentication instead of Kerberos, set useKerberos to 
 	newPoint.setPointClass("classic");
 	newPoint.setPointType("float32");
 	newPoint.setFuture(false);
-	ApiResponse<Void> res =  client.getDataServer().createPointWithHttpInfo(dataServer.getWebId(),newPoint);          
+	ApiResponse<Void> res =  client.getDataServer().createPointWithHttpInfo(dataServer.getWebId(), newPoint, null);          
 ```
 
 ### Get PI Points WebIds
 
 ```java
-	PIPoint point1 = client.getPoint().getByPath("\\\\JUPITER001\\sinusoid", null);
-	PIPoint point2 = client.getPoint().getByPath("\\\\JUPITER001\\sinusoidu", null);
-	PIPoint point3 = client.getPoint().getByPath("\\\\JUPITER001\\cdt158", null);
+	PIPoint point1 = client.getPoint().getByPath("\\\\JUPITER001\\sinusoid", null, null);
+	PIPoint point2 = client.getPoint().getByPath("\\\\JUPITER001\\sinusoidu", null, null);
+	PIPoint point3 = client.getPoint().getByPath("\\\\JUPITER001\\cdt158", null, null);
 ```
 
 ### Get recorded values in bulk using the StreamSet/GetRecordedAdHoc
@@ -116,8 +124,7 @@ If you want to use basic authentication instead of Kerberos, set useKerberos to 
 	webIds.add(point1.getWebId());
 	webIds.add(point2.getWebId());
 	webIds.add(point3.getWebId());
-	PIItemsStreamValues piItemsStreamValues = client.getStreamSet().getRecordedAdHoc(webIds,null, "*", null, true, 1000, null, "*-3d",null);
-            
+	PIItemsStreamValues piItemsStreamValues = client.getStreamSet().getRecordedAdHoc(webIds,null, "*", null, true, 1000, null, null, null,"*-3d",null, null);     
 ```
 
 ### Send values in bulk using the StreamSet/UpdateValuesAdHoc
@@ -168,15 +175,15 @@ If you want to use basic authentication instead of Kerberos, set useKerberos to 
 	streamValues.add(streamValue1);
 	streamValues.add(streamValue2);
 	streamValues.add(streamValue3);
-	ApiResponse<PIItemsItemsSubstatus> res = client.getStreamSet().updateValuesAdHocWithHttpInfo(streamValues, null,null);
+	ApiResponse<PIItemsItemsSubstatus> res = client.getStreamSet().updateValuesAdHocWithHttpInfo(streamValues, null, null);
 ```
 
 
 ### Get element and its attributes given an AF Element path
 
 ```java
-	PIElement myElement = client.getElement().getByPath("\\\\MARC-PI2016\\CrossPlatformLab\\marc.adm", null);
-	PIItemsAttribute attributes = client.getElement().getAttributes(myElement.getWebId(), null, 1000, null, false, null, null,null,null,null,0,null,null);
+	PIElement myElement = client.getElement().getByPath("\\\\PISRV1\\Element", null,null);
+	PIItemsAttribute attributes = client.getElement().getAttributes(myElement.getWebId(), null, 1000, null, false, null, null,null,null,null,0,null,null, null);
            
 ```
 
@@ -185,7 +192,7 @@ If you want to use basic authentication instead of Kerberos, set useKerberos to 
 
 
 ## Licensing
-Copyright 2017 OSIsoft, LLC.
+Copyright 2018 OSIsoft, LLC.
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.

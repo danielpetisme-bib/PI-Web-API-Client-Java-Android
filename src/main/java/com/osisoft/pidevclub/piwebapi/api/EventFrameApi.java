@@ -1,6 +1,6 @@
 /*
  *
- * Copyright 2017 OSIsoft, LLC
+ * Copyright 2018 OSIsoft, LLC
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,8 +47,8 @@ public class EventFrameApi {
 	 * Retrieve an event frame by path. 
 	 *
 	 */
-	public PIEventFrame getByPath(String path, String selectedFields) throws ApiException {
-		ApiResponse<PIEventFrame> resp = getByPathWithHttpInfo(path, selectedFields);
+	public PIEventFrame getByPath(String path, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIEventFrame> resp = getByPathWithHttpInfo(path, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -56,8 +56,8 @@ public class EventFrameApi {
 	 * Retrieve an event frame by path. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIEventFrame> getByPathWithHttpInfo(String path, String selectedFields) throws ApiException {
-		okhttp3.Call call = getByPathCall(path, selectedFields,null,null);
+	public ApiResponse<PIEventFrame> getByPathWithHttpInfo(String path, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getByPathCall(path, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIEventFrame>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -66,7 +66,7 @@ public class EventFrameApi {
 	 * Retrieve an event frame by path. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getByPathAsync(String path, String selectedFields, final ApiCallback<PIEventFrame> callback) throws ApiException {
+	public okhttp3.Call getByPathAsync(String path, String selectedFields, String webIdType, final ApiCallback<PIEventFrame> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -86,12 +86,12 @@ public class EventFrameApi {
 				}
 			};
 		}
-		okhttp3.Call call = getByPathCall(path, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getByPathCall(path, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getByPathCall(String path, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getByPathCall(String path, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'path' is set
 		if (path == null)
@@ -116,6 +116,8 @@ public class EventFrameApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "path", path));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -136,8 +138,8 @@ public class EventFrameApi {
 	 * Retrieve an event frame. 
 	 *
 	 */
-	public PIEventFrame get(String webId, String selectedFields) throws ApiException {
-		ApiResponse<PIEventFrame> resp = getWithHttpInfo(webId, selectedFields);
+	public PIEventFrame get(String webId, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIEventFrame> resp = getWithHttpInfo(webId, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -145,8 +147,8 @@ public class EventFrameApi {
 	 * Retrieve an event frame. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIEventFrame> getWithHttpInfo(String webId, String selectedFields) throws ApiException {
-		okhttp3.Call call = getCall(webId, selectedFields,null,null);
+	public ApiResponse<PIEventFrame> getWithHttpInfo(String webId, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getCall(webId, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIEventFrame>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -155,7 +157,7 @@ public class EventFrameApi {
 	 * Retrieve an event frame. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getAsync(String webId, String selectedFields, final ApiCallback<PIEventFrame> callback) throws ApiException {
+	public okhttp3.Call getAsync(String webId, String selectedFields, String webIdType, final ApiCallback<PIEventFrame> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -175,12 +177,12 @@ public class EventFrameApi {
 				}
 			};
 		}
-		okhttp3.Call call = getCall(webId, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getCall(webId, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getCall(String webId, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getCall(String webId, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -204,6 +206,8 @@ public class EventFrameApi {
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -480,8 +484,8 @@ public class EventFrameApi {
 	 * Get an event frame's annotations. 
 	 *
 	 */
-	public PIItemsAnnotation getAnnotations(String webId, String selectedFields) throws ApiException {
-		ApiResponse<PIItemsAnnotation> resp = getAnnotationsWithHttpInfo(webId, selectedFields);
+	public PIItemsAnnotation getAnnotations(String webId, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIItemsAnnotation> resp = getAnnotationsWithHttpInfo(webId, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -489,8 +493,8 @@ public class EventFrameApi {
 	 * Get an event frame's annotations. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsAnnotation> getAnnotationsWithHttpInfo(String webId, String selectedFields) throws ApiException {
-		okhttp3.Call call = getAnnotationsCall(webId, selectedFields,null,null);
+	public ApiResponse<PIItemsAnnotation> getAnnotationsWithHttpInfo(String webId, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getAnnotationsCall(webId, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsAnnotation>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -499,7 +503,7 @@ public class EventFrameApi {
 	 * Get an event frame's annotations. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getAnnotationsAsync(String webId, String selectedFields, final ApiCallback<PIItemsAnnotation> callback) throws ApiException {
+	public okhttp3.Call getAnnotationsAsync(String webId, String selectedFields, String webIdType, final ApiCallback<PIItemsAnnotation> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -519,12 +523,12 @@ public class EventFrameApi {
 				}
 			};
 		}
-		okhttp3.Call call = getAnnotationsCall(webId, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getAnnotationsCall(webId, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getAnnotationsCall(String webId, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getAnnotationsCall(String webId, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -548,6 +552,8 @@ public class EventFrameApi {
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -568,16 +574,16 @@ public class EventFrameApi {
 	 * Create an annotation on an event frame. 
 	 *
 	 */
-	public void createAnnotation(String webId, PIAnnotation annotation) throws ApiException {
-		createAnnotationWithHttpInfo(webId, annotation);
+	public void createAnnotation(String webId, PIAnnotation annotation, String webIdType) throws ApiException {
+		createAnnotationWithHttpInfo(webId, annotation, webIdType);
 	}
 
 	/**
 	 * Create an annotation on an event frame. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<Void> createAnnotationWithHttpInfo(String webId, PIAnnotation annotation) throws ApiException {
-		okhttp3.Call call = createAnnotationCall(webId, annotation,null,null);
+	public ApiResponse<Void> createAnnotationWithHttpInfo(String webId, PIAnnotation annotation, String webIdType) throws ApiException {
+		okhttp3.Call call = createAnnotationCall(webId, annotation, webIdType,null,null);
 		return apiClient.execute(call);
 	}
 
@@ -585,7 +591,7 @@ public class EventFrameApi {
 	 * Create an annotation on an event frame. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call createAnnotationAsync(String webId, PIAnnotation annotation, final ApiCallback<Void> callback) throws ApiException {
+	public okhttp3.Call createAnnotationAsync(String webId, PIAnnotation annotation, String webIdType, final ApiCallback<Void> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -605,12 +611,12 @@ public class EventFrameApi {
 				}
 			};
 		}
-		okhttp3.Call call = createAnnotationCall(webId, annotation, progressListener, progressRequestListener);
+		okhttp3.Call call = createAnnotationCall(webId, annotation, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call createAnnotationCall(String webId, PIAnnotation annotation, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call createAnnotationCall(String webId, PIAnnotation annotation, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -636,6 +642,8 @@ public class EventFrameApi {
 
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		localVarPostBody =  annotation;
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -656,8 +664,8 @@ public class EventFrameApi {
 	 * Get a specific annotation on an event frame. 
 	 *
 	 */
-	public PIAnnotation getAnnotationById(String id, String webId, String selectedFields) throws ApiException {
-		ApiResponse<PIAnnotation> resp = getAnnotationByIdWithHttpInfo(id, webId, selectedFields);
+	public PIAnnotation getAnnotationById(String id, String webId, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIAnnotation> resp = getAnnotationByIdWithHttpInfo(id, webId, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -665,8 +673,8 @@ public class EventFrameApi {
 	 * Get a specific annotation on an event frame. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIAnnotation> getAnnotationByIdWithHttpInfo(String id, String webId, String selectedFields) throws ApiException {
-		okhttp3.Call call = getAnnotationByIdCall(id, webId, selectedFields,null,null);
+	public ApiResponse<PIAnnotation> getAnnotationByIdWithHttpInfo(String id, String webId, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getAnnotationByIdCall(id, webId, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIAnnotation>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -675,7 +683,7 @@ public class EventFrameApi {
 	 * Get a specific annotation on an event frame. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getAnnotationByIdAsync(String id, String webId, String selectedFields, final ApiCallback<PIAnnotation> callback) throws ApiException {
+	public okhttp3.Call getAnnotationByIdAsync(String id, String webId, String selectedFields, String webIdType, final ApiCallback<PIAnnotation> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -695,12 +703,12 @@ public class EventFrameApi {
 				}
 			};
 		}
-		okhttp3.Call call = getAnnotationByIdCall(id, webId, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getAnnotationByIdCall(id, webId, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getAnnotationByIdCall(String id, String webId, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getAnnotationByIdCall(String id, String webId, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'id' is set
 		if (id == null)
@@ -728,6 +736,8 @@ public class EventFrameApi {
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -928,8 +938,8 @@ public class EventFrameApi {
 	 * Get the attributes of the specified event frame. 
 	 *
 	 */
-	public PIItemsAttribute getAttributes(String webId, String categoryName, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, Boolean showExcluded, Boolean showHidden, String sortField, String sortOrder, Integer startIndex, String templateName, String valueType) throws ApiException {
-		ApiResponse<PIItemsAttribute> resp = getAttributesWithHttpInfo(webId, categoryName, maxCount, nameFilter, searchFullHierarchy, selectedFields, showExcluded, showHidden, sortField, sortOrder, startIndex, templateName, valueType);
+	public PIItemsAttribute getAttributes(String webId, String categoryName, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, Boolean showExcluded, Boolean showHidden, String sortField, String sortOrder, Integer startIndex, String templateName, String valueType, String webIdType) throws ApiException {
+		ApiResponse<PIItemsAttribute> resp = getAttributesWithHttpInfo(webId, categoryName, maxCount, nameFilter, searchFullHierarchy, selectedFields, showExcluded, showHidden, sortField, sortOrder, startIndex, templateName, valueType, webIdType);
 		return resp.getData();
 	}
 
@@ -937,8 +947,8 @@ public class EventFrameApi {
 	 * Get the attributes of the specified event frame. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsAttribute> getAttributesWithHttpInfo(String webId, String categoryName, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, Boolean showExcluded, Boolean showHidden, String sortField, String sortOrder, Integer startIndex, String templateName, String valueType) throws ApiException {
-		okhttp3.Call call = getAttributesCall(webId, categoryName, maxCount, nameFilter, searchFullHierarchy, selectedFields, showExcluded, showHidden, sortField, sortOrder, startIndex, templateName, valueType,null,null);
+	public ApiResponse<PIItemsAttribute> getAttributesWithHttpInfo(String webId, String categoryName, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, Boolean showExcluded, Boolean showHidden, String sortField, String sortOrder, Integer startIndex, String templateName, String valueType, String webIdType) throws ApiException {
+		okhttp3.Call call = getAttributesCall(webId, categoryName, maxCount, nameFilter, searchFullHierarchy, selectedFields, showExcluded, showHidden, sortField, sortOrder, startIndex, templateName, valueType, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsAttribute>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -947,7 +957,7 @@ public class EventFrameApi {
 	 * Get the attributes of the specified event frame. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getAttributesAsync(String webId, String categoryName, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, Boolean showExcluded, Boolean showHidden, String sortField, String sortOrder, Integer startIndex, String templateName, String valueType, final ApiCallback<PIItemsAttribute> callback) throws ApiException {
+	public okhttp3.Call getAttributesAsync(String webId, String categoryName, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, Boolean showExcluded, Boolean showHidden, String sortField, String sortOrder, Integer startIndex, String templateName, String valueType, String webIdType, final ApiCallback<PIItemsAttribute> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -967,12 +977,12 @@ public class EventFrameApi {
 				}
 			};
 		}
-		okhttp3.Call call = getAttributesCall(webId, categoryName, maxCount, nameFilter, searchFullHierarchy, selectedFields, showExcluded, showHidden, sortField, sortOrder, startIndex, templateName, valueType, progressListener, progressRequestListener);
+		okhttp3.Call call = getAttributesCall(webId, categoryName, maxCount, nameFilter, searchFullHierarchy, selectedFields, showExcluded, showHidden, sortField, sortOrder, startIndex, templateName, valueType, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getAttributesCall(String webId, String categoryName, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, Boolean showExcluded, Boolean showHidden, String sortField, String sortOrder, Integer startIndex, String templateName, String valueType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getAttributesCall(String webId, String categoryName, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, Boolean showExcluded, Boolean showHidden, String sortField, String sortOrder, Integer startIndex, String templateName, String valueType, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -1018,6 +1028,8 @@ public class EventFrameApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "templateName", templateName));
 		if (valueType != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "valueType", valueType));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -1038,16 +1050,16 @@ public class EventFrameApi {
 	 * Create a new attribute of the specified event frame. 
 	 *
 	 */
-	public void createAttribute(String webId, PIAttribute attribute) throws ApiException {
-		createAttributeWithHttpInfo(webId, attribute);
+	public void createAttribute(String webId, PIAttribute attribute, String webIdType) throws ApiException {
+		createAttributeWithHttpInfo(webId, attribute, webIdType);
 	}
 
 	/**
 	 * Create a new attribute of the specified event frame. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<Void> createAttributeWithHttpInfo(String webId, PIAttribute attribute) throws ApiException {
-		okhttp3.Call call = createAttributeCall(webId, attribute,null,null);
+	public ApiResponse<Void> createAttributeWithHttpInfo(String webId, PIAttribute attribute, String webIdType) throws ApiException {
+		okhttp3.Call call = createAttributeCall(webId, attribute, webIdType,null,null);
 		return apiClient.execute(call);
 	}
 
@@ -1055,7 +1067,7 @@ public class EventFrameApi {
 	 * Create a new attribute of the specified event frame. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call createAttributeAsync(String webId, PIAttribute attribute, final ApiCallback<Void> callback) throws ApiException {
+	public okhttp3.Call createAttributeAsync(String webId, PIAttribute attribute, String webIdType, final ApiCallback<Void> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -1075,12 +1087,12 @@ public class EventFrameApi {
 				}
 			};
 		}
-		okhttp3.Call call = createAttributeCall(webId, attribute, progressListener, progressRequestListener);
+		okhttp3.Call call = createAttributeCall(webId, attribute, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call createAttributeCall(String webId, PIAttribute attribute, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call createAttributeCall(String webId, PIAttribute attribute, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -1106,6 +1118,8 @@ public class EventFrameApi {
 
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		localVarPostBody =  attribute;
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -1210,8 +1224,8 @@ public class EventFrameApi {
 	 * Get an event frame's categories. 
 	 *
 	 */
-	public PIItemsElementCategory getCategories(String webId, String selectedFields) throws ApiException {
-		ApiResponse<PIItemsElementCategory> resp = getCategoriesWithHttpInfo(webId, selectedFields);
+	public PIItemsElementCategory getCategories(String webId, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIItemsElementCategory> resp = getCategoriesWithHttpInfo(webId, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -1219,8 +1233,8 @@ public class EventFrameApi {
 	 * Get an event frame's categories. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsElementCategory> getCategoriesWithHttpInfo(String webId, String selectedFields) throws ApiException {
-		okhttp3.Call call = getCategoriesCall(webId, selectedFields,null,null);
+	public ApiResponse<PIItemsElementCategory> getCategoriesWithHttpInfo(String webId, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getCategoriesCall(webId, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsElementCategory>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -1229,7 +1243,7 @@ public class EventFrameApi {
 	 * Get an event frame's categories. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getCategoriesAsync(String webId, String selectedFields, final ApiCallback<PIItemsElementCategory> callback) throws ApiException {
+	public okhttp3.Call getCategoriesAsync(String webId, String selectedFields, String webIdType, final ApiCallback<PIItemsElementCategory> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -1249,12 +1263,12 @@ public class EventFrameApi {
 				}
 			};
 		}
-		okhttp3.Call call = getCategoriesCall(webId, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getCategoriesCall(webId, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getCategoriesCall(String webId, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getCategoriesCall(String webId, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -1278,6 +1292,8 @@ public class EventFrameApi {
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -1384,8 +1400,8 @@ public class EventFrameApi {
 	 * Retrieves a list of event frame attributes matching the specified filters from the specified event frame. 
 	 *
 	 */
-	public PIItemsAttribute findEventFrameAttributes(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String endTime, String eventFrameCategory, String eventFrameDescriptionFilter, String eventFrameNameFilter, String eventFrameTemplate, Integer maxCount, String referencedElementNameFilter, Boolean searchFullHierarchy, String searchMode, String selectedFields, String sortField, String sortOrder, Integer startIndex, String startTime) throws ApiException {
-		ApiResponse<PIItemsAttribute> resp = findEventFrameAttributesWithHttpInfo(webId, attributeCategory, attributeDescriptionFilter, attributeNameFilter, attributeType, endTime, eventFrameCategory, eventFrameDescriptionFilter, eventFrameNameFilter, eventFrameTemplate, maxCount, referencedElementNameFilter, searchFullHierarchy, searchMode, selectedFields, sortField, sortOrder, startIndex, startTime);
+	public PIItemsAttribute findEventFrameAttributes(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String endTime, String eventFrameCategory, String eventFrameDescriptionFilter, String eventFrameNameFilter, String eventFrameTemplate, Integer maxCount, String referencedElementNameFilter, Boolean searchFullHierarchy, String searchMode, String selectedFields, String sortField, String sortOrder, Integer startIndex, String startTime, String webIdType) throws ApiException {
+		ApiResponse<PIItemsAttribute> resp = findEventFrameAttributesWithHttpInfo(webId, attributeCategory, attributeDescriptionFilter, attributeNameFilter, attributeType, endTime, eventFrameCategory, eventFrameDescriptionFilter, eventFrameNameFilter, eventFrameTemplate, maxCount, referencedElementNameFilter, searchFullHierarchy, searchMode, selectedFields, sortField, sortOrder, startIndex, startTime, webIdType);
 		return resp.getData();
 	}
 
@@ -1393,8 +1409,8 @@ public class EventFrameApi {
 	 * Retrieves a list of event frame attributes matching the specified filters from the specified event frame. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsAttribute> findEventFrameAttributesWithHttpInfo(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String endTime, String eventFrameCategory, String eventFrameDescriptionFilter, String eventFrameNameFilter, String eventFrameTemplate, Integer maxCount, String referencedElementNameFilter, Boolean searchFullHierarchy, String searchMode, String selectedFields, String sortField, String sortOrder, Integer startIndex, String startTime) throws ApiException {
-		okhttp3.Call call = findEventFrameAttributesCall(webId, attributeCategory, attributeDescriptionFilter, attributeNameFilter, attributeType, endTime, eventFrameCategory, eventFrameDescriptionFilter, eventFrameNameFilter, eventFrameTemplate, maxCount, referencedElementNameFilter, searchFullHierarchy, searchMode, selectedFields, sortField, sortOrder, startIndex, startTime,null,null);
+	public ApiResponse<PIItemsAttribute> findEventFrameAttributesWithHttpInfo(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String endTime, String eventFrameCategory, String eventFrameDescriptionFilter, String eventFrameNameFilter, String eventFrameTemplate, Integer maxCount, String referencedElementNameFilter, Boolean searchFullHierarchy, String searchMode, String selectedFields, String sortField, String sortOrder, Integer startIndex, String startTime, String webIdType) throws ApiException {
+		okhttp3.Call call = findEventFrameAttributesCall(webId, attributeCategory, attributeDescriptionFilter, attributeNameFilter, attributeType, endTime, eventFrameCategory, eventFrameDescriptionFilter, eventFrameNameFilter, eventFrameTemplate, maxCount, referencedElementNameFilter, searchFullHierarchy, searchMode, selectedFields, sortField, sortOrder, startIndex, startTime, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsAttribute>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -1403,7 +1419,7 @@ public class EventFrameApi {
 	 * Retrieves a list of event frame attributes matching the specified filters from the specified event frame. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call findEventFrameAttributesAsync(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String endTime, String eventFrameCategory, String eventFrameDescriptionFilter, String eventFrameNameFilter, String eventFrameTemplate, Integer maxCount, String referencedElementNameFilter, Boolean searchFullHierarchy, String searchMode, String selectedFields, String sortField, String sortOrder, Integer startIndex, String startTime, final ApiCallback<PIItemsAttribute> callback) throws ApiException {
+	public okhttp3.Call findEventFrameAttributesAsync(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String endTime, String eventFrameCategory, String eventFrameDescriptionFilter, String eventFrameNameFilter, String eventFrameTemplate, Integer maxCount, String referencedElementNameFilter, Boolean searchFullHierarchy, String searchMode, String selectedFields, String sortField, String sortOrder, Integer startIndex, String startTime, String webIdType, final ApiCallback<PIItemsAttribute> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -1423,12 +1439,12 @@ public class EventFrameApi {
 				}
 			};
 		}
-		okhttp3.Call call = findEventFrameAttributesCall(webId, attributeCategory, attributeDescriptionFilter, attributeNameFilter, attributeType, endTime, eventFrameCategory, eventFrameDescriptionFilter, eventFrameNameFilter, eventFrameTemplate, maxCount, referencedElementNameFilter, searchFullHierarchy, searchMode, selectedFields, sortField, sortOrder, startIndex, startTime, progressListener, progressRequestListener);
+		okhttp3.Call call = findEventFrameAttributesCall(webId, attributeCategory, attributeDescriptionFilter, attributeNameFilter, attributeType, endTime, eventFrameCategory, eventFrameDescriptionFilter, eventFrameNameFilter, eventFrameTemplate, maxCount, referencedElementNameFilter, searchFullHierarchy, searchMode, selectedFields, sortField, sortOrder, startIndex, startTime, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call findEventFrameAttributesCall(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String endTime, String eventFrameCategory, String eventFrameDescriptionFilter, String eventFrameNameFilter, String eventFrameTemplate, Integer maxCount, String referencedElementNameFilter, Boolean searchFullHierarchy, String searchMode, String selectedFields, String sortField, String sortOrder, Integer startIndex, String startTime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call findEventFrameAttributesCall(String webId, String attributeCategory, String attributeDescriptionFilter, String attributeNameFilter, String attributeType, String endTime, String eventFrameCategory, String eventFrameDescriptionFilter, String eventFrameNameFilter, String eventFrameTemplate, Integer maxCount, String referencedElementNameFilter, Boolean searchFullHierarchy, String searchMode, String selectedFields, String sortField, String sortOrder, Integer startIndex, String startTime, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -1486,6 +1502,8 @@ public class EventFrameApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "startIndex", startIndex));
 		if (startTime != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "startTime", startTime));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -1503,29 +1521,29 @@ public class EventFrameApi {
 	}
 
 	/**
-	 * Retrieve event frames based on the specified conditions. By default, returns all children of the specified root event frame with a start time in the past 8 hours. 
+	 * Retrieve event frames based on the specified conditions. By default, returns all children of the specified root event frame that have been active in the past 8 hours. 
 	 *
 	 */
-	public PIItemsEventFrame getEventFrames(String webId, Boolean canBeAcknowledged, String categoryName, String endTime, Boolean isAcknowledged, Integer maxCount, String nameFilter, String referencedElementNameFilter, String referencedElementTemplateName, Boolean searchFullHierarchy, String searchMode, String selectedFields, List<String> severity, String sortField, String sortOrder, Integer startIndex, String startTime, String templateName) throws ApiException {
-		ApiResponse<PIItemsEventFrame> resp = getEventFramesWithHttpInfo(webId, canBeAcknowledged, categoryName, endTime, isAcknowledged, maxCount, nameFilter, referencedElementNameFilter, referencedElementTemplateName, searchFullHierarchy, searchMode, selectedFields, severity, sortField, sortOrder, startIndex, startTime, templateName);
+	public PIItemsEventFrame getEventFrames(String webId, Boolean canBeAcknowledged, String categoryName, String endTime, Boolean isAcknowledged, Integer maxCount, String nameFilter, String referencedElementNameFilter, String referencedElementTemplateName, Boolean searchFullHierarchy, String searchMode, String selectedFields, List<String> severity, String sortField, String sortOrder, Integer startIndex, String startTime, String templateName, String webIdType) throws ApiException {
+		ApiResponse<PIItemsEventFrame> resp = getEventFramesWithHttpInfo(webId, canBeAcknowledged, categoryName, endTime, isAcknowledged, maxCount, nameFilter, referencedElementNameFilter, referencedElementTemplateName, searchFullHierarchy, searchMode, selectedFields, severity, sortField, sortOrder, startIndex, startTime, templateName, webIdType);
 		return resp.getData();
 	}
 
 	/**
-	 * Retrieve event frames based on the specified conditions. By default, returns all children of the specified root event frame with a start time in the past 8 hours. (with HTTP information)
+	 * Retrieve event frames based on the specified conditions. By default, returns all children of the specified root event frame that have been active in the past 8 hours. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsEventFrame> getEventFramesWithHttpInfo(String webId, Boolean canBeAcknowledged, String categoryName, String endTime, Boolean isAcknowledged, Integer maxCount, String nameFilter, String referencedElementNameFilter, String referencedElementTemplateName, Boolean searchFullHierarchy, String searchMode, String selectedFields, List<String> severity, String sortField, String sortOrder, Integer startIndex, String startTime, String templateName) throws ApiException {
-		okhttp3.Call call = getEventFramesCall(webId, canBeAcknowledged, categoryName, endTime, isAcknowledged, maxCount, nameFilter, referencedElementNameFilter, referencedElementTemplateName, searchFullHierarchy, searchMode, selectedFields, severity, sortField, sortOrder, startIndex, startTime, templateName,null,null);
+	public ApiResponse<PIItemsEventFrame> getEventFramesWithHttpInfo(String webId, Boolean canBeAcknowledged, String categoryName, String endTime, Boolean isAcknowledged, Integer maxCount, String nameFilter, String referencedElementNameFilter, String referencedElementTemplateName, Boolean searchFullHierarchy, String searchMode, String selectedFields, List<String> severity, String sortField, String sortOrder, Integer startIndex, String startTime, String templateName, String webIdType) throws ApiException {
+		okhttp3.Call call = getEventFramesCall(webId, canBeAcknowledged, categoryName, endTime, isAcknowledged, maxCount, nameFilter, referencedElementNameFilter, referencedElementTemplateName, searchFullHierarchy, searchMode, selectedFields, severity, sortField, sortOrder, startIndex, startTime, templateName, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsEventFrame>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
 
 	/**
-	 * Retrieve event frames based on the specified conditions. By default, returns all children of the specified root event frame with a start time in the past 8 hours. (asynchronously)
+	 * Retrieve event frames based on the specified conditions. By default, returns all children of the specified root event frame that have been active in the past 8 hours. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getEventFramesAsync(String webId, Boolean canBeAcknowledged, String categoryName, String endTime, Boolean isAcknowledged, Integer maxCount, String nameFilter, String referencedElementNameFilter, String referencedElementTemplateName, Boolean searchFullHierarchy, String searchMode, String selectedFields, List<String> severity, String sortField, String sortOrder, Integer startIndex, String startTime, String templateName, final ApiCallback<PIItemsEventFrame> callback) throws ApiException {
+	public okhttp3.Call getEventFramesAsync(String webId, Boolean canBeAcknowledged, String categoryName, String endTime, Boolean isAcknowledged, Integer maxCount, String nameFilter, String referencedElementNameFilter, String referencedElementTemplateName, Boolean searchFullHierarchy, String searchMode, String selectedFields, List<String> severity, String sortField, String sortOrder, Integer startIndex, String startTime, String templateName, String webIdType, final ApiCallback<PIItemsEventFrame> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -1545,12 +1563,12 @@ public class EventFrameApi {
 				}
 			};
 		}
-		okhttp3.Call call = getEventFramesCall(webId, canBeAcknowledged, categoryName, endTime, isAcknowledged, maxCount, nameFilter, referencedElementNameFilter, referencedElementTemplateName, searchFullHierarchy, searchMode, selectedFields, severity, sortField, sortOrder, startIndex, startTime, templateName, progressListener, progressRequestListener);
+		okhttp3.Call call = getEventFramesCall(webId, canBeAcknowledged, categoryName, endTime, isAcknowledged, maxCount, nameFilter, referencedElementNameFilter, referencedElementTemplateName, searchFullHierarchy, searchMode, selectedFields, severity, sortField, sortOrder, startIndex, startTime, templateName, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getEventFramesCall(String webId, Boolean canBeAcknowledged, String categoryName, String endTime, Boolean isAcknowledged, Integer maxCount, String nameFilter, String referencedElementNameFilter, String referencedElementTemplateName, Boolean searchFullHierarchy, String searchMode, String selectedFields, List<String> severity, String sortField, String sortOrder, Integer startIndex, String startTime, String templateName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getEventFramesCall(String webId, Boolean canBeAcknowledged, String categoryName, String endTime, Boolean isAcknowledged, Integer maxCount, String nameFilter, String referencedElementNameFilter, String referencedElementTemplateName, Boolean searchFullHierarchy, String searchMode, String selectedFields, List<String> severity, String sortField, String sortOrder, Integer startIndex, String startTime, String templateName, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -1606,6 +1624,8 @@ public class EventFrameApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "startTime", startTime));
 		if (templateName != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "templateName", templateName));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -1626,16 +1646,16 @@ public class EventFrameApi {
 	 * Create an event frame as a child of the specified event frame. 
 	 *
 	 */
-	public void createEventFrame(String webId, PIEventFrame eventFrame) throws ApiException {
-		createEventFrameWithHttpInfo(webId, eventFrame);
+	public void createEventFrame(String webId, PIEventFrame eventFrame, String webIdType) throws ApiException {
+		createEventFrameWithHttpInfo(webId, eventFrame, webIdType);
 	}
 
 	/**
 	 * Create an event frame as a child of the specified event frame. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<Void> createEventFrameWithHttpInfo(String webId, PIEventFrame eventFrame) throws ApiException {
-		okhttp3.Call call = createEventFrameCall(webId, eventFrame,null,null);
+	public ApiResponse<Void> createEventFrameWithHttpInfo(String webId, PIEventFrame eventFrame, String webIdType) throws ApiException {
+		okhttp3.Call call = createEventFrameCall(webId, eventFrame, webIdType,null,null);
 		return apiClient.execute(call);
 	}
 
@@ -1643,7 +1663,7 @@ public class EventFrameApi {
 	 * Create an event frame as a child of the specified event frame. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call createEventFrameAsync(String webId, PIEventFrame eventFrame, final ApiCallback<Void> callback) throws ApiException {
+	public okhttp3.Call createEventFrameAsync(String webId, PIEventFrame eventFrame, String webIdType, final ApiCallback<Void> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -1663,12 +1683,12 @@ public class EventFrameApi {
 				}
 			};
 		}
-		okhttp3.Call call = createEventFrameCall(webId, eventFrame, progressListener, progressRequestListener);
+		okhttp3.Call call = createEventFrameCall(webId, eventFrame, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call createEventFrameCall(String webId, PIEventFrame eventFrame, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call createEventFrameCall(String webId, PIEventFrame eventFrame, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -1694,6 +1714,8 @@ public class EventFrameApi {
 
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		localVarPostBody =  eventFrame;
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -1714,8 +1736,8 @@ public class EventFrameApi {
 	 * Retrieve the event frame's referenced elements. 
 	 *
 	 */
-	public PIItemsElement getReferencedElements(String webId, String selectedFields) throws ApiException {
-		ApiResponse<PIItemsElement> resp = getReferencedElementsWithHttpInfo(webId, selectedFields);
+	public PIItemsElement getReferencedElements(String webId, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIItemsElement> resp = getReferencedElementsWithHttpInfo(webId, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -1723,8 +1745,8 @@ public class EventFrameApi {
 	 * Retrieve the event frame's referenced elements. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsElement> getReferencedElementsWithHttpInfo(String webId, String selectedFields) throws ApiException {
-		okhttp3.Call call = getReferencedElementsCall(webId, selectedFields,null,null);
+	public ApiResponse<PIItemsElement> getReferencedElementsWithHttpInfo(String webId, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getReferencedElementsCall(webId, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsElement>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -1733,7 +1755,7 @@ public class EventFrameApi {
 	 * Retrieve the event frame's referenced elements. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getReferencedElementsAsync(String webId, String selectedFields, final ApiCallback<PIItemsElement> callback) throws ApiException {
+	public okhttp3.Call getReferencedElementsAsync(String webId, String selectedFields, String webIdType, final ApiCallback<PIItemsElement> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -1753,12 +1775,12 @@ public class EventFrameApi {
 				}
 			};
 		}
-		okhttp3.Call call = getReferencedElementsCall(webId, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getReferencedElementsCall(webId, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getReferencedElementsCall(String webId, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getReferencedElementsCall(String webId, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -1782,6 +1804,8 @@ public class EventFrameApi {
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -1802,8 +1826,8 @@ public class EventFrameApi {
 	 * Get the security information of the specified security item associated with the event frame for a specified user. 
 	 *
 	 */
-	public PIItemsSecurityRights getSecurity(String webId, List<String> userIdentity, Boolean forceRefresh, String selectedFields) throws ApiException {
-		ApiResponse<PIItemsSecurityRights> resp = getSecurityWithHttpInfo(webId, userIdentity, forceRefresh, selectedFields);
+	public PIItemsSecurityRights getSecurity(String webId, List<String> userIdentity, Boolean forceRefresh, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIItemsSecurityRights> resp = getSecurityWithHttpInfo(webId, userIdentity, forceRefresh, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -1811,8 +1835,8 @@ public class EventFrameApi {
 	 * Get the security information of the specified security item associated with the event frame for a specified user. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsSecurityRights> getSecurityWithHttpInfo(String webId, List<String> userIdentity, Boolean forceRefresh, String selectedFields) throws ApiException {
-		okhttp3.Call call = getSecurityCall(webId, userIdentity, forceRefresh, selectedFields,null,null);
+	public ApiResponse<PIItemsSecurityRights> getSecurityWithHttpInfo(String webId, List<String> userIdentity, Boolean forceRefresh, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getSecurityCall(webId, userIdentity, forceRefresh, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsSecurityRights>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -1821,7 +1845,7 @@ public class EventFrameApi {
 	 * Get the security information of the specified security item associated with the event frame for a specified user. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getSecurityAsync(String webId, List<String> userIdentity, Boolean forceRefresh, String selectedFields, final ApiCallback<PIItemsSecurityRights> callback) throws ApiException {
+	public okhttp3.Call getSecurityAsync(String webId, List<String> userIdentity, Boolean forceRefresh, String selectedFields, String webIdType, final ApiCallback<PIItemsSecurityRights> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -1841,12 +1865,12 @@ public class EventFrameApi {
 				}
 			};
 		}
-		okhttp3.Call call = getSecurityCall(webId, userIdentity, forceRefresh, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getSecurityCall(webId, userIdentity, forceRefresh, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getSecurityCall(String webId, List<String> userIdentity, Boolean forceRefresh, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getSecurityCall(String webId, List<String> userIdentity, Boolean forceRefresh, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -1877,6 +1901,8 @@ public class EventFrameApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "forceRefresh", forceRefresh));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -1897,8 +1923,8 @@ public class EventFrameApi {
 	 * Retrieve the security entries associated with the event frame based on the specified criteria. By default, all security entries for this event frame are returned. 
 	 *
 	 */
-	public PIItemsSecurityEntry getSecurityEntries(String webId, String nameFilter, String selectedFields) throws ApiException {
-		ApiResponse<PIItemsSecurityEntry> resp = getSecurityEntriesWithHttpInfo(webId, nameFilter, selectedFields);
+	public PIItemsSecurityEntry getSecurityEntries(String webId, String nameFilter, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIItemsSecurityEntry> resp = getSecurityEntriesWithHttpInfo(webId, nameFilter, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -1906,8 +1932,8 @@ public class EventFrameApi {
 	 * Retrieve the security entries associated with the event frame based on the specified criteria. By default, all security entries for this event frame are returned. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsSecurityEntry> getSecurityEntriesWithHttpInfo(String webId, String nameFilter, String selectedFields) throws ApiException {
-		okhttp3.Call call = getSecurityEntriesCall(webId, nameFilter, selectedFields,null,null);
+	public ApiResponse<PIItemsSecurityEntry> getSecurityEntriesWithHttpInfo(String webId, String nameFilter, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getSecurityEntriesCall(webId, nameFilter, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsSecurityEntry>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -1916,7 +1942,7 @@ public class EventFrameApi {
 	 * Retrieve the security entries associated with the event frame based on the specified criteria. By default, all security entries for this event frame are returned. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getSecurityEntriesAsync(String webId, String nameFilter, String selectedFields, final ApiCallback<PIItemsSecurityEntry> callback) throws ApiException {
+	public okhttp3.Call getSecurityEntriesAsync(String webId, String nameFilter, String selectedFields, String webIdType, final ApiCallback<PIItemsSecurityEntry> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -1936,12 +1962,12 @@ public class EventFrameApi {
 				}
 			};
 		}
-		okhttp3.Call call = getSecurityEntriesCall(webId, nameFilter, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getSecurityEntriesCall(webId, nameFilter, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getSecurityEntriesCall(String webId, String nameFilter, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getSecurityEntriesCall(String webId, String nameFilter, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -1967,6 +1993,8 @@ public class EventFrameApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "nameFilter", nameFilter));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -1987,16 +2015,16 @@ public class EventFrameApi {
 	 * Create a security entry owned by the event frame. 
 	 *
 	 */
-	public void createSecurityEntry(String webId, PISecurityEntry securityEntry, Boolean applyToChildren) throws ApiException {
-		createSecurityEntryWithHttpInfo(webId, securityEntry, applyToChildren);
+	public void createSecurityEntry(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, String webIdType) throws ApiException {
+		createSecurityEntryWithHttpInfo(webId, securityEntry, applyToChildren, webIdType);
 	}
 
 	/**
 	 * Create a security entry owned by the event frame. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<Void> createSecurityEntryWithHttpInfo(String webId, PISecurityEntry securityEntry, Boolean applyToChildren) throws ApiException {
-		okhttp3.Call call = createSecurityEntryCall(webId, securityEntry, applyToChildren,null,null);
+	public ApiResponse<Void> createSecurityEntryWithHttpInfo(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, String webIdType) throws ApiException {
+		okhttp3.Call call = createSecurityEntryCall(webId, securityEntry, applyToChildren, webIdType,null,null);
 		return apiClient.execute(call);
 	}
 
@@ -2004,7 +2032,7 @@ public class EventFrameApi {
 	 * Create a security entry owned by the event frame. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call createSecurityEntryAsync(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, final ApiCallback<Void> callback) throws ApiException {
+	public okhttp3.Call createSecurityEntryAsync(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, String webIdType, final ApiCallback<Void> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -2024,12 +2052,12 @@ public class EventFrameApi {
 				}
 			};
 		}
-		okhttp3.Call call = createSecurityEntryCall(webId, securityEntry, applyToChildren, progressListener, progressRequestListener);
+		okhttp3.Call call = createSecurityEntryCall(webId, securityEntry, applyToChildren, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call createSecurityEntryCall(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call createSecurityEntryCall(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -2057,6 +2085,8 @@ public class EventFrameApi {
 		localVarPostBody =  securityEntry;
 		if (applyToChildren != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "applyToChildren", applyToChildren));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -2077,8 +2107,8 @@ public class EventFrameApi {
 	 * Retrieve the security entry associated with the event frame with the specified name. 
 	 *
 	 */
-	public PISecurityEntry getSecurityEntryByName(String name, String webId, String selectedFields) throws ApiException {
-		ApiResponse<PISecurityEntry> resp = getSecurityEntryByNameWithHttpInfo(name, webId, selectedFields);
+	public PISecurityEntry getSecurityEntryByName(String name, String webId, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PISecurityEntry> resp = getSecurityEntryByNameWithHttpInfo(name, webId, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -2086,8 +2116,8 @@ public class EventFrameApi {
 	 * Retrieve the security entry associated with the event frame with the specified name. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PISecurityEntry> getSecurityEntryByNameWithHttpInfo(String name, String webId, String selectedFields) throws ApiException {
-		okhttp3.Call call = getSecurityEntryByNameCall(name, webId, selectedFields,null,null);
+	public ApiResponse<PISecurityEntry> getSecurityEntryByNameWithHttpInfo(String name, String webId, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getSecurityEntryByNameCall(name, webId, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PISecurityEntry>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -2096,7 +2126,7 @@ public class EventFrameApi {
 	 * Retrieve the security entry associated with the event frame with the specified name. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getSecurityEntryByNameAsync(String name, String webId, String selectedFields, final ApiCallback<PISecurityEntry> callback) throws ApiException {
+	public okhttp3.Call getSecurityEntryByNameAsync(String name, String webId, String selectedFields, String webIdType, final ApiCallback<PISecurityEntry> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -2116,12 +2146,12 @@ public class EventFrameApi {
 				}
 			};
 		}
-		okhttp3.Call call = getSecurityEntryByNameCall(name, webId, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getSecurityEntryByNameCall(name, webId, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getSecurityEntryByNameCall(String name, String webId, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getSecurityEntryByNameCall(String name, String webId, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'name' is set
 		if (name == null)
@@ -2149,6 +2179,8 @@ public class EventFrameApi {
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -2353,8 +2385,8 @@ public class EventFrameApi {
 	 * Retrieve multiple event frames by web ids or paths. 
 	 *
 	 */
-	public PIItemsItemEventFrame getMultiple(Boolean asParallel, String includeMode, List<String> path, String selectedFields, List<String> webId) throws ApiException {
-		ApiResponse<PIItemsItemEventFrame> resp = getMultipleWithHttpInfo(asParallel, includeMode, path, selectedFields, webId);
+	public PIItemsItemEventFrame getMultiple(Boolean asParallel, String includeMode, List<String> path, String selectedFields, List<String> webId, String webIdType) throws ApiException {
+		ApiResponse<PIItemsItemEventFrame> resp = getMultipleWithHttpInfo(asParallel, includeMode, path, selectedFields, webId, webIdType);
 		return resp.getData();
 	}
 
@@ -2362,8 +2394,8 @@ public class EventFrameApi {
 	 * Retrieve multiple event frames by web ids or paths. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsItemEventFrame> getMultipleWithHttpInfo(Boolean asParallel, String includeMode, List<String> path, String selectedFields, List<String> webId) throws ApiException {
-		okhttp3.Call call = getMultipleCall(asParallel, includeMode, path, selectedFields, webId,null,null);
+	public ApiResponse<PIItemsItemEventFrame> getMultipleWithHttpInfo(Boolean asParallel, String includeMode, List<String> path, String selectedFields, List<String> webId, String webIdType) throws ApiException {
+		okhttp3.Call call = getMultipleCall(asParallel, includeMode, path, selectedFields, webId, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsItemEventFrame>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -2372,7 +2404,7 @@ public class EventFrameApi {
 	 * Retrieve multiple event frames by web ids or paths. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getMultipleAsync(Boolean asParallel, String includeMode, List<String> path, String selectedFields, List<String> webId, final ApiCallback<PIItemsItemEventFrame> callback) throws ApiException {
+	public okhttp3.Call getMultipleAsync(Boolean asParallel, String includeMode, List<String> path, String selectedFields, List<String> webId, String webIdType, final ApiCallback<PIItemsItemEventFrame> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -2392,12 +2424,12 @@ public class EventFrameApi {
 				}
 			};
 		}
-		okhttp3.Call call = getMultipleCall(asParallel, includeMode, path, selectedFields, webId, progressListener, progressRequestListener);
+		okhttp3.Call call = getMultipleCall(asParallel, includeMode, path, selectedFields, webId, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getMultipleCall(Boolean asParallel, String includeMode, List<String> path, String selectedFields, List<String> webId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getMultipleCall(Boolean asParallel, String includeMode, List<String> path, String selectedFields, List<String> webId, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		String localVarPath = "/eventframes/multiple";
 		Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -2425,6 +2457,102 @@ public class EventFrameApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
 		if (webId != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webId", webId));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
+		if (progressListener != null)
+		{
+			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
+			@Override
+			public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+				okhttp3.Response originalResponse = chain.proceed(chain.request());
+				return originalResponse.newBuilder()
+				.body(new ProgressResponseBody(originalResponse.body(), progressListener))
+				.build();
+				}
+			});
+		}
+		String[] localVarAuthNames = new String[] {"Basic" };
+		return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+	}
+
+	/**
+	 * Retrieve event frames based on the specified conditions. Returns event frames using the specified search query string. 
+	 *
+	 */
+	public PIItemsEventFrame getEventFramesQuery(String databaseWebId, Integer maxCount, String query, String selectedFields, Integer startIndex, String webIdType) throws ApiException {
+		ApiResponse<PIItemsEventFrame> resp = getEventFramesQueryWithHttpInfo(databaseWebId, maxCount, query, selectedFields, startIndex, webIdType);
+		return resp.getData();
+	}
+
+	/**
+	 * Retrieve event frames based on the specified conditions. Returns event frames using the specified search query string. (with HTTP information)
+	 *
+	 */
+	public ApiResponse<PIItemsEventFrame> getEventFramesQueryWithHttpInfo(String databaseWebId, Integer maxCount, String query, String selectedFields, Integer startIndex, String webIdType) throws ApiException {
+		okhttp3.Call call = getEventFramesQueryCall(databaseWebId, maxCount, query, selectedFields, startIndex, webIdType,null,null);
+		Type localVarReturnType = new TypeToken<PIItemsEventFrame>(){}.getType();
+		return apiClient.execute(call, localVarReturnType);
+	}
+
+	/**
+	 * Retrieve event frames based on the specified conditions. Returns event frames using the specified search query string. (asynchronously)
+	 *
+	 */
+	public okhttp3.Call getEventFramesQueryAsync(String databaseWebId, Integer maxCount, String query, String selectedFields, Integer startIndex, String webIdType, final ApiCallback<PIItemsEventFrame> callback) throws ApiException {
+		ProgressResponseBody.ProgressListener progressListener = null;
+		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+		if (callback != null)
+		{
+			progressListener = new ProgressResponseBody.ProgressListener() {
+				@Override
+				public void update(long bytesRead, long contentLength, boolean done)
+				{
+					callback.onDownloadProgress(bytesRead, contentLength, done);
+				}
+			};
+			progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+				@Override
+				public void onRequestProgress(long bytesWritten, long contentLength, boolean done)
+				{
+					callback.onUploadProgress(bytesWritten, contentLength, done);
+				}
+			};
+		}
+		okhttp3.Call call = getEventFramesQueryCall(databaseWebId, maxCount, query, selectedFields, startIndex, webIdType, progressListener, progressRequestListener);
+		apiClient.executeAsync(call, callback);
+		return call;
+	}
+
+	private okhttp3.Call getEventFramesQueryCall(String databaseWebId, Integer maxCount, String query, String selectedFields, Integer startIndex, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+		Object localVarPostBody =  null;
+		String localVarPath = "/eventframes/search";
+		Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+		Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+		List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+		final String[] localVarAccepts = {"application/json", "text/json", "text/html", "application/x-ms-application"};
+
+		final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+		if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+		final String[] localVarContentTypes = {"application/json", "text/json" };
+
+		final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+		localVarHeaderParams.put("Content-Type", localVarContentType);
+
+		if (databaseWebId != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "databaseWebId", databaseWebId));
+		if (maxCount != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "maxCount", maxCount));
+		if (query != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "query", query));
+		if (selectedFields != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (startIndex != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "startIndex", startIndex));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -2445,24 +2573,26 @@ public class EventFrameApi {
 	 * Create a link for a "Search EventFrames By Attribute Value" operation, whose queries are specified in the request content. The SearchRoot is specified by the Web Id of the root EventFrame. If the SearchRoot is not specified, then the search starts at the Asset Database. ElementTemplate must be provided as the Web ID of the ElementTemplate, which are used to create the EventFrames. All the attributes in the queries must be defined as AttributeTemplates on the ElementTemplate. An array of attribute value queries are ANDed together to find the desired Element objects. At least one value query must be specified. There are limitations on SearchOperators. 
 	 *
 	 */
-	public void createSearchByAttribute(PISearchByAttributeEventFrame search) throws ApiException {
-		createSearchByAttributeWithHttpInfo(search);
+	public PIItemsEventFrame createSearchByAttribute(PISearchByAttribute query, Boolean noResults, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIItemsEventFrame> resp = createSearchByAttributeWithHttpInfo(query, noResults, selectedFields, webIdType);
+		return resp.getData();
 	}
 
 	/**
 	 * Create a link for a "Search EventFrames By Attribute Value" operation, whose queries are specified in the request content. The SearchRoot is specified by the Web Id of the root EventFrame. If the SearchRoot is not specified, then the search starts at the Asset Database. ElementTemplate must be provided as the Web ID of the ElementTemplate, which are used to create the EventFrames. All the attributes in the queries must be defined as AttributeTemplates on the ElementTemplate. An array of attribute value queries are ANDed together to find the desired Element objects. At least one value query must be specified. There are limitations on SearchOperators. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<Void> createSearchByAttributeWithHttpInfo(PISearchByAttributeEventFrame search) throws ApiException {
-		okhttp3.Call call = createSearchByAttributeCall(search,null,null);
-		return apiClient.execute(call);
+	public ApiResponse<PIItemsEventFrame> createSearchByAttributeWithHttpInfo(PISearchByAttribute query, Boolean noResults, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = createSearchByAttributeCall(query, noResults, selectedFields, webIdType,null,null);
+		Type localVarReturnType = new TypeToken<PIItemsEventFrame>(){}.getType();
+		return apiClient.execute(call, localVarReturnType);
 	}
 
 	/**
 	 * Create a link for a "Search EventFrames By Attribute Value" operation, whose queries are specified in the request content. The SearchRoot is specified by the Web Id of the root EventFrame. If the SearchRoot is not specified, then the search starts at the Asset Database. ElementTemplate must be provided as the Web ID of the ElementTemplate, which are used to create the EventFrames. All the attributes in the queries must be defined as AttributeTemplates on the ElementTemplate. An array of attribute value queries are ANDed together to find the desired Element objects. At least one value query must be specified. There are limitations on SearchOperators. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call createSearchByAttributeAsync(PISearchByAttributeEventFrame search, final ApiCallback<Void> callback) throws ApiException {
+	public okhttp3.Call createSearchByAttributeAsync(PISearchByAttribute query, Boolean noResults, String selectedFields, String webIdType, final ApiCallback<PIItemsEventFrame> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -2482,16 +2612,16 @@ public class EventFrameApi {
 				}
 			};
 		}
-		okhttp3.Call call = createSearchByAttributeCall(search, progressListener, progressRequestListener);
+		okhttp3.Call call = createSearchByAttributeCall(query, noResults, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call createSearchByAttributeCall(PISearchByAttributeEventFrame search, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call createSearchByAttributeCall(PISearchByAttribute query, Boolean noResults, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
-		// verify the required parameter 'search' is set
-		if (search == null)
-			throw new ApiException("Missing required parameter 'search'");
+		// verify the required parameter 'query' is set
+		if (query == null)
+			throw new ApiException("Missing required parameter 'query'");
 		String localVarPath = "/eventframes/searchbyattribute";
 		Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 		Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -2508,7 +2638,13 @@ public class EventFrameApi {
 		final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 		localVarHeaderParams.put("Content-Type", localVarContentType);
 
-		localVarPostBody =  search;
+		localVarPostBody =  query;
+		if (noResults != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "noResults", noResults));
+		if (selectedFields != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -2529,24 +2665,26 @@ public class EventFrameApi {
 	 * Execute a "Search EventFrames By Attribute Value" operation. 
 	 *
 	 */
-	public void executeSearchByAttribute(String searchId, Boolean canBeAcknowledged, String endTime, Boolean isAcknowledged, Integer maxCount, String nameFilter, String referencedElementNameFilter, Boolean searchFullHierarchy, String searchMode, String selectedFields, List<String> severity, String sortField, String sortOrder, Integer startIndex, String startTime) throws ApiException {
-		executeSearchByAttributeWithHttpInfo(searchId, canBeAcknowledged, endTime, isAcknowledged, maxCount, nameFilter, referencedElementNameFilter, searchFullHierarchy, searchMode, selectedFields, severity, sortField, sortOrder, startIndex, startTime);
+	public PIItemsEventFrame executeSearchByAttribute(String searchId, Boolean canBeAcknowledged, String endTime, Boolean isAcknowledged, Integer maxCount, String nameFilter, String referencedElementNameFilter, Boolean searchFullHierarchy, String searchMode, String selectedFields, List<String> severity, String sortField, String sortOrder, Integer startIndex, String startTime, String webIdType) throws ApiException {
+		ApiResponse<PIItemsEventFrame> resp = executeSearchByAttributeWithHttpInfo(searchId, canBeAcknowledged, endTime, isAcknowledged, maxCount, nameFilter, referencedElementNameFilter, searchFullHierarchy, searchMode, selectedFields, severity, sortField, sortOrder, startIndex, startTime, webIdType);
+		return resp.getData();
 	}
 
 	/**
 	 * Execute a "Search EventFrames By Attribute Value" operation. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<Void> executeSearchByAttributeWithHttpInfo(String searchId, Boolean canBeAcknowledged, String endTime, Boolean isAcknowledged, Integer maxCount, String nameFilter, String referencedElementNameFilter, Boolean searchFullHierarchy, String searchMode, String selectedFields, List<String> severity, String sortField, String sortOrder, Integer startIndex, String startTime) throws ApiException {
-		okhttp3.Call call = executeSearchByAttributeCall(searchId, canBeAcknowledged, endTime, isAcknowledged, maxCount, nameFilter, referencedElementNameFilter, searchFullHierarchy, searchMode, selectedFields, severity, sortField, sortOrder, startIndex, startTime,null,null);
-		return apiClient.execute(call);
+	public ApiResponse<PIItemsEventFrame> executeSearchByAttributeWithHttpInfo(String searchId, Boolean canBeAcknowledged, String endTime, Boolean isAcknowledged, Integer maxCount, String nameFilter, String referencedElementNameFilter, Boolean searchFullHierarchy, String searchMode, String selectedFields, List<String> severity, String sortField, String sortOrder, Integer startIndex, String startTime, String webIdType) throws ApiException {
+		okhttp3.Call call = executeSearchByAttributeCall(searchId, canBeAcknowledged, endTime, isAcknowledged, maxCount, nameFilter, referencedElementNameFilter, searchFullHierarchy, searchMode, selectedFields, severity, sortField, sortOrder, startIndex, startTime, webIdType,null,null);
+		Type localVarReturnType = new TypeToken<PIItemsEventFrame>(){}.getType();
+		return apiClient.execute(call, localVarReturnType);
 	}
 
 	/**
 	 * Execute a "Search EventFrames By Attribute Value" operation. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call executeSearchByAttributeAsync(String searchId, Boolean canBeAcknowledged, String endTime, Boolean isAcknowledged, Integer maxCount, String nameFilter, String referencedElementNameFilter, Boolean searchFullHierarchy, String searchMode, String selectedFields, List<String> severity, String sortField, String sortOrder, Integer startIndex, String startTime, final ApiCallback<Void> callback) throws ApiException {
+	public okhttp3.Call executeSearchByAttributeAsync(String searchId, Boolean canBeAcknowledged, String endTime, Boolean isAcknowledged, Integer maxCount, String nameFilter, String referencedElementNameFilter, Boolean searchFullHierarchy, String searchMode, String selectedFields, List<String> severity, String sortField, String sortOrder, Integer startIndex, String startTime, String webIdType, final ApiCallback<PIItemsEventFrame> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -2566,12 +2704,12 @@ public class EventFrameApi {
 				}
 			};
 		}
-		okhttp3.Call call = executeSearchByAttributeCall(searchId, canBeAcknowledged, endTime, isAcknowledged, maxCount, nameFilter, referencedElementNameFilter, searchFullHierarchy, searchMode, selectedFields, severity, sortField, sortOrder, startIndex, startTime, progressListener, progressRequestListener);
+		okhttp3.Call call = executeSearchByAttributeCall(searchId, canBeAcknowledged, endTime, isAcknowledged, maxCount, nameFilter, referencedElementNameFilter, searchFullHierarchy, searchMode, selectedFields, severity, sortField, sortOrder, startIndex, startTime, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call executeSearchByAttributeCall(String searchId, Boolean canBeAcknowledged, String endTime, Boolean isAcknowledged, Integer maxCount, String nameFilter, String referencedElementNameFilter, Boolean searchFullHierarchy, String searchMode, String selectedFields, List<String> severity, String sortField, String sortOrder, Integer startIndex, String startTime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call executeSearchByAttributeCall(String searchId, Boolean canBeAcknowledged, String endTime, Boolean isAcknowledged, Integer maxCount, String nameFilter, String referencedElementNameFilter, Boolean searchFullHierarchy, String searchMode, String selectedFields, List<String> severity, String sortField, String sortOrder, Integer startIndex, String startTime, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'searchId' is set
 		if (searchId == null)
@@ -2621,6 +2759,8 @@ public class EventFrameApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "startIndex", startIndex));
 		if (startTime != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "startTime", startTime));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {

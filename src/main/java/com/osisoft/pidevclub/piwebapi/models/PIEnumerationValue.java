@@ -1,6 +1,6 @@
 /*
  *
- * Copyright 2017 OSIsoft, LLC
+ * Copyright 2018 OSIsoft, LLC
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -44,8 +44,11 @@ public class PIEnumerationValue {
 	@SerializedName("Path")
 	private String path = null;
 
+	@SerializedName("Parent")
+	private String parent = null;
+
 	@SerializedName("Links")
-	private Map<String, String> links = null;
+	private PIEnumerationValueLinks links = null;
 
 	@SerializedName("SerializeWebId")
 	private Boolean serializeWebId = null;
@@ -61,6 +64,9 @@ public class PIEnumerationValue {
 
 	@SerializedName("SerializeLinks")
 	private Boolean serializeLinks = null;
+
+	@SerializedName("WebException")
+	private PIWebException webException = null;
 
 	public PIEnumerationValue() {
 	}
@@ -90,9 +96,13 @@ public class PIEnumerationValue {
 
 	public String getPath() { return this.path;}
 
-	public void setLinks(Map<String, String> links) { this.links = links;}
+	public void setParent(String parent) { this.parent = parent;}
 
-	public Map<String, String> getLinks() { return this.links;}
+	public String getParent() { return this.parent;}
+
+	public void setLinks(PIEnumerationValueLinks links) { this.links = links;}
+
+	public PIEnumerationValueLinks getLinks() { return this.links;}
 
 	public void setSerializeWebId(Boolean serializeWebId) { this.serializeWebId = serializeWebId;}
 
@@ -113,4 +123,8 @@ public class PIEnumerationValue {
 	public void setSerializeLinks(Boolean serializeLinks) { this.serializeLinks = serializeLinks;}
 
 	public Boolean getSerializeLinks() { return this.serializeLinks;}
+
+	public void setWebException(PIWebException webException) { this.webException = webException;}
+
+	public PIWebException getWebException() { return this.webException;}
 }

@@ -1,6 +1,6 @@
 /*
  *
- * Copyright 2017 OSIsoft, LLC
+ * Copyright 2018 OSIsoft, LLC
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -60,7 +60,10 @@ public class PIPoint {
 	private Boolean future = null;
 
 	@SerializedName("Links")
-	private Map<String, String> links = null;
+	private PIPointLinks links = null;
+
+	@SerializedName("WebException")
+	private PIWebException webException = null;
 
 	public PIPoint() {
 	}
@@ -110,7 +113,11 @@ public class PIPoint {
 
 	public Boolean getFuture() { return this.future;}
 
-	public void setLinks(Map<String, String> links) { this.links = links;}
+	public void setLinks(PIPointLinks links) { this.links = links;}
 
-	public Map<String, String> getLinks() { return this.links;}
+	public PIPointLinks getLinks() { return this.links;}
+
+	public void setWebException(PIWebException webException) { this.webException = webException;}
+
+	public PIWebException getWebException() { return this.webException;}
 }

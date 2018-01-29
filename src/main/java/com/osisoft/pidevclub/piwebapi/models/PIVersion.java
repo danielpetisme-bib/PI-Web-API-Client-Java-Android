@@ -1,6 +1,6 @@
 /*
  *
- * Copyright 2017 OSIsoft, LLC
+ * Copyright 2018 OSIsoft, LLC
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,6 +35,9 @@ public class PIVersion {
 	@SerializedName("Build")
 	private String build = null;
 
+	@SerializedName("WebException")
+	private PIWebException webException = null;
+
 	public PIVersion() {
 	}
 
@@ -50,4 +53,8 @@ public class PIVersion {
 	public void setBuild(String build) { this.build = build;}
 
 	public String getBuild() { return this.build;}
+
+	public void setWebException(PIWebException webException) { this.webException = webException;}
+
+	public PIWebException getWebException() { return this.webException;}
 }

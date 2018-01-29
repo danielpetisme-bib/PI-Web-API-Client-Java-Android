@@ -14,6 +14,7 @@ Name | Type | Notes
 **EngineeringUnits** | **String**
 **Step** | **Boolean**
 **Future** | **Boolean**
-**Links** | **Map<String, String>**
+**Links** | **[**PIPointLinks**](../models/PIPointLinks.md)**
+**WebException** | **[**PIWebException**](../models/PIWebException.md)**
 
 [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)

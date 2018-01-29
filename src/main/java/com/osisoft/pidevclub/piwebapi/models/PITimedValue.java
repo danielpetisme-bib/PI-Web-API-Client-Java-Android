@@ -1,6 +1,6 @@
 /*
  *
- * Copyright 2017 OSIsoft, LLC
+ * Copyright 2018 OSIsoft, LLC
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -44,8 +44,11 @@ public class PITimedValue {
 	@SerializedName("Value")
 	private Object value = null;
 
-	@SerializedName("Exception")
-	private PIErrors exception = null;
+	@SerializedName("Errors")
+	private List<PIPropertyError> errors = null;
+
+	@SerializedName("WebException")
+	private PIWebException webException = null;
 
 	public PITimedValue() {
 	}
@@ -75,7 +78,11 @@ public class PITimedValue {
 
 	public Object getValue() { return this.value;}
 
-	public void setException(PIErrors exception) { this.exception = exception;}
+	public void setErrors(List<PIPropertyError> errors) { this.errors = errors;}
 
-	public PIErrors getException() { return this.exception;}
+	public List<PIPropertyError> getErrors() { return this.errors;}
+
+	public void setWebException(PIWebException webException) { this.webException = webException;}
+
+	public PIWebException getWebException() { return this.webException;}
 }

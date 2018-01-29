@@ -141,7 +141,9 @@ public class ApiClient {
         this.lenientDatetimeFormat = true;
 
         // Set default User-Agent.
-        setUserAgent("PI-Web-API-Client/1.0.0/java");
+        setUserAgent("PI-Web-API-Client/1.1.0/java");
+
+        addDefaultHeader("X-Requested-With", "PIWebApiWrapper");
 
         // Setup authentications (key: authentication name, value: authentication).
         authentications = new HashMap<String, Authentication>();

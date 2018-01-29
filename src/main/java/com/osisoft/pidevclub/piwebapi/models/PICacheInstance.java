@@ -1,6 +1,6 @@
 /*
  *
- * Copyright 2017 OSIsoft, LLC
+ * Copyright 2018 OSIsoft, LLC
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,6 +41,9 @@ public class PICacheInstance {
 	@SerializedName("User")
 	private String user = null;
 
+	@SerializedName("WebException")
+	private PIWebException webException = null;
+
 	public PICacheInstance() {
 	}
 
@@ -64,4 +67,8 @@ public class PICacheInstance {
 	public void setUser(String user) { this.user = user;}
 
 	public String getUser() { return this.user;}
+
+	public void setWebException(PIWebException webException) { this.webException = webException;}
+
+	public PIWebException getWebException() { return this.webException;}
 }

@@ -14,17 +14,17 @@ import static junit.framework.TestCase.*;
 public class PIWebApiTests {
     private PIWebApiClient generatePIWebApiInstance()
     {
-        return  new PIWebApiClient("https://fqdn-valid-ssl/piwebapi", "username", "password", true, false);
+        return  new PIWebApiClient("https://devdata.osisoft.com/piwebapi", "webapiuser", "!try3.14webapi!", true, false);
     }
 
     @Test
     public void testDebug() throws Exception {
-        PIWebApiClient client = new PIWebApiClient("https://fqdn-valid-ssl/piwebapi", "username", "password", true, true);
+        PIWebApiClient client = new PIWebApiClient("https://devdata.osisoft.com/piwebapi/", "webapiuser", "!try3.14webapi!", true, true);
         HomeApi home = client.getHome();
         try {
 
             PILanding land = home.get();
-            assertEquals(land.getLinks().get("Self"), "https://fqdn-valid-ssl/piwebapi/");
+            assertEquals(land.getLinks().getSelf(), "https://devdata.osisoft.com/piwebapi/");
         } catch (ApiException ex) {
             throw new Exception(ex);
         }
@@ -32,7 +32,7 @@ public class PIWebApiTests {
 
     @Test
     public void testInvalidCertErrorApi() throws Exception {
-        PIWebApiClient client = new PIWebApiClient("https://fqdn-invalid-ssl/piwebapi/", "username", "password", true, false);
+        PIWebApiClient client = new PIWebApiClient("https://fqdn-invalid-ssl/piwebapi/", "webapiuser", "!try3.14webapi!", true, false);
         HomeApi home = client.getHome();
         try {
 
@@ -47,12 +47,12 @@ public class PIWebApiTests {
 
     @Test
     public void testSuccessInvalidCertApi() throws Exception {
-        PIWebApiClient client = new PIWebApiClient("https://fqdn-invalid-ssl/piwebapi/", "username", "password", false, false);
+        PIWebApiClient client = new PIWebApiClient("https://devdata.osisoft.com/piwebapi/", "webapiuser", "!try3.14webapi!", false, false);
         HomeApi home = client.getHome();
         try {
 
             PILanding land = home.get();
-            assertEquals(land.getLinks().get("Self"),"https://fqdn-invalid-ssl/piwebapi/");
+            assertEquals(land.getLinks().getSelf(),"https://devdata.osisoft.com/piwebapi/");
         }
         catch (ApiException ex)
         {
@@ -70,7 +70,7 @@ public class PIWebApiTests {
         try {
 
             PILanding land = home.get();
-            assertEquals(land.getLinks().get("Self"),"https://fqdn-valid-ssl/piwebapi/");
+            assertEquals(land.getLinks().getSelf(),"https://devdata.osisoft.com/piwebapi/");
         }
         catch (ApiException ex)
         {
@@ -83,8 +83,8 @@ public class PIWebApiTests {
         PIWebApiClient client = generatePIWebApiInstance();
         try {
 
-            PIDataServer dataServer = client.getDataServer().getByPath("\\\\SERVERNAME", null);
-            assertEquals(dataServer.getName(), "SERVERNAME");
+            PIDataServer dataServer = client.getDataServer().getByPath("\\\\PISRV1", null,null);
+            assertEquals(dataServer.getName(), "PISRV1");
         }
         catch (ApiException ex)
         {
@@ -97,7 +97,7 @@ public class PIWebApiTests {
 
         try {
 
-            PIPoint point = client.getPoint().getByPath("\\\\SERVERNAME\\sinusoid", null);
+            PIPoint point = client.getPoint().getByPath("\\\\PISRV1\\sinusoid", null,null);
             assertEquals(point.getName(), "SINUSOID");
         }
         catch (ApiException ex)
@@ -111,9 +111,9 @@ public class PIWebApiTests {
         PIWebApiClient client = generatePIWebApiInstance();
         try {
 
-            PIPoint point1 = client.getPoint().getByPath("\\\\SERVERNAME\\sinusoid", null);
-            PIPoint point2 = client.getPoint().getByPath("\\\\SERVERNAME\\sinusoidu", null);
-            PIPoint point3 = client.getPoint().getByPath("\\\\SERVERNAME\\cdt158", null);
+            PIPoint point1 = client.getPoint().getByPath("\\\\PISRV1\\sinusoid", null,null);
+            PIPoint point2 = client.getPoint().getByPath("\\\\PISRV1\\sinusoidu", null,null);
+            PIPoint point3 = client.getPoint().getByPath("\\\\PISRV1\\cdt158", null,null);
             List<String> webIds = new ArrayList<String>();
             webIds.add(point1.getWebId());
             webIds.add(point2.getWebId());
@@ -121,7 +121,7 @@ public class PIWebApiTests {
 
 
             //Get recorded values in bulk
-            PIItemsStreamValues piItemsStreamValues = client.getStreamSet().getRecordedAdHoc(webIds,null, "*", null, true, 1000, null, "*-3d",null);
+            PIItemsStreamValues piItemsStreamValues = client.getStreamSet().getRecordedAdHoc(webIds,null, "*", null, true, 1000, null, null, null,"*-3d",null, null);
             assertEquals(piItemsStreamValues.getItems().size(), 3);
         }
         catch (ApiException ex)
@@ -135,7 +135,7 @@ public class PIWebApiTests {
         PIWebApiClient client = generatePIWebApiInstance();
         try {
 
-            PIElement myElement = client.getElement().getByPath("\\\\SERVERNAME\\Element", null);
+            PIElement myElement = client.getElement().getByPath("\\\\PISRV1\\Element", null,null);
             assertEquals( myElement.getName(),"Electricity");
         }
         catch (ApiException ex)
@@ -148,9 +148,9 @@ public class PIWebApiTests {
         PIWebApiClient client = generatePIWebApiInstance();
         try {
 
-            PIElement myElement = client.getElement().getByPath("\\\\SERVERNAME\\Element", null);
+            PIElement myElement = client.getElement().getByPath("\\\\PISRV1\\Element", null,null);
 
-            PIItemsAttribute attributes = client.getElement().getAttributes(myElement.getWebId(), null, 1000, null, false, null, null,null,null,null,0,null,null);
+            PIItemsAttribute attributes = client.getElement().getAttributes(myElement.getWebId(), null, 1000, null, false, null, null,null,null,null,0,null,null, null);
             assertEquals ( attributes.getItems().size(),19);
 
         }
@@ -163,7 +163,7 @@ public class PIWebApiTests {
     public void testGetAttributeByPath() throws Exception {
         PIWebApiClient client = generatePIWebApiInstance();
         try {
-            PIAttribute myAttribute = client.getAttribute().getByPath("\\\\SERVERNAME\\Element|Attribute", null);
+            PIAttribute myAttribute = client.getAttribute().getByPath("\\\\PISRV1\\Element|Attribute", null,null);
             assertEquals( myAttribute.getName(),"Annual Cost");
         }
         catch (ApiException ex)
@@ -178,14 +178,14 @@ public class PIWebApiTests {
     public void testCreatePoint() throws Exception {
         PIWebApiClient client = generatePIWebApiInstance();
         try {
-            PIDataServer dataServer = client.getDataServer().getByPath("\\\\SERVERNAME", null);
+            PIDataServer dataServer = client.getDataServer().getByPath("\\\\PISRV1", null,null);
             PIPoint newPoint = new PIPoint();
             newPoint.setName("SINUSOID_TEST11");
             newPoint.setDescriptor("Test PI Point for Java PI Web API Client");
             newPoint.setPointClass("classic");
             newPoint.setPointType("float32");
             newPoint.setFuture(false);
-            ApiResponse<Void> res =  client.getDataServer().createPointWithHttpInfo(dataServer.getWebId(),newPoint);
+            ApiResponse<Void> res =  client.getDataServer().createPointWithHttpInfo(dataServer.getWebId(), newPoint, null);
             assertEquals(res.getStatusCode(), 201);
         }
         catch (ApiException ex)
@@ -201,9 +201,9 @@ public class PIWebApiTests {
     public void testSendValuesInBulk() throws Exception {
         PIWebApiClient client = generatePIWebApiInstance();
         try {
-            PIPoint point1 = client.getPoint().getByPath("\\\\SERVERNAME\\sinusoid",null);
-            PIPoint point2 = client.getPoint().getByPath("\\\\SERVERNAME\\sinusoidu",null);
-            PIPoint point3 = client.getPoint().getByPath("\\\\SERVERNAME\\cdt158",null);
+            PIPoint point1 = client.getPoint().getByPath("\\\\PISRV1\\sinusoid",null,null);
+            PIPoint point2 = client.getPoint().getByPath("\\\\PISRV1\\sinusoidu",null, null);
+            PIPoint point3 = client.getPoint().getByPath("\\\\PISRV1\\cdt158",null, null);
 
 
             PIItemsStreamValues streamValuesItems = new PIItemsStreamValues();

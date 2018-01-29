@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **getByPath**
-> getByPath(String path, String selectedFields)
+> getByPath(String path, String selectedFields, String webIdType)
 
 Retrieve an Analysis Rule by path.
 
@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 ------------- | ------------- | ------------- | -------------
  **path** | **String**| The path to the Analysis Rule.. | [required]
  **selectedFields** | **String**| List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.. | [optional]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -30,7 +31,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **get**
-> get(String webId, String selectedFields)
+> get(String webId, String selectedFields, String webIdType)
 
 Retrieve an Analysis Rule.
 
@@ -40,6 +41,7 @@ Name | Type | Description | Notes
 ------------- | ------------- | ------------- | -------------
  **webId** | **String**| The ID of the Analysis Rule.. | [required]
  **selectedFields** | **String**| List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.. | [optional]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -86,7 +88,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **getAnalysisRules**
-> getAnalysisRules(String webId, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex)
+> getAnalysisRules(String webId, Integer maxCount, String nameFilter, Boolean searchFullHierarchy, String selectedFields, String sortField, String sortOrder, Integer startIndex, String webIdType)
 
 Get the child Analysis Rules of the Analysis Rule.
 
@@ -102,6 +104,7 @@ Name | Type | Description | Notes
  **sortField** | **String**| The field or property of the object used to sort the returned collection. The default is 'Name'.. | [optional]
  **sortOrder** | **String**| The order that the returned collection is sorted. The default is 'Ascending'.. | [optional]
  **startIndex** | **Integer**| The starting index (zero based) of the items to be returned. The default is 0.. | [optional]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type
@@ -111,7 +114,7 @@ Name | Type | Description | Notes
 [[Back to top]](#) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
 
 # **createAnalysisRule**
-> createAnalysisRule(String webId, PIAnalysisRule analysisRule)
+> createAnalysisRule(String webId, PIAnalysisRule analysisRule, String webIdType)
 
 Create a new Analysis Rule as a child of an existing Analysis Rule.
 
@@ -121,6 +124,7 @@ Name | Type | Description | Notes
 ------------- | ------------- | ------------- | -------------
  **webId** | **String**| The ID of the parent Analysis Rule, on which to create the child Analysis Rule.. | [required]
  **analysisRule** | **PIAnalysisRule**| The definition of the new Analysis Rule.. | [required]
+ **webIdType** | **String**| Optional parameter. Used to specify the type of WebID. Useful for URL brevity and other special cases. Default is the value of the configuration item "WebIDType".. | [optional]
 
 
 ### Return type

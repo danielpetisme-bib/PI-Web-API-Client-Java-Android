@@ -1,6 +1,6 @@
 /*
  *
- * Copyright 2017 OSIsoft, LLC
+ * Copyright 2018 OSIsoft, LLC
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -32,6 +32,9 @@ public class PITableData {
 	@SerializedName("Rows")
 	private List<Map<String, Object>> rows = null;
 
+	@SerializedName("WebException")
+	private PIWebException webException = null;
+
 	public PITableData() {
 	}
 
@@ -43,4 +46,8 @@ public class PITableData {
 	public void setRows(List<Map<String, Object>> rows) { this.rows = rows;}
 
 	public List<Map<String, Object>> getRows() { return this.rows;}
+
+	public void setWebException(PIWebException webException) { this.webException = webException;}
+
+	public PIWebException getWebException() { return this.webException;}
 }

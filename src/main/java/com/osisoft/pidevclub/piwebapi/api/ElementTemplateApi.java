@@ -1,6 +1,6 @@
 /*
  *
- * Copyright 2017 OSIsoft, LLC
+ * Copyright 2018 OSIsoft, LLC
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,8 +47,8 @@ public class ElementTemplateApi {
 	 * Retrieve an element template by path. 
 	 *
 	 */
-	public PIElementTemplate getByPath(String path, String selectedFields) throws ApiException {
-		ApiResponse<PIElementTemplate> resp = getByPathWithHttpInfo(path, selectedFields);
+	public PIElementTemplate getByPath(String path, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIElementTemplate> resp = getByPathWithHttpInfo(path, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -56,8 +56,8 @@ public class ElementTemplateApi {
 	 * Retrieve an element template by path. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIElementTemplate> getByPathWithHttpInfo(String path, String selectedFields) throws ApiException {
-		okhttp3.Call call = getByPathCall(path, selectedFields,null,null);
+	public ApiResponse<PIElementTemplate> getByPathWithHttpInfo(String path, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getByPathCall(path, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIElementTemplate>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -66,7 +66,7 @@ public class ElementTemplateApi {
 	 * Retrieve an element template by path. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getByPathAsync(String path, String selectedFields, final ApiCallback<PIElementTemplate> callback) throws ApiException {
+	public okhttp3.Call getByPathAsync(String path, String selectedFields, String webIdType, final ApiCallback<PIElementTemplate> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -86,12 +86,12 @@ public class ElementTemplateApi {
 				}
 			};
 		}
-		okhttp3.Call call = getByPathCall(path, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getByPathCall(path, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getByPathCall(String path, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getByPathCall(String path, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'path' is set
 		if (path == null)
@@ -116,6 +116,8 @@ public class ElementTemplateApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "path", path));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -136,8 +138,8 @@ public class ElementTemplateApi {
 	 * Retrieve an element template. 
 	 *
 	 */
-	public PIElementTemplate get(String webId, String selectedFields) throws ApiException {
-		ApiResponse<PIElementTemplate> resp = getWithHttpInfo(webId, selectedFields);
+	public PIElementTemplate get(String webId, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIElementTemplate> resp = getWithHttpInfo(webId, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -145,8 +147,8 @@ public class ElementTemplateApi {
 	 * Retrieve an element template. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIElementTemplate> getWithHttpInfo(String webId, String selectedFields) throws ApiException {
-		okhttp3.Call call = getCall(webId, selectedFields,null,null);
+	public ApiResponse<PIElementTemplate> getWithHttpInfo(String webId, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getCall(webId, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIElementTemplate>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -155,7 +157,7 @@ public class ElementTemplateApi {
 	 * Retrieve an element template. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getAsync(String webId, String selectedFields, final ApiCallback<PIElementTemplate> callback) throws ApiException {
+	public okhttp3.Call getAsync(String webId, String selectedFields, String webIdType, final ApiCallback<PIElementTemplate> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -175,12 +177,12 @@ public class ElementTemplateApi {
 				}
 			};
 		}
-		okhttp3.Call call = getCall(webId, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getCall(webId, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getCall(String webId, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getCall(String webId, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -204,6 +206,8 @@ public class ElementTemplateApi {
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -396,8 +400,8 @@ public class ElementTemplateApi {
 	 * Get analysis templates for an element template. 
 	 *
 	 */
-	public PIItemsAnalysisTemplate getAnalysisTemplates(String webId, String selectedFields) throws ApiException {
-		ApiResponse<PIItemsAnalysisTemplate> resp = getAnalysisTemplatesWithHttpInfo(webId, selectedFields);
+	public PIItemsAnalysisTemplate getAnalysisTemplates(String webId, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIItemsAnalysisTemplate> resp = getAnalysisTemplatesWithHttpInfo(webId, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -405,8 +409,8 @@ public class ElementTemplateApi {
 	 * Get analysis templates for an element template. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsAnalysisTemplate> getAnalysisTemplatesWithHttpInfo(String webId, String selectedFields) throws ApiException {
-		okhttp3.Call call = getAnalysisTemplatesCall(webId, selectedFields,null,null);
+	public ApiResponse<PIItemsAnalysisTemplate> getAnalysisTemplatesWithHttpInfo(String webId, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getAnalysisTemplatesCall(webId, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsAnalysisTemplate>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -415,7 +419,7 @@ public class ElementTemplateApi {
 	 * Get analysis templates for an element template. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getAnalysisTemplatesAsync(String webId, String selectedFields, final ApiCallback<PIItemsAnalysisTemplate> callback) throws ApiException {
+	public okhttp3.Call getAnalysisTemplatesAsync(String webId, String selectedFields, String webIdType, final ApiCallback<PIItemsAnalysisTemplate> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -435,12 +439,12 @@ public class ElementTemplateApi {
 				}
 			};
 		}
-		okhttp3.Call call = getAnalysisTemplatesCall(webId, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getAnalysisTemplatesCall(webId, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getAnalysisTemplatesCall(String webId, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getAnalysisTemplatesCall(String webId, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -464,6 +468,8 @@ public class ElementTemplateApi {
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -484,8 +490,8 @@ public class ElementTemplateApi {
 	 * Get child attribute templates for an element template. 
 	 *
 	 */
-	public PIItemsAttributeTemplate getAttributeTemplates(String webId, String selectedFields, Boolean showInherited) throws ApiException {
-		ApiResponse<PIItemsAttributeTemplate> resp = getAttributeTemplatesWithHttpInfo(webId, selectedFields, showInherited);
+	public PIItemsAttributeTemplate getAttributeTemplates(String webId, String selectedFields, Boolean showInherited, String webIdType) throws ApiException {
+		ApiResponse<PIItemsAttributeTemplate> resp = getAttributeTemplatesWithHttpInfo(webId, selectedFields, showInherited, webIdType);
 		return resp.getData();
 	}
 
@@ -493,8 +499,8 @@ public class ElementTemplateApi {
 	 * Get child attribute templates for an element template. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsAttributeTemplate> getAttributeTemplatesWithHttpInfo(String webId, String selectedFields, Boolean showInherited) throws ApiException {
-		okhttp3.Call call = getAttributeTemplatesCall(webId, selectedFields, showInherited,null,null);
+	public ApiResponse<PIItemsAttributeTemplate> getAttributeTemplatesWithHttpInfo(String webId, String selectedFields, Boolean showInherited, String webIdType) throws ApiException {
+		okhttp3.Call call = getAttributeTemplatesCall(webId, selectedFields, showInherited, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsAttributeTemplate>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -503,7 +509,7 @@ public class ElementTemplateApi {
 	 * Get child attribute templates for an element template. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getAttributeTemplatesAsync(String webId, String selectedFields, Boolean showInherited, final ApiCallback<PIItemsAttributeTemplate> callback) throws ApiException {
+	public okhttp3.Call getAttributeTemplatesAsync(String webId, String selectedFields, Boolean showInherited, String webIdType, final ApiCallback<PIItemsAttributeTemplate> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -523,12 +529,12 @@ public class ElementTemplateApi {
 				}
 			};
 		}
-		okhttp3.Call call = getAttributeTemplatesCall(webId, selectedFields, showInherited, progressListener, progressRequestListener);
+		okhttp3.Call call = getAttributeTemplatesCall(webId, selectedFields, showInherited, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getAttributeTemplatesCall(String webId, String selectedFields, Boolean showInherited, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getAttributeTemplatesCall(String webId, String selectedFields, Boolean showInherited, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -554,6 +560,8 @@ public class ElementTemplateApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
 		if (showInherited != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "showInherited", showInherited));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -574,16 +582,16 @@ public class ElementTemplateApi {
 	 * Create an attribute template. 
 	 *
 	 */
-	public void createAttributeTemplate(String webId, PIAttributeTemplate template) throws ApiException {
-		createAttributeTemplateWithHttpInfo(webId, template);
+	public void createAttributeTemplate(String webId, PIAttributeTemplate template, String webIdType) throws ApiException {
+		createAttributeTemplateWithHttpInfo(webId, template, webIdType);
 	}
 
 	/**
 	 * Create an attribute template. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<Void> createAttributeTemplateWithHttpInfo(String webId, PIAttributeTemplate template) throws ApiException {
-		okhttp3.Call call = createAttributeTemplateCall(webId, template,null,null);
+	public ApiResponse<Void> createAttributeTemplateWithHttpInfo(String webId, PIAttributeTemplate template, String webIdType) throws ApiException {
+		okhttp3.Call call = createAttributeTemplateCall(webId, template, webIdType,null,null);
 		return apiClient.execute(call);
 	}
 
@@ -591,7 +599,7 @@ public class ElementTemplateApi {
 	 * Create an attribute template. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call createAttributeTemplateAsync(String webId, PIAttributeTemplate template, final ApiCallback<Void> callback) throws ApiException {
+	public okhttp3.Call createAttributeTemplateAsync(String webId, PIAttributeTemplate template, String webIdType, final ApiCallback<Void> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -611,12 +619,12 @@ public class ElementTemplateApi {
 				}
 			};
 		}
-		okhttp3.Call call = createAttributeTemplateCall(webId, template, progressListener, progressRequestListener);
+		okhttp3.Call call = createAttributeTemplateCall(webId, template, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call createAttributeTemplateCall(String webId, PIAttributeTemplate template, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call createAttributeTemplateCall(String webId, PIAttributeTemplate template, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -642,6 +650,8 @@ public class ElementTemplateApi {
 
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		localVarPostBody =  template;
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -662,8 +672,8 @@ public class ElementTemplateApi {
 	 * Get an element template's categories. 
 	 *
 	 */
-	public PIItemsElementCategory getCategories(String webId, String selectedFields, Boolean showInherited) throws ApiException {
-		ApiResponse<PIItemsElementCategory> resp = getCategoriesWithHttpInfo(webId, selectedFields, showInherited);
+	public PIItemsElementCategory getCategories(String webId, String selectedFields, Boolean showInherited, String webIdType) throws ApiException {
+		ApiResponse<PIItemsElementCategory> resp = getCategoriesWithHttpInfo(webId, selectedFields, showInherited, webIdType);
 		return resp.getData();
 	}
 
@@ -671,8 +681,8 @@ public class ElementTemplateApi {
 	 * Get an element template's categories. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsElementCategory> getCategoriesWithHttpInfo(String webId, String selectedFields, Boolean showInherited) throws ApiException {
-		okhttp3.Call call = getCategoriesCall(webId, selectedFields, showInherited,null,null);
+	public ApiResponse<PIItemsElementCategory> getCategoriesWithHttpInfo(String webId, String selectedFields, Boolean showInherited, String webIdType) throws ApiException {
+		okhttp3.Call call = getCategoriesCall(webId, selectedFields, showInherited, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsElementCategory>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -681,7 +691,7 @@ public class ElementTemplateApi {
 	 * Get an element template's categories. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getCategoriesAsync(String webId, String selectedFields, Boolean showInherited, final ApiCallback<PIItemsElementCategory> callback) throws ApiException {
+	public okhttp3.Call getCategoriesAsync(String webId, String selectedFields, Boolean showInherited, String webIdType, final ApiCallback<PIItemsElementCategory> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -701,12 +711,12 @@ public class ElementTemplateApi {
 				}
 			};
 		}
-		okhttp3.Call call = getCategoriesCall(webId, selectedFields, showInherited, progressListener, progressRequestListener);
+		okhttp3.Call call = getCategoriesCall(webId, selectedFields, showInherited, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getCategoriesCall(String webId, String selectedFields, Boolean showInherited, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getCategoriesCall(String webId, String selectedFields, Boolean showInherited, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -732,6 +742,8 @@ public class ElementTemplateApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
 		if (showInherited != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "showInherited", showInherited));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -752,8 +764,8 @@ public class ElementTemplateApi {
 	 * Get the security information of the specified security item associated with the element template for a specified user. 
 	 *
 	 */
-	public PIItemsSecurityRights getSecurity(String webId, List<String> userIdentity, Boolean forceRefresh, String selectedFields) throws ApiException {
-		ApiResponse<PIItemsSecurityRights> resp = getSecurityWithHttpInfo(webId, userIdentity, forceRefresh, selectedFields);
+	public PIItemsSecurityRights getSecurity(String webId, List<String> userIdentity, Boolean forceRefresh, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIItemsSecurityRights> resp = getSecurityWithHttpInfo(webId, userIdentity, forceRefresh, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -761,8 +773,8 @@ public class ElementTemplateApi {
 	 * Get the security information of the specified security item associated with the element template for a specified user. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsSecurityRights> getSecurityWithHttpInfo(String webId, List<String> userIdentity, Boolean forceRefresh, String selectedFields) throws ApiException {
-		okhttp3.Call call = getSecurityCall(webId, userIdentity, forceRefresh, selectedFields,null,null);
+	public ApiResponse<PIItemsSecurityRights> getSecurityWithHttpInfo(String webId, List<String> userIdentity, Boolean forceRefresh, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getSecurityCall(webId, userIdentity, forceRefresh, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsSecurityRights>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -771,7 +783,7 @@ public class ElementTemplateApi {
 	 * Get the security information of the specified security item associated with the element template for a specified user. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getSecurityAsync(String webId, List<String> userIdentity, Boolean forceRefresh, String selectedFields, final ApiCallback<PIItemsSecurityRights> callback) throws ApiException {
+	public okhttp3.Call getSecurityAsync(String webId, List<String> userIdentity, Boolean forceRefresh, String selectedFields, String webIdType, final ApiCallback<PIItemsSecurityRights> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -791,12 +803,12 @@ public class ElementTemplateApi {
 				}
 			};
 		}
-		okhttp3.Call call = getSecurityCall(webId, userIdentity, forceRefresh, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getSecurityCall(webId, userIdentity, forceRefresh, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getSecurityCall(String webId, List<String> userIdentity, Boolean forceRefresh, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getSecurityCall(String webId, List<String> userIdentity, Boolean forceRefresh, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -827,6 +839,8 @@ public class ElementTemplateApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "forceRefresh", forceRefresh));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -847,8 +861,8 @@ public class ElementTemplateApi {
 	 * Retrieve the security entries associated with the element template based on the specified criteria. By default, all security entries for this element template are returned. 
 	 *
 	 */
-	public PIItemsSecurityEntry getSecurityEntries(String webId, String nameFilter, String selectedFields) throws ApiException {
-		ApiResponse<PIItemsSecurityEntry> resp = getSecurityEntriesWithHttpInfo(webId, nameFilter, selectedFields);
+	public PIItemsSecurityEntry getSecurityEntries(String webId, String nameFilter, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIItemsSecurityEntry> resp = getSecurityEntriesWithHttpInfo(webId, nameFilter, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -856,8 +870,8 @@ public class ElementTemplateApi {
 	 * Retrieve the security entries associated with the element template based on the specified criteria. By default, all security entries for this element template are returned. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsSecurityEntry> getSecurityEntriesWithHttpInfo(String webId, String nameFilter, String selectedFields) throws ApiException {
-		okhttp3.Call call = getSecurityEntriesCall(webId, nameFilter, selectedFields,null,null);
+	public ApiResponse<PIItemsSecurityEntry> getSecurityEntriesWithHttpInfo(String webId, String nameFilter, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getSecurityEntriesCall(webId, nameFilter, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsSecurityEntry>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -866,7 +880,7 @@ public class ElementTemplateApi {
 	 * Retrieve the security entries associated with the element template based on the specified criteria. By default, all security entries for this element template are returned. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getSecurityEntriesAsync(String webId, String nameFilter, String selectedFields, final ApiCallback<PIItemsSecurityEntry> callback) throws ApiException {
+	public okhttp3.Call getSecurityEntriesAsync(String webId, String nameFilter, String selectedFields, String webIdType, final ApiCallback<PIItemsSecurityEntry> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -886,12 +900,12 @@ public class ElementTemplateApi {
 				}
 			};
 		}
-		okhttp3.Call call = getSecurityEntriesCall(webId, nameFilter, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getSecurityEntriesCall(webId, nameFilter, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getSecurityEntriesCall(String webId, String nameFilter, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getSecurityEntriesCall(String webId, String nameFilter, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -917,6 +931,8 @@ public class ElementTemplateApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "nameFilter", nameFilter));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -937,16 +953,16 @@ public class ElementTemplateApi {
 	 * Create a security entry owned by the element template. 
 	 *
 	 */
-	public void createSecurityEntry(String webId, PISecurityEntry securityEntry, Boolean applyToChildren) throws ApiException {
-		createSecurityEntryWithHttpInfo(webId, securityEntry, applyToChildren);
+	public void createSecurityEntry(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, String webIdType) throws ApiException {
+		createSecurityEntryWithHttpInfo(webId, securityEntry, applyToChildren, webIdType);
 	}
 
 	/**
 	 * Create a security entry owned by the element template. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<Void> createSecurityEntryWithHttpInfo(String webId, PISecurityEntry securityEntry, Boolean applyToChildren) throws ApiException {
-		okhttp3.Call call = createSecurityEntryCall(webId, securityEntry, applyToChildren,null,null);
+	public ApiResponse<Void> createSecurityEntryWithHttpInfo(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, String webIdType) throws ApiException {
+		okhttp3.Call call = createSecurityEntryCall(webId, securityEntry, applyToChildren, webIdType,null,null);
 		return apiClient.execute(call);
 	}
 
@@ -954,7 +970,7 @@ public class ElementTemplateApi {
 	 * Create a security entry owned by the element template. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call createSecurityEntryAsync(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, final ApiCallback<Void> callback) throws ApiException {
+	public okhttp3.Call createSecurityEntryAsync(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, String webIdType, final ApiCallback<Void> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -974,12 +990,12 @@ public class ElementTemplateApi {
 				}
 			};
 		}
-		okhttp3.Call call = createSecurityEntryCall(webId, securityEntry, applyToChildren, progressListener, progressRequestListener);
+		okhttp3.Call call = createSecurityEntryCall(webId, securityEntry, applyToChildren, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call createSecurityEntryCall(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call createSecurityEntryCall(String webId, PISecurityEntry securityEntry, Boolean applyToChildren, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -1007,6 +1023,8 @@ public class ElementTemplateApi {
 		localVarPostBody =  securityEntry;
 		if (applyToChildren != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "applyToChildren", applyToChildren));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -1027,8 +1045,8 @@ public class ElementTemplateApi {
 	 * Retrieve the security entry associated with the element template with the specified name. 
 	 *
 	 */
-	public PIItemsSecurityEntry getSecurityEntryByName(String name, String webId, String selectedFields) throws ApiException {
-		ApiResponse<PIItemsSecurityEntry> resp = getSecurityEntryByNameWithHttpInfo(name, webId, selectedFields);
+	public PIItemsSecurityEntry getSecurityEntryByName(String name, String webId, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIItemsSecurityEntry> resp = getSecurityEntryByNameWithHttpInfo(name, webId, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -1036,8 +1054,8 @@ public class ElementTemplateApi {
 	 * Retrieve the security entry associated with the element template with the specified name. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIItemsSecurityEntry> getSecurityEntryByNameWithHttpInfo(String name, String webId, String selectedFields) throws ApiException {
-		okhttp3.Call call = getSecurityEntryByNameCall(name, webId, selectedFields,null,null);
+	public ApiResponse<PIItemsSecurityEntry> getSecurityEntryByNameWithHttpInfo(String name, String webId, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getSecurityEntryByNameCall(name, webId, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIItemsSecurityEntry>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -1046,7 +1064,7 @@ public class ElementTemplateApi {
 	 * Retrieve the security entry associated with the element template with the specified name. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getSecurityEntryByNameAsync(String name, String webId, String selectedFields, final ApiCallback<PIItemsSecurityEntry> callback) throws ApiException {
+	public okhttp3.Call getSecurityEntryByNameAsync(String name, String webId, String selectedFields, String webIdType, final ApiCallback<PIItemsSecurityEntry> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -1066,12 +1084,12 @@ public class ElementTemplateApi {
 				}
 			};
 		}
-		okhttp3.Call call = getSecurityEntryByNameCall(name, webId, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getSecurityEntryByNameCall(name, webId, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getSecurityEntryByNameCall(String name, String webId, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getSecurityEntryByNameCall(String name, String webId, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'name' is set
 		if (name == null)
@@ -1099,6 +1117,8 @@ public class ElementTemplateApi {
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {

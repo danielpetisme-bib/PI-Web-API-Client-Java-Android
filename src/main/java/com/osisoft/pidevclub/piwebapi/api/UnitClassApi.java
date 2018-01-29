@@ -1,6 +1,6 @@
 /*
  *
- * Copyright 2017 OSIsoft, LLC
+ * Copyright 2018 OSIsoft, LLC
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,8 +47,8 @@ public class UnitClassApi {
 	 * Retrieve a unit class by path. 
 	 *
 	 */
-	public PIUnitClass getByPath(String path, String selectedFields) throws ApiException {
-		ApiResponse<PIUnitClass> resp = getByPathWithHttpInfo(path, selectedFields);
+	public PIUnitClass getByPath(String path, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIUnitClass> resp = getByPathWithHttpInfo(path, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -56,8 +56,8 @@ public class UnitClassApi {
 	 * Retrieve a unit class by path. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIUnitClass> getByPathWithHttpInfo(String path, String selectedFields) throws ApiException {
-		okhttp3.Call call = getByPathCall(path, selectedFields,null,null);
+	public ApiResponse<PIUnitClass> getByPathWithHttpInfo(String path, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getByPathCall(path, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIUnitClass>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -66,7 +66,7 @@ public class UnitClassApi {
 	 * Retrieve a unit class by path. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getByPathAsync(String path, String selectedFields, final ApiCallback<PIUnitClass> callback) throws ApiException {
+	public okhttp3.Call getByPathAsync(String path, String selectedFields, String webIdType, final ApiCallback<PIUnitClass> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -86,12 +86,12 @@ public class UnitClassApi {
 				}
 			};
 		}
-		okhttp3.Call call = getByPathCall(path, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getByPathCall(path, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getByPathCall(String path, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getByPathCall(String path, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'path' is set
 		if (path == null)
@@ -116,6 +116,8 @@ public class UnitClassApi {
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "path", path));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -136,8 +138,8 @@ public class UnitClassApi {
 	 * Retrieve a unit class. 
 	 *
 	 */
-	public PIUnitClass get(String webId, String selectedFields) throws ApiException {
-		ApiResponse<PIUnitClass> resp = getWithHttpInfo(webId, selectedFields);
+	public PIUnitClass get(String webId, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIUnitClass> resp = getWithHttpInfo(webId, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -145,8 +147,8 @@ public class UnitClassApi {
 	 * Retrieve a unit class. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIUnitClass> getWithHttpInfo(String webId, String selectedFields) throws ApiException {
-		okhttp3.Call call = getCall(webId, selectedFields,null,null);
+	public ApiResponse<PIUnitClass> getWithHttpInfo(String webId, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getCall(webId, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIUnitClass>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -155,7 +157,7 @@ public class UnitClassApi {
 	 * Retrieve a unit class. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getAsync(String webId, String selectedFields, final ApiCallback<PIUnitClass> callback) throws ApiException {
+	public okhttp3.Call getAsync(String webId, String selectedFields, String webIdType, final ApiCallback<PIUnitClass> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -175,12 +177,12 @@ public class UnitClassApi {
 				}
 			};
 		}
-		okhttp3.Call call = getCall(webId, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getCall(webId, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getCall(String webId, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getCall(String webId, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -204,6 +206,8 @@ public class UnitClassApi {
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -396,8 +400,8 @@ public class UnitClassApi {
 	 * Get the canonical unit of a unit class. 
 	 *
 	 */
-	public PIUnit getCanonicalUnit(String webId, String selectedFields) throws ApiException {
-		ApiResponse<PIUnit> resp = getCanonicalUnitWithHttpInfo(webId, selectedFields);
+	public PIUnit getCanonicalUnit(String webId, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIUnit> resp = getCanonicalUnitWithHttpInfo(webId, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -405,8 +409,8 @@ public class UnitClassApi {
 	 * Get the canonical unit of a unit class. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIUnit> getCanonicalUnitWithHttpInfo(String webId, String selectedFields) throws ApiException {
-		okhttp3.Call call = getCanonicalUnitCall(webId, selectedFields,null,null);
+	public ApiResponse<PIUnit> getCanonicalUnitWithHttpInfo(String webId, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getCanonicalUnitCall(webId, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIUnit>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -415,7 +419,7 @@ public class UnitClassApi {
 	 * Get the canonical unit of a unit class. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getCanonicalUnitAsync(String webId, String selectedFields, final ApiCallback<PIUnit> callback) throws ApiException {
+	public okhttp3.Call getCanonicalUnitAsync(String webId, String selectedFields, String webIdType, final ApiCallback<PIUnit> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -435,12 +439,12 @@ public class UnitClassApi {
 				}
 			};
 		}
-		okhttp3.Call call = getCanonicalUnitCall(webId, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getCanonicalUnitCall(webId, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getCanonicalUnitCall(String webId, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getCanonicalUnitCall(String webId, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -464,6 +468,8 @@ public class UnitClassApi {
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -484,8 +490,8 @@ public class UnitClassApi {
 	 * Get a list of all units belonging to the unit class. 
 	 *
 	 */
-	public PIUnit getUnits(String webId, String selectedFields) throws ApiException {
-		ApiResponse<PIUnit> resp = getUnitsWithHttpInfo(webId, selectedFields);
+	public PIUnit getUnits(String webId, String selectedFields, String webIdType) throws ApiException {
+		ApiResponse<PIUnit> resp = getUnitsWithHttpInfo(webId, selectedFields, webIdType);
 		return resp.getData();
 	}
 
@@ -493,8 +499,8 @@ public class UnitClassApi {
 	 * Get a list of all units belonging to the unit class. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<PIUnit> getUnitsWithHttpInfo(String webId, String selectedFields) throws ApiException {
-		okhttp3.Call call = getUnitsCall(webId, selectedFields,null,null);
+	public ApiResponse<PIUnit> getUnitsWithHttpInfo(String webId, String selectedFields, String webIdType) throws ApiException {
+		okhttp3.Call call = getUnitsCall(webId, selectedFields, webIdType,null,null);
 		Type localVarReturnType = new TypeToken<PIUnit>(){}.getType();
 		return apiClient.execute(call, localVarReturnType);
 	}
@@ -503,7 +509,7 @@ public class UnitClassApi {
 	 * Get a list of all units belonging to the unit class. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call getUnitsAsync(String webId, String selectedFields, final ApiCallback<PIUnit> callback) throws ApiException {
+	public okhttp3.Call getUnitsAsync(String webId, String selectedFields, String webIdType, final ApiCallback<PIUnit> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -523,12 +529,12 @@ public class UnitClassApi {
 				}
 			};
 		}
-		okhttp3.Call call = getUnitsCall(webId, selectedFields, progressListener, progressRequestListener);
+		okhttp3.Call call = getUnitsCall(webId, selectedFields, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call getUnitsCall(String webId, String selectedFields, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call getUnitsCall(String webId, String selectedFields, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -552,6 +558,8 @@ public class UnitClassApi {
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		if (selectedFields != null)
 			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "selectedFields", selectedFields));
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
@@ -572,16 +580,16 @@ public class UnitClassApi {
 	 * Create a unit in the specified Unit Class. 
 	 *
 	 */
-	public void createUnit(String webId, PIUnit unitDTO) throws ApiException {
-		createUnitWithHttpInfo(webId, unitDTO);
+	public void createUnit(String webId, PIUnit unitDTO, String webIdType) throws ApiException {
+		createUnitWithHttpInfo(webId, unitDTO, webIdType);
 	}
 
 	/**
 	 * Create a unit in the specified Unit Class. (with HTTP information)
 	 *
 	 */
-	public ApiResponse<Void> createUnitWithHttpInfo(String webId, PIUnit unitDTO) throws ApiException {
-		okhttp3.Call call = createUnitCall(webId, unitDTO,null,null);
+	public ApiResponse<Void> createUnitWithHttpInfo(String webId, PIUnit unitDTO, String webIdType) throws ApiException {
+		okhttp3.Call call = createUnitCall(webId, unitDTO, webIdType,null,null);
 		return apiClient.execute(call);
 	}
 
@@ -589,7 +597,7 @@ public class UnitClassApi {
 	 * Create a unit in the specified Unit Class. (asynchronously)
 	 *
 	 */
-	public okhttp3.Call createUnitAsync(String webId, PIUnit unitDTO, final ApiCallback<Void> callback) throws ApiException {
+	public okhttp3.Call createUnitAsync(String webId, PIUnit unitDTO, String webIdType, final ApiCallback<Void> callback) throws ApiException {
 		ProgressResponseBody.ProgressListener progressListener = null;
 		ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 		if (callback != null)
@@ -609,12 +617,12 @@ public class UnitClassApi {
 				}
 			};
 		}
-		okhttp3.Call call = createUnitCall(webId, unitDTO, progressListener, progressRequestListener);
+		okhttp3.Call call = createUnitCall(webId, unitDTO, webIdType, progressListener, progressRequestListener);
 		apiClient.executeAsync(call, callback);
 		return call;
 	}
 
-	private okhttp3.Call createUnitCall(String webId, PIUnit unitDTO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+	private okhttp3.Call createUnitCall(String webId, PIUnit unitDTO, String webIdType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		Object localVarPostBody =  null;
 		// verify the required parameter 'webId' is set
 		if (webId == null)
@@ -640,6 +648,8 @@ public class UnitClassApi {
 
 		localVarPath = localVarPath.replaceAll("\\{webId\\}", apiClient.escapeString(webId.toString()));
 		localVarPostBody =  unitDTO;
+		if (webIdType != null)
+			localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "webIdType", webIdType));
 		if (progressListener != null)
 		{
 			apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {

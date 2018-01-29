@@ -16,6 +16,7 @@ Name | Type | Notes
 **IsInitializing** | **Boolean**
 **MergeDuplicatedItems** | **Boolean**
 **PlugInName** | **String**
-**Links** | **Map<String, String>**
+**Links** | **[**PITimeRuleLinks**](../models/PITimeRuleLinks.md)**
+**WebException** | **[**PIWebException**](../models/PIWebException.md)**
 
 [[Back to Model list]](../../DOCUMENTATION.md#documentation-for-models) [[Back to API list]](../../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to DOCUMENTATION]](../../DOCUMENTATION.md)
