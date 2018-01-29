@@ -87,7 +87,7 @@ Please check the [PIWebApiTests.java](/src/test/java/PIWebApiTests.java) from th
 	PIWebApiClient client = new PIWebApiClient("https://marc-web-sql.marc.net/piwebapi", username, password, false, true);  
 ``` 
 
-If you want to use basic authentication instead of Kerberos, set useKerberos to false and set the username and password accordingly.
+This library is only compatible with PI Web API Basic Authentication. As a result, you must provide the username and password.
 
 
 ### Get the PI Data Archive WebId
