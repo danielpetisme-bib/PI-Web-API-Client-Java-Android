@@ -31,6 +31,7 @@ Method | Controller
 **getAttribute()** | [**AttributeApi**](/docs/api/AttributeApi.md)
 **getAttributeTemplate()** | [**AttributeTemplateApi**](/docs/api/AttributeTemplateApi.md)
 **getAttributeTrait()** | [**AttributeTraitApi**](/docs/api/AttributeTraitApi.md)
+**getBatch()** | [**BatchApi**](/docs/api/BatchApi.md)
 **getCalculation()** | [**CalculationApi**](/docs/api/CalculationApi.md)
 **getChannel()** | [**ChannelApi**](/docs/api/ChannelApi.md)
 **getDataServer()** | [**DataServerApi**](/docs/api/DataServerApi.md)
@@ -53,5 +54,6 @@ Method | Controller
 **getTimeRule()** | [**TimeRuleApi**](/docs/api/TimeRuleApi.md)
 **getUnitClass()** | [**UnitClassApi**](/docs/api/UnitClassApi.md)
 **getUnit()** | [**UnitApi**](/docs/api/UnitApi.md)
+**getWebIdHelper()** | [**WebIdHelperApi**](/docs/api/WebIdHelperApi.md)
 
 [[Back to Model list]](../DOCUMENTATION.md#documentation-for-models) [[Back to API list]](../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to DOCUMENTATION]](../DOCUMENTATION.md)
