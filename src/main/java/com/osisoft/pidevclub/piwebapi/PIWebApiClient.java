@@ -1,6 +1,7 @@
 package com.osisoft.pidevclub.piwebapi;
 
 import com.osisoft.pidevclub.piwebapi.api.*;
+import com.osisoft.pidevclub.piwebapi.webid.WebIdHelper;
 
 public class PIWebApiClient
 {
@@ -24,7 +25,7 @@ public class PIWebApiClient
 
     }
 
-
+    public ApiClient getApiClient() { return  this.apiClient; }
 
     public AnalysisApi getAnalysis()
     {
@@ -82,7 +83,10 @@ public class PIWebApiClient
         return new AttributeTraitApi(apiClient);
     }
 
-
+    public BatchApi getBatch()
+    {
+      return new BatchApi(apiClient);
+    }
 
     public CalculationApi getCalculation()
     {
@@ -196,8 +200,14 @@ public class PIWebApiClient
     {
         return new UnitApi(apiClient);
     }
+
     public UnitClassApi getUnitClass()
     {
         return new UnitClassApi (apiClient);
+    }
+
+    public WebIdHelper getWebIdHelper()
+    {
+        return new WebIdHelper();
     }
 }

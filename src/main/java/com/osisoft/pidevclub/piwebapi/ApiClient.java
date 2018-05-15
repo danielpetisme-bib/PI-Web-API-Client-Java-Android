@@ -15,6 +15,7 @@ package com.osisoft.pidevclub.piwebapi;
 
 import okhttp3.*;
 import okhttp3.internal.http.HttpMethod;
+import okhttp3.internal.http.RealResponseBody;
 import okhttp3.logging.HttpLoggingInterceptor;
 import okhttp3.logging.HttpLoggingInterceptor.Level;
 
@@ -828,7 +829,7 @@ public class ApiClient {
             else
                 respBody = null;
         } catch (IOException e) {
-            throw new ApiException(e);
+            return  null;
         }
 
         if (respBody == null || "".equals(respBody)) {
@@ -853,6 +854,9 @@ public class ApiClient {
                     respBody);
         }
     }
+
+
+
 
     /**
      * Serialize the given Java object into request body according to the object's
@@ -1262,16 +1266,16 @@ public class ApiClient {
                 trustManagers  = new TrustManager[] {
                         new X509TrustManager() {
                             @Override
-                            public void checkClientTrusted(java.security.cert.X509Certificate[] chain, String authType) throws CertificateException {
+                            public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {
                             }
 
                             @Override
-                            public void checkServerTrusted(java.security.cert.X509Certificate[] chain, String authType) throws CertificateException {
+                            public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {
                             }
 
                             @Override
-                            public java.security.cert.X509Certificate[] getAcceptedIssuers() {
-                                return new java.security.cert.X509Certificate[]{};
+                            public X509Certificate[] getAcceptedIssuers() {
+                                return new X509Certificate[]{};
                             }
                         }
                 };
@@ -1301,7 +1305,7 @@ public class ApiClient {
 
             if (keyManagers != null || trustManagers != null) {
                 SSLContext sslContext = SSLContext.getInstance("SSL");
-                sslContext.init(keyManagers, trustManagers, new java.security.SecureRandom());
+                sslContext.init(keyManagers, trustManagers, new SecureRandom());
                 SSLSocketFactory sslSocketFactory = sslContext.getSocketFactory();
 
                 clientBuilder.sslSocketFactory(sslSocketFactory, (X509TrustManager)trustManagers[0]);

@@ -32,11 +32,11 @@ public class PISearchByAttribute {
 	@SerializedName("ElementTemplate")
 	private String elementTemplate = null;
 
+	@SerializedName("Items")
+	private List<PIValueQuery> items = null;
+
 	@SerializedName("WebException")
 	private PIWebException webException = null;
-
-	@SerializedName("ValueQueries")
-	private List<PIValueQuery> valueQueries = null;
 
 	public PISearchByAttribute() {
 	}
@@ -50,11 +50,11 @@ public class PISearchByAttribute {
 
 	public String getElementTemplate() { return this.elementTemplate;}
 
+	public void setItems(List<PIValueQuery> items) { this.items = items;}
+
+	public List<PIValueQuery> getItems() { return this.items;}
+
 	public void setWebException(PIWebException webException) { this.webException = webException;}
 
 	public PIWebException getWebException() { return this.webException;}
-
-	public void setValueQueries(List<PIValueQuery> valueQueries) { this.valueQueries = valueQueries;}
-
-	public List<PIValueQuery> getValueQueries() { return this.valueQueries;}
 }

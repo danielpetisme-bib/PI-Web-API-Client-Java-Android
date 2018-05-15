@@ -10,7 +10,7 @@ This repository has the source code package of the PI Web API client library for
 
  - JDK
  - [Maven](https://maven.apache.org/)
- - Python 2.7 and 3.4+
+
 
  
 ## Installation
@@ -42,7 +42,7 @@ Add this dependency to your project's POM:
 <dependency>
 	<groupId>com.osisoft.pidevclub</groupId>
 	<artifactId>piwebapi</artifactId>
-	<version>1.1.0</version>
+	<version>1.1.1</version>
 </dependency>
 ```
 
@@ -51,7 +51,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile 'com.osisoft.pidevclub:piwebapi:1.1.0'
+compile 'com.osisoft.pidevclub:piwebapi:1.1.1'
 ```
 
 ### Others
@@ -62,7 +62,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/piwebapi-1.1.0.jar
+* target/piwebapi-1.1.1.jar
 * target/lib/*.jar
 
 
@@ -188,7 +188,66 @@ This library is only compatible with PI Web API Basic Authentication. As a resul
 ```
 
 
+### PI Web API Batch
 
+```java
+	Map<String, PIRequest> batch = new HashMap<String, PIRequest>();
+	PIRequest req1 = new PIRequest();
+	PIRequest req2 = new PIRequest();
+	PIRequest req3 = new PIRequest();
+	req1.setMethod("GET");
+	req1.setResource("https://marc-web-sql.marc.net/piwebapi/points?path=\\\\MARC-PI2016\\sinusoid");
+	req2.setMethod("GET");
+	req2.setResource("https://marc-web-sql.marc.net/piwebapi/points?path=\\\\MARC-PI2016\\cdt158");
+	req3.setMethod("GET");
+	req3.setResource("https://marc-web-sql.marc.net/piwebapi/streamsets/value?webid={0}&webid={1}");
+
+	List<String> parameters = new ArrayList<>();
+	parameters.add("$.1.Content.WebId");
+	parameters.add("$.2.Content.WebId" );
+	req3.setParameters(parameters);
+
+
+	List<String> parentIds = new ArrayList<>();
+	parentIds.add("1");
+	parentIds.add("2");
+	req3.setParentIds(parentIds);
+
+	batch.put("1", req1);
+	batch.put("2", req2);
+	batch.put("3", req3);
+	Map<String, PIResponse> batchResponse = client.getBatch().execute(batch);
+
+	Object content1 = batchResponse.get("1").getContent();
+	Object content2 = batchResponse.get("2").getContent();
+	Object content3 = batchResponse.get("3").getContent();
+
+	JSON json = new JSON(client.getApiClient());
+	PIPoint pointBatch1 = json.deserialize(json.serialize(content1), new TypeToken<PIPoint>(){}.getType());
+	PIPoint pointBatch2 = json.deserialize(json.serialize(content2), new TypeToken<PIPoint>(){}.getType());
+	PIItemsStreamValue batchStreamValues = json.deserialize(json.serialize(content3), new TypeToken<PIItemsStreamValue>(){}.getType());
+```
+
+
+### Getting WebID 2.0 information
+
+```java
+	string webIdType = "Full";
+	PIAssetServer piAssetServer = client.AssetServer.GetByPath(Constants.AF_SERVER_PATH, null, webIdType);
+	WebIdInfo piAssetServerWebIdInfo = client.WebIdHelper.GetWebIdInfo(piAssetServer.WebId);
+
+	PIAttribute piAttribute = client.Attribute.GetByPath(Constants.AF_ATTRIBUTE_PATH, null, webIdType);
+	WebIdInfo piAttributeWebIdInfo = client.WebIdHelper.GetWebIdInfo(piAttribute.WebId);
+```
+
+
+### Generating WebID 2.0 client side
+
+```java
+	String web_id1 = client.getWebIdHelper().generateWebIdByPath("\\\\PISRV1\\CDF144_Repeated24h_forward", PIPoint.class, null);
+	String web_id2 = client.getWebIdHelper().generateWebIdByPath("\\\\PISRV1\\Universities\\UC Davis\\Buildings\\Academic Surge Building|Electricity Totalizer", 
+		PIAttribute.class, PIElement.class);
+```
 
 
 ## Licensing
