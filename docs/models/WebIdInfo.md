@@ -3,14 +3,14 @@
 ## Properties
 Name | Type | Notes
 ------------ | ------------- | -------------
-**Marker** | **strng**
-**ObjectID** | **Guid**
-**ObjectType** | **Type**
-**OwnerID** | **Guid**
-**OwnerType** | **Type**
-**Path** | **string**
+**Marker** | **Strng**
+**ObjectID** | **UUID**
+**ObjectType** | **String**
+**OwnerID** | **UUID**
+**OwnerType** | **String**
+**Path** | **String**
 **PointID** | **int**
-**ServerID** | **Guid**
+**ServerID** | **UUID**
 **Version** | **int**
 **WebIdType** | **WebIdType**
 
