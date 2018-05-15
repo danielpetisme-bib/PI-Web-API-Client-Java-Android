@@ -54,6 +54,6 @@ Method | Controller
 **getTimeRule()** | [**TimeRuleApi**](/docs/api/TimeRuleApi.md)
 **getUnitClass()** | [**UnitClassApi**](/docs/api/UnitClassApi.md)
 **getUnit()** | [**UnitApi**](/docs/api/UnitApi.md)
-**getWebIdHelper()** | [**WebIdHelperApi**](/docs/api/WebIdHelperApi.md)
+**getWebIdHelper()** | [**WebIdHelper**](/docs/api/WebIdHelper.md)
 
 [[Back to Model list]](../DOCUMENTATION.md#documentation-for-models) [[Back to API list]](../DOCUMENTATION.md#documentation-for-api-endpoints) [[Back to DOCUMENTATION]](../DOCUMENTATION.md)
