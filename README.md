@@ -13,7 +13,7 @@ This repository has the source code package of the PI Web API client library for
 
 
  
-## Installation
+## Local Installation
 
 To install the API client library to your local Maven repository, simply execute on the project folder:
 
@@ -64,6 +64,11 @@ Then manually install the following JARs:
 
 * target/piwebapi-1.1.1.jar
 * target/lib/*.jar
+
+
+## Download from JitPack repository (Gradle and Maven)
+
+You can download the package through JitPack. Just follow the steps described [here](https://jitpack.io/#osimloeff/PI-Web-API-Client-Java-Android/1.1.1).
 
 
 ## Documentation
